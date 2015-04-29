@@ -1,16 +1,9 @@
 console.log('welcome.js loaded');
 
-(function() {
 
-	var app = angular.module('welcomeController', []);
-
-	app.controller('welcomeController',
-		['$http', '$cookies', '$location', function($http, $cookies, $location) {
-
-		var cards = this;
+slideController.controller('welcomeController',
+	['$scope', '$http', '$cookies', '$location', function($scope, $http, $cookies, $location) {
 
 
-
-		cards.test = "test 1337";
-	}]);
-})();
+	$scope.test2 = "test 42 - 1337";
+}]);

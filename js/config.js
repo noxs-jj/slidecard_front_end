@@ -5,3 +5,4 @@ console.log("config.js loaded");
 
 var	urlApi = 'http://slidecard.tk/v1';
 
+var slideController = angular.module('slideController',[]);

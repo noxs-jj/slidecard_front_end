@@ -1,1 +1,25 @@
-<h2 class="text-center">Login</h2>
+<h2 class="h2 text-center">Login</h2>
+
+<div class="container" ng-controller="loginController">
+
+	<p>{{test}}</p>
+
+	<div ng-show="login.error">{{login.error}}</div>
+	<form class="form-signin" name="loginForm" data-ng-submit="loginForm.$valid && login.auth()" novalidate>
+
+		<h2 class="form-signin-heading">Please sign in</h2>
+
+		<label for="inputEmail" class="sr-only">Email</label>
+		<input class="form-control" type="text" data-ng-model="login.email" placeholder="email" required />
+		</br>
+		<label for="inputPassword" class="sr-only">Password</label>
+		<input class="form-control" type="password" data-ng-model="login.password" placeholder="password" required />
+		</br>
+		<button class="btn btn-lg btn-primary btn-block" type="submit" data-ng-show="loginForm.$valid" value="Login" />Sign in</button>
+	</form>
+
+</div>
+<!-- 
+jquilez@student.42.fr
+jquilez
+-->

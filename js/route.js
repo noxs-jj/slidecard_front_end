@@ -1,35 +1,32 @@
 console.log('route.js loaded');
 
-(function() {
+var slideApp = angular.module('slideApp',
+	['ngRoute', 'ngCookies', 'slideController']);
 
-	var app = angular.module('slideApp',
-		['ngRoute', 'ngCookies', 'welcomeController']);
+slideApp.config(['$routeProvider', function ($routeProvider) {
+	$routeProvider.
+	when('/login', {
 
-	app.config(['$routeProvider', function ($routeProvider) {
+		templateUrl: 'html/login.html',
+		controller: 'loginController',
+		controllerAs: 'login'
+	}).
+	when('/welcome', {
 
-		$routeProvider.
-			when('/login', {
+		templateUrl: 'html/welcome.html',
+		controller: 'welcomeController',
+		controllerAs: 'welcome'
+	}).
+	otherwise({ redirectTo: '/welcome' });
+}]);
 
-				templateUrl: 'html/login.html',
-				controller: 'loginController',
-				controllerAs: 'login'
-			}).
-			when('/welcome', {
 
-				templateUrl: 'html/welcome.html',
-				controller: 'welcomeController',
-				controllerAs: 'welcome'
-			}).
-			otherwise({ redirectTo: '/welcome' });
-	}]);
+slideApp.controller('contentController', ['$cookies', function($cookies) {
 
-	app.controller('contentController', ['$cookies', function($cookies) {
+	var content = this;
 
-		var content = this;
+	content.isLog = function() {
 
-		content.isLog = function() {
-
-			return $cookies.usr_token;
-		};
-	}]);
-})();
+		return $cookies.usr_token;
+	};
+}]);
