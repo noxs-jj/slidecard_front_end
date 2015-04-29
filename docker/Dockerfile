@@ -8,6 +8,7 @@ RUN apt-get update ; apt-get install -y curl git-core nano wget nginx \
 && apt-get clean ; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD build_file/default /etc/nginx/sites-enabled/
+ADD build_file/nginx.con /etc/nginx/
 
 RUN mkdir /var/www ; chmod 777 /var/www
 
