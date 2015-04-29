@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" data-ng-app ="slideApp">
+<html lang="en" ng-app ="slideApp">
 <head>
 	<meta charset="utf-8">
 	<title>SlideCard Front End</title>
@@ -9,32 +9,26 @@
 </head>
 <body>
 	<div class="jumbotron text-center"><h1>SlideCard</h1></div>
-
-	<div>TEST en dessous {{40 + 2}}</div></br></br></br></br></br></br>
-	
-	<div data-ng-view></div>
-
-	</br></br></br></br></br></br><div>TEST en dessus {{9 + 5}}</div>
-
-
+	<div style="align: center;">
+		<ul class="nav nav-pills">
+			<li role="presentation"><a href="#/welcome">Welcome</a></li>
+			<li role="presentation"><a href="#/login">Login</a></li>
+			<li role="presentation"><a href="#/logout">Logout</a></li>
+		</ul>
+	</div>
+	<div ng-view></div>
 	<!--- libs -->
 	<script src="js/libs/angular/angular.js"></script>
 	<script src="js/libs/angular/angular-cookies.js"></script>
 	<script src="js/libs/angular/angular-route.js"></script>
-
 	<!--- config angulars -->
 	<script src="js/config.js"></script>
 	<script src="js/controller.js"></script>
 	<script src="js/route.js"></script>
-	
 	<!--- controllers -->
 	<script src="js/controller/login.js"></script>
+	<script src="js/controller/logout.js"></script>
 	<script src="js/controller/welcome.js"></script>
-
-	
-	
-	
-	
 	<footer>
 		<p style="text-center">
 			<a href="http://fr.linkedin.com/pub/jonathan-maurice/93/47a/a30/en" target="_blank">Jonathan Maurice</a>

@@ -11,6 +11,12 @@ slideApp.config(['$routeProvider', function ($routeProvider) {
 		controller: 'loginController',
 		controllerAs: 'login'
 	}).
+	when('/logout', {
+
+		templateUrl: 'html/logout.html',
+		controller: 'logoutController',
+		controllerAs: 'logout'
+	}).
 	when('/welcome', {
 
 		templateUrl: 'html/welcome.html',
@@ -22,11 +28,9 @@ slideApp.config(['$routeProvider', function ($routeProvider) {
 
 
 slideApp.controller('contentController', ['$cookies', function($cookies) {
-
 	var content = this;
 
 	content.isLog = function() {
-
 		return $cookies.usr_token;
 	};
 }]);

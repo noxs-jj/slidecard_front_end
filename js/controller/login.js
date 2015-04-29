@@ -1,11 +1,12 @@
 console.log('login.js loaded');
 
-slideController.controller('loginController',
-	['$scope', '$http', '$cookies', '$location', function($scope, $http, $cookies, $location) {
-
+slideController.controller('loginController', ['$scope', '$http', '$cookies', '$location', function($scope, $http, $cookies, $location) {
 	var login = this;
 
-	$scope.test = "test login 42";
+	login.error = "";
+
+	if ($cookies.usr_token)
+			$location.path('/welcome');
 
 	login.auth = function() {
 		$http.post(urlApi + '/auth', {
@@ -13,12 +14,16 @@ slideController.controller('loginController',
 			'password': login.password
 		})
 		.success(function(data) {
-			$cookies.usr_token = data['data'].token;
+			$cookies.usr_token = data.data.token;
 			console.log('Login success');
+			// REMOVE
+			console.log($cookies.usr_token);
+			console.log(data['data'].token);
 			$location.path('/welcome');
 		})
-		.error(function(error) {
-			console.log(error);
+		.error(function(data, status) {
+			console.log('status: ' + status);
+			console.log('data: ' + data);
 			login.error = "Bad login / pass";
 		})
 		// REMOVE
