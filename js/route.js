@@ -17,6 +17,12 @@ slideApp.config(['$routeProvider', function ($routeProvider) {
 		controller: 'logoutController',
 		controllerAs: 'logout'
 	}).
+	when('/register', {
+
+		templateUrl: 'html/register.html',
+		controller: 'registerController',
+		controllerAs: 'register'
+	}).
 	when('/welcome', {
 
 		templateUrl: 'html/welcome.html',
@@ -39,8 +45,6 @@ slideApp.controller('contentController', ['$cookies', function($cookies) {
 slideApp.config(['$httpProvider', function($httpProvider) {
         $httpProvider.defaults.useXDomain = true;
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
-        delete $httpProvider.defaults.headers.common['Content-Type'];
         console.log("PROVIDER");
     }
 ]);
-console.log("awdfaafdsa");
