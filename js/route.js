@@ -34,3 +34,13 @@ slideApp.controller('contentController', ['$cookies', function($cookies) {
 		return $cookies.usr_token;
 	};
 }]);
+
+
+slideApp.config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+        delete $httpProvider.defaults.headers.common['Content-Type'];
+        console.log("PROVIDER");
+    }
+]);
+console.log("awdfaafdsa");

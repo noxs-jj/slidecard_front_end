@@ -5,12 +5,13 @@ slideController.controller('loginController', ['$scope', '$http', '$cookies', '$
 
 	login.error = '';
 
-	if ($cookies.usr_token)
-			$location.path('/welcome');
+	if ($cookies.usr_token) {
+		console.log('Login:: Already logged');
+		$location.path('/welcome');
+	}
 
 	login.auth = function() {
 		$http.post(urlApi + '/auth', {
-			'Content-Type': 'application/json',
 			'email': login.email,
 			'password': login.password
 		})
@@ -20,6 +21,7 @@ slideController.controller('loginController', ['$scope', '$http', '$cookies', '$
 			$location.path('/welcome');
 		})
 		.error(function(data, status) {
+			// REMOVE
 			console.log('Login error');
 			console.log('status: ' + status);
 			console.log('data: ' + data);
