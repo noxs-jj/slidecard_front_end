@@ -1,12 +1,12 @@
-console.log('cardList.js loaded');
+console.log('Account.js loaded');
 
-slideController.controller('cardListController', ['$scope', '$http', '$cookies', '$location', function($scope, $http, $cookies, $location) {
+slideController.controller('accountController', ['$scope', '$http', '$cookies', '$location', function($scope, $http, $cookies, $location) {
 	$scope.error = '';
 
-	$http.get(urlApi + '/cards')
+	$http.get(urlApi + '/acount')
 
 	.success(function(data, status) {
-		console.log('CardList success');
+		console.log('Account success');
 		$scope.result = data.data;
 		console.log(status);
 		console.log(data.data);

@@ -6,7 +6,7 @@ slideController.controller('loginController', ['$scope', '$http', '$cookies', '$
 
 	if ($cookies.usr_token) {
 		console.log('Login:: Already logged');
-
+		console.log($cookies.usr_token);
 	}
 
 	$scope.auth = function() {

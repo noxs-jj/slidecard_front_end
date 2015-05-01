@@ -15,10 +15,20 @@ slideApp.config(['$routeProvider', function ($routeProvider) {
 		controller: 'logoutController',
 		controllerAs: 'logout'
 	}).
+	when('/account', {
+		templateUrl: 'html/account.html',
+		controller: 'accountController',
+		controllerAs: 'account'
+	}).
 	when('/register', {
 		templateUrl: 'html/register.html',
 		controller: 'registerController',
 		controllerAs: 'register'
+	}).
+	when('/cardList', {
+		templateUrl: 'html/cardList.html',
+		controller: 'cardListController',
+		controllerAs: 'cardList'
 	}).
 	when('/cardCreate', {
 		templateUrl: 'html/cardCreate.html',
