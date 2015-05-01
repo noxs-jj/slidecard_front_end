@@ -1,6 +1,9 @@
 console.log('Account.js loaded');
 
 slideController.controller('accountController', ['$scope', '$http', '$cookies', '$location', function($scope, $http, $cookies, $location) {
+	if (!$cookies.usr_token)
+		$location.path('/login');
+
 	$scope.error = '';
 
 	$http.get(urlApi + '/acount')

@@ -56,8 +56,8 @@ slideApp.controller('contentController', ['$cookies', '$scope', function($cookie
 
 
 slideApp.config(['$httpProvider', function($httpProvider) {
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-        console.log("PROVIDER");
-    }
+		$httpProvider.defaults.useXDomain = true;
+		delete $httpProvider.defaults.headers.common['X-Requested-With'];
+		console.log("PROVIDER");
+	}
 ]);

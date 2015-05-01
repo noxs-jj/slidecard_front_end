@@ -1,6 +1,9 @@
 console.log('cardCreate.js loaded');
 
 slideController.controller('cardCreateController', ['$scope', '$http', '$cookies', '$location', function($scope, $http, $cookies, $location) {
+	if (!$cookies.usr_token)
+		$location.path('/login');
+
 	$scope.error = '';
 
 	$scope.create = function() {

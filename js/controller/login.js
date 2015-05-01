@@ -13,14 +13,13 @@ slideController.controller('loginController', ['$scope', '$http', '$cookies', '$
 		if ($cookies.usr_token) {
 			$location.path('/welcome');
 			console.log('Login:: Already logged');
-			$location.path('/welcome');
 		}
 		else {
 			$http.post(urlApi + '/auth', {
 				'email': $scope.email,
 				'password': $scope.password
 			})
-			.success(function(data) {
+			.success(function(data, status) {
 				$cookies.usr_token = data['data'].token;
 				console.log('Login success');
 				$location.path('/welcome');
