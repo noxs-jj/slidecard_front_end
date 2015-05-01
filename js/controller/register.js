@@ -2,7 +2,7 @@ console.log('register.js loaded');
 
 slideController.controller('registerController', ['$scope', '$http', '$cookies', '$location', function($scope, $http, $cookies, $location) {
 	$scope.error = '';
-	$scope.auth = function() {
+	$scope.reg = function() {
 		$http.post(urlApi + '/register', {
 			'email': $scope.email,
 			'password': $scope.password,

@@ -6,7 +6,7 @@ slideController.controller('accountController', ['$scope', '$http', '$cookies', 
 
 	$scope.error = '';
 
-	$http.get(urlApi + '/acount')
+	$http.get(urlApi + '/account')
 
 	.success(function(data, status) {
 		console.log('Account success');

@@ -4,37 +4,25 @@ slideController.controller('loginController', ['$scope', '$http', '$cookies', '$
 							function($scope, $http, $cookies, $location) {
 	$scope.error = '';
 
-	if ($cookies.usr_token) {
-		console.log('Login:: Already logged');
-		console.log($cookies.usr_token);
-	}
-
 	$scope.auth = function() {
-		if ($cookies.usr_token) {
+		$http.post(urlApi + '/auth', {
+			'email': $scope.email,
+			'password': $scope.password
+		})
+		.success(function(data, status) {
+			$cookies.usr_token = data['data'].token;
+			console.log('Login success');
+			console.log($cookies.usr_token);
 			$location.path('/welcome');
-			console.log('Login:: Already logged');
-		}
-		else {
-			$http.post(urlApi + '/auth', {
-				'email': $scope.email,
-				'password': $scope.password
-			})
-			.success(function(data, status) {
-				$cookies.usr_token = data['data'].token;
-				console.log('Login success');
-				$location.path('/welcome');
-			})
-			.error(function(data, status) {
-				// REMOVE
-				console.log('Login error');
-				console.log('status: ' + status);
-				console.log('data: ' + data);
-				$scope.error = 'Bad login / pass';
-			})
+		})
+		.error(function(data, status) {
 			// REMOVE
-			console.log($scope.email + " / " + $scope.password);
-		}
-	}
+			console.log('Login error');
+			$scope.error = status + " / " + data.message;
+		})
+		// REMOVE
+		console.log($scope.email + " / " + $scope.password);
+	};
 }]);
 
 // jquilez@student.42.fr

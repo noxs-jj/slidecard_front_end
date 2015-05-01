@@ -1,8 +1,5 @@
 console.log('route.js loaded');
 
-var slideApp = angular.module('slideApp',
-	['ngRoute', 'ngCookies', 'slideController']);
-
 slideApp.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider.
 	when('/login', {
@@ -53,11 +50,3 @@ slideApp.controller('contentController', ['$cookies', '$scope', function($cookie
 		return 0;
 	};
 }]);
-
-
-slideApp.config(['$httpProvider', function($httpProvider) {
-		$httpProvider.defaults.useXDomain = true;
-		delete $httpProvider.defaults.headers.common['X-Requested-With'];
-		console.log("PROVIDER");
-	}
-]);
