@@ -1,29 +1,29 @@
 <h2 class="h2 text-center">Register</h2>
 <div class="container" ng-controller="loginController">
-	<div ng-show="register.error">{{register.error}}</div>
-	<form class="form-signin" name="registerForm" data-ng-submit="registerForm.$valid && register.auth()" novalidate>
+	<div ng-show="error">{{error}}</div>
+	<form class="form-signin" name="registerForm" data-ng-submit="registerForm.$valid && auth()" novalidate>
 
 		<h2 class="form-signin-heading">Register New account</h2>
 
 		<label for="inputPassword" class="sr-only">First Name</label>
-		<input class="form-control" type="text" data-ng-model="register.firstname" placeholder="First Name" required />
+		<input class="form-control" type="text" data-ng-model="firstname" placeholder="First Name" required />
 		</br>
 
 		<label for="inputPassword" class="sr-only">Last Name</label>
-		<input class="form-control" type="text" data-ng-model="register.lastname" placeholder="Last Name" required />
+		<input class="form-control" type="text" data-ng-model="lastname" placeholder="Last Name" required />
 		</br>
 
 
 		<label for="inputEmail" class="sr-only">Email</label>
-		<input class="form-control" type="text" data-ng-model="register.email" placeholder="Email" required />
+		<input class="form-control" type="text" data-ng-model="email" placeholder="Email" required />
 		</br>
 
 		<label for="inputPassword" class="sr-only">Password</label>
-		<input class="form-control" type="password" data-ng-model="register.password" placeholder="Password" required />
+		<input class="form-control" type="password" data-ng-model="password" placeholder="Password" required />
 		</br>
 
 		<label for="inputPassword" class="sr-only">Again Password</label>
-		<input class="form-control" type="password" data-ng-model="register.retypeEmail" placeholder="Password" required />
+		<input class="form-control" type="password" data-ng-model="retypeEmail" placeholder="Password" required />
 		</br>
 
 

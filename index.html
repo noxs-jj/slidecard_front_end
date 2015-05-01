@@ -9,12 +9,14 @@
 </head>
 <body>
 	<div class="jumbotron text-center"><h1>SlideCard</h1></div>
-	<div style="align: center;">
+	<div class="container">
 		<ul class="nav nav-pills">
-			<li role="presentation"><a href="#/welcome">Welcome</a></li>
-			<li role="presentation"><a href="#/register">Register</a></li>
-			<li role="presentation"><a href="#/login">Login</a></li>
-			<li role="presentation"><a href="#/logout">Logout</a></li>
+			<li><a href="#/welcome">Welcome</a></li>
+			<li><a href="#/cardList">Cards</a></li>
+			<li><a href="#/cardCreate">AddCard</a></li>
+			<li><a href="#/register">Register</a></li>
+			<li><a href="#/login">Login</a></li>
+			<li><a href="#/logout">Logout</a></li>
 		</ul>
 	</div>
 	<div ng-view></div>
@@ -31,8 +33,10 @@
 	<script src="js/controller/logout.js"></script>
 	<script src="js/controller/welcome.js"></script>
 	<script src="js/controller/register.js"></script>
+	<script src="js/controller/cardCreate.js"></script>
+	<hr>
 	<footer>
-		<p style="text-center">
+		<p class="text-center">
 			<a href="http://fr.linkedin.com/pub/jonathan-maurice/93/47a/a30/en" target="_blank">Jonathan Maurice</a>
 			<a href="http://fr.linkedin.com/in/jeanjacquesmoiroux/fr" target="_blank">Jean-Jacques Moiroux</a>
 			<a href="http://fr.linkedin.com/pub/julien-quilez/90/33/3a7/fr" target="_blank">Julien Quilez</a>

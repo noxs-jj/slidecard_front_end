@@ -1,39 +1,41 @@
 console.log('login.js loaded');
 
-slideController.controller('loginController', ['$scope', '$http', '$cookies', '$location', function($scope, $http, $cookies, $location) {
-	var login = this;
-
-	login.error = '';
+slideController.controller('loginController', ['$scope', '$http', '$cookies', '$location',
+							function($scope, $http, $cookies, $location) {
+	$scope.error = '';
 
 	if ($cookies.usr_token) {
 		console.log('Login:: Already logged');
-		$location.path('/welcome');
+
 	}
 
-	login.auth = function() {
-		$http.post(urlApi + '/auth', {
-			'email': login.email,
-			'password': login.password
-		})
-		.success(function(data) {
-			$cookies.usr_token = data['data'].token;
-			console.log('Login success');
+	$scope.auth = function() {
+		if ($cookies.usr_token) {
 			$location.path('/welcome');
-		})
-		.error(function(data, status) {
+			console.log('Login:: Already logged');
+			$location.path('/welcome');
+		}
+		else {
+			$http.post(urlApi + '/auth', {
+				'email': $scope.email,
+				'password': $scope.password
+			})
+			.success(function(data) {
+				$cookies.usr_token = data['data'].token;
+				console.log('Login success');
+				$location.path('/welcome');
+			})
+			.error(function(data, status) {
+				// REMOVE
+				console.log('Login error');
+				console.log('status: ' + status);
+				console.log('data: ' + data);
+				$scope.error = 'Bad login / pass';
+			})
 			// REMOVE
-			console.log('Login error');
-			console.log('status: ' + status);
-			console.log('data: ' + data);
-			login.error = "Bad login / pass";
-		})
-		// REMOVE
-		console.log(login.email + " / " + login.password);
+			console.log($scope.email + " / " + $scope.password);
+		}
 	}
-	// REMOVE
-	console.log(urlApi + '/auth');
-	// REMOVE
-	console.log($cookies.usr_token);
 }]);
 
 // jquilez@student.42.fr

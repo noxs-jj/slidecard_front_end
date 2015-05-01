@@ -6,25 +6,26 @@ var slideApp = angular.module('slideApp',
 slideApp.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider.
 	when('/login', {
-
 		templateUrl: 'html/login.html',
 		controller: 'loginController',
 		controllerAs: 'login'
 	}).
 	when('/logout', {
-
 		templateUrl: 'html/logout.html',
 		controller: 'logoutController',
 		controllerAs: 'logout'
 	}).
 	when('/register', {
-
 		templateUrl: 'html/register.html',
 		controller: 'registerController',
 		controllerAs: 'register'
 	}).
+	when('/cardCreate', {
+		templateUrl: 'html/cardCreate.html',
+		controller: 'cardCreateController',
+		controllerAs: 'cardCreate'
+	}).
 	when('/welcome', {
-
 		templateUrl: 'html/welcome.html',
 		controller: 'welcomeController',
 		controllerAs: 'welcome'
@@ -33,11 +34,13 @@ slideApp.config(['$routeProvider', function ($routeProvider) {
 }]);
 
 
-slideApp.controller('contentController', ['$cookies', function($cookies) {
+slideApp.controller('contentController', ['$cookies', '$scope', function($cookies, $scope) {
 	var content = this;
 
-	content.isLog = function() {
-		return $cookies.usr_token;
+	$scope.isLog = function() {
+		if ($cookies.usr_token !== '')
+			return 1;
+		return 0;
 	};
 }]);
 
