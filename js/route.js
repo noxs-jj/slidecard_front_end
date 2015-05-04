@@ -32,6 +32,11 @@ slideApp.config(['$routeProvider', function ($routeProvider) {
 		controller: 'cardCreateController',
 		controllerAs: 'cardCreate'
 	}).
+	when('/card/:id', {
+		templateUrl: 'html/cardDetail.html',
+		controller: 'cardDetailController',
+		controllerAs: 'cardDetail'
+	}).
 	when('/welcome', {
 		templateUrl: 'html/welcome.html',
 		controller: 'welcomeController',

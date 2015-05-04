@@ -2,6 +2,7 @@
 <div class="container" ng-controller="cardListController">
 	<p class="error" data-ng-show="error">{{error}}</p>
 	<div ng-repeat="card in result">
+		<a href="#/card/{{card.id}}">DETAILS</a>
 		id: [{{card.id}}]
 		Location: [{{card.location}}]</br>
 		Organization: [{{card.organization}}]</br>
