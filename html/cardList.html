@@ -2,33 +2,22 @@
 <div class="container" ng-controller="cardListController">
 	<p class="error" data-ng-show="error">{{error}}</p>
 	<div ng-repeat="card in result">
-		{{card.location}}</br>
-		{{card.organization}}</br>
-		{{card.slogan}}</br>
-		{{card.job}}</br>
-		{{card.phone}}</br>
-		{{card.email}}</br>
-		
+		id: [{{card.id}}]
+		Location: [{{card.location}}]</br>
+		Organization: [{{card.organization}}]</br>
+		slogan: [{{card.slogan}}]</br>
+		job: [{{card.job}}]</br>
+		phone: [{{card.phone}}]</br>
+		email: [{{card.email}}]</br>
+		hash_code: [{{card.hash_code}}]</br>
+		color: [{{card.color}}]</br>
+		id_font: [{{card.id_font}}]</br>
+		id_template: [{{card.id_template}}]</br>
+		type: [{{card.type}}]</br>
+		owned_by: [{{card.email}}]</br>
+		------------------------------</br>
+		</br>
 	</div>
-		}
+	</br>
+
 </div>
-
-
-<!-- 		<section class="col-md-12">
-			<div class="cards">
-				<p class="error" data-ng-show="cards.error">{{cards.error}}</p>
-				<form class="col-md-12" name="sendForm" data-ng-submit="sendForm.$valid && cards.share()" novalidate>
-					<input type="text" data-ng-model="cards.number" placeholder="phone number" required />
-					<input type="submit" data-ng-show="sendForm.$valid" value="share" />
-				</form>
-				<div class="card col-md-12" data-ng-repeat="card in cards.content" style="background: url('{{card['template'].path}}') no-repeat; font-family: '{{card['font'].name}}'; color: #{{card.color}}" data-ng-click="cards.setCard(card.hash_code)" data-ng-style="cards.isCard(card.hash_code) && {'border': '1px solid #057FFA'}">
-					<p class="location">{{card.location}}</p>
-					<p class="organization">{{card.organization}}</p>
-					<p class="slogan">{{card.slogan}}</p>
-					<p>{{cards.profile.firstname}} {{cards.profile.lastname | uppercase}}</p>
-					<p class="job">{{card.job}}</p>
-					<p class="phone">{{card.phone}}</p>
-					<p class="email">{{card.email}}</p>
-				</div>
-			</div>
-		</section> -->
