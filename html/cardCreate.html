@@ -1,6 +1,6 @@
 <h2 class="h2 text-center">Create New Card</h2>
 <div class="container" ng-controller="loginController">
-	<div ng-show="error">{{error}}</div>
+	<div class="bg-danger" ng-show="error">{{error}}</div>
 	<form class="form-signin" name="newCardForm" data-ng-submit="newCardForm.$valid && create()" novalidate>
 
 		<h2 class="form-signin-heading">Create New Card</h2>

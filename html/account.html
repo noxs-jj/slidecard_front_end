@@ -1,7 +1,11 @@
 <h2 class="h2 text-center">My Profile</h2>
 
 <div class="container" ng-controller="accountController">
-	<p class="error" data-ng-show="error">{{error}}</p>
+	<p class="bg-danger" data-ng-show="error">{{error}}</p>
+	<a href="#/account/update">
+		<button type="button" class="btn btn-warning align-right">Edit Profile</button>
+	</a>
+	
 	<div>Firstname:	[{{firstname}}]</div>
 	<div>Lastname: [{{lastname}}]</div>
 	<div>Email: [{{email}}]</div>

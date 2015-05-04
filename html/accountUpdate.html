@@ -1,0 +1,44 @@
+<h2 class="h2 text-center">Update Profile</h2>
+
+<div class="container" ng-controller="accountUpdateController">
+	<p class="bg-danger" data-ng-show="error">{{error}}</p>
+	<div>Firstname:	[{{firstname}}]</div>
+	<div>Lastname: [{{lastname}}]</div>
+	<div>Email: [{{email}}]</div>
+	<div>Avatar: [{{avatar}}]</div>
+	<div>User_id: [{{id}}]</div>
+	<div>LastLogin: [{{lastLogin}}]</div>
+	<div>???Card_Hash: [{{card_hash}}]</div>
+
+
+	<form class="form-signin" name="registerForm" data-ng-submit="registerForm.$valid && update()" novalidate>
+
+		<label for="inputPassword" class="sr-only">First Name</label>
+		<input class="form-control" type="text" data-ng-model="update_firstname" placeholder="{{firstname}}" required />
+		</br>
+
+		<label for="inputPassword" class="sr-only">Last Name</label>
+		<input class="form-control" type="text" data-ng-model="update_lastname" placeholder="{{lastname}}" required />
+		</br>
+
+
+		<label for="inputEmail" class="sr-only">Email</label>
+		<input class="form-control" type="text" data-ng-model="update_email" placeholder="{{email}}" required />
+		</br>
+
+		<label for="inputEmail" class="sr-only">URL Avatar</label>
+		<input class="form-control" type="text" data-ng-model="update_avatar" placeholder="{{avatar}}" required />
+		</br>
+
+		<label for="inputPassword" class="sr-only">New Password</label>
+		<input class="form-control" type="password" data-ng-model="update_password" placeholder="Old Password" required />
+		</br>
+
+		<label for="inputPassword" class="sr-only">Again Password</label>
+		<input class="form-control" type="password" data-ng-model="retype_password" placeholder="Again Password" required />
+		</br>
+
+
+		<button class="btn btn-lg btn-primary btn-block" type="submit" value="Login" />Sign in</button>
+	</form>
+</div>

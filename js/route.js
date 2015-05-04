@@ -17,6 +17,11 @@ slideApp.config(['$routeProvider', function ($routeProvider) {
 		controller: 'accountController',
 		controllerAs: 'account'
 	}).
+	when('/account/update', {
+		templateUrl: 'html/accountUpdate.html',
+		controller: 'accountUpdateController',
+		controllerAs: 'accountUpdate'
+	}).
 	when('/register', {
 		templateUrl: 'html/register.html',
 		controller: 'registerController',

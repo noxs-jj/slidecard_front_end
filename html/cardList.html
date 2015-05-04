@@ -1,6 +1,6 @@
 <h2 class="h2 text-center">My Cards</h2>
 <div class="container" ng-controller="cardListController">
-	<p class="error" data-ng-show="error">{{error}}</p>
+	<p class="bg-danger" data-ng-show="error">{{error}}</p>
 	<div ng-repeat="card in result">
 		<a href="#/card/{{card.id}}">DETAILS</a>
 		id: [{{card.id}}]
