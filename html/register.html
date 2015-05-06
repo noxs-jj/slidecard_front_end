@@ -1,5 +1,5 @@
 <h2 class="h2 text-center">Register</h2>
-<div class="container" ng-controller="loginController">
+<div class="container" ng-controller="registerController">
 	<div class="bg-danger" ng-show="error">{{error}}</div>
 	<form class="form-signin" name="registerForm" data-ng-submit="registerForm.$valid && reg()" novalidate>
 
@@ -13,9 +13,12 @@
 		<input class="form-control" type="text" data-ng-model="lastname" placeholder="Last Name" required />
 		</br>
 
-
 		<label for="inputEmail" class="sr-only">Email</label>
 		<input class="form-control" type="text" data-ng-model="email" placeholder="Email" required />
+		</br>
+
+		<label for="inputEmail" class="sr-only">Email Again</label>
+		<input class="form-control" type="text" data-ng-model="email_again" placeholder="Again Email" required />
 		</br>
 
 		<label for="inputPassword" class="sr-only">Password</label>
@@ -23,11 +26,10 @@
 		</br>
 
 		<label for="inputPassword" class="sr-only">Again Password</label>
-		<input class="form-control" type="password" data-ng-model="retypeEmail" placeholder="Password" required />
+		<input class="form-control" type="password" data-ng-model="retype_password" placeholder="Again Password" required />
 		</br>
 
-
-		<button class="btn btn-lg btn-primary btn-block" type="submit" value="Login" />Sign in</button>
+		<button class="btn btn-lg btn-primary btn-block" type="submit" value="Login" />Register</button>
 	</form>
 
 </div>
