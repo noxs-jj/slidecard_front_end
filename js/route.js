@@ -27,6 +27,11 @@ slideApp.config(['$routeProvider', function ($routeProvider) {
 		controller: 'registerController',
 		controllerAs: 'register'
 	}).
+	when('/template', {
+		templateUrl: 'html/templateList.html',
+		controller: 'templateListController',
+		controllerAs: 'templateList'
+	}).
 	when('/cardList', {
 		templateUrl: 'html/cardList.html',
 		controller: 'cardListController',
@@ -41,6 +46,11 @@ slideApp.config(['$routeProvider', function ($routeProvider) {
 		templateUrl: 'html/cardDetail.html',
 		controller: 'cardDetailController',
 		controllerAs: 'cardDetail'
+	}).
+	when('/card/update/:id', {
+		templateUrl: 'html/cardUpdate.html',
+		controller: 'cardUpdateController',
+		controllerAs: 'cardUpdate'
 	}).
 	when('/welcome', {
 		templateUrl: 'html/welcome.html',

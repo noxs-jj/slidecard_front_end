@@ -1,11 +1,9 @@
-<h2 class="h2 text-center">My Cards</h2>
-<div class="container" ng-controller="cardListController">
+<h2 class="h2 text-center">Update Card</h2>
+<div class="container" ng-controller="cardUpdateController">
 	<p class="bg-danger" data-ng-show="error">{{error}}</p>
+	API FAILED
 	<div ng-repeat="card in result">
-		<button type="button" class="btn btn-info"><a href="#/card/{{card.id}}">More Info</a></button>
-		<button type="button" class="btn btn-info"><a href="#/card/update/{{card.id}}">Update this card</a></br></button>
-		</br></br></br>
-		id: [{{card.id}}]</br>
+		id: [{{card.id}}]
 		Location: [{{card.location}}]</br>
 		Organization: [{{card.organization}}]</br>
 		slogan: [{{card.slogan}}]</br>
