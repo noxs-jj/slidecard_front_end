@@ -7,9 +7,8 @@ slideController.controller('templateListController', ['$scope', '$http', '$cooki
 		$scope.error = '';
 		$http.get(urlApi + '/templates')
 		.success(function(data, status) {
-			console.log(status + 'templateList success');
+			console.log(status + ' templateList success');
 			$scope.result = data;
-			console.log(data);
 		})
 		.error(function(data, status) {
 			$scope.error = status + ' / ' + data.message;

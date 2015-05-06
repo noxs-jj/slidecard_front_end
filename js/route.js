@@ -61,12 +61,9 @@ slideApp.config(['$routeProvider', function ($routeProvider) {
 }]);
 
 
-slideApp.controller('contentController', ['$cookies', '$scope', function($cookies, $scope) {
-	var content = this;
-
+slideApp.controller('contentController', ['$cookies', function($cookies) {
 	$scope.isLog = function() {
-		if ($cookies.usr_token !== '')
-			return 1;
-		return 0;
+		console.log('Gros TEst');
+		return $cookies.usr_token;
 	};
 }]);

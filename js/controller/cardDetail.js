@@ -10,8 +10,7 @@ slideController.controller('cardDetailController',
 	console.log($routeParams.id)
 	$http.get(urlApi + '/card/' + $routeParams.id)
 		.success(function(data, status) {
-			console.log(status + ' Card Info Failed');
-			console.log(data);
+			console.log(status + ' Card Info Success');
 		})
 		.error(function(data, status) {
 			$scope.error = status + ' / ' + data.message;

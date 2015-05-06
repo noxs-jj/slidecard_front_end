@@ -7,7 +7,7 @@ slideController.controller('cardListController', ['$scope', '$http', '$cookies',
 		$scope.error = '';
 		$http.get(urlApi + '/cards')
 		.success(function(data, status) {
-			console.log(status + 'CardList success');
+			console.log(status + ' CardList success');
 			$scope.result = data.data;
 		})
 		.error(function(data, status) {
