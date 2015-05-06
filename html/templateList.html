@@ -2,14 +2,15 @@
 <div class="container" ng-controller="templateListController">
 	<p class="bg-danger" data-ng-show="error">{{error}}</p>
 	<button type="button" class="btn btn-info"><a href="#/card/{{card.id}}">More Info</a></button>
-	<button type="button" class="btn btn-info"><a href="#/card/update/{{card.id}}">Update this template</a></br></button>
+	<button type="button" class="btn btn-info"><a href="#/card/update/{{card.id}}">Update this template</a>
+	</button></br></br></br>
 	<div ng-repeat="template in result">
-		id: [{{template.id}}]
+		id: [{{template.id}}]</br>
 		type: [{{template.type}}]</br>
 		name: [{{template.name}}]</br>
 		path: [{{template.path}}]</br>
 		price: [{{template.price}}]</br>
-		CREATED BY:</br>0
+		<b>CREATED BY:</b></br>
 		id: [{{template.created_by.id}}]</br>
 		firstname: [{{template.created_by.firstname}}]</br>
 		lastname: [{{template.created_by.lastname}}]</br>

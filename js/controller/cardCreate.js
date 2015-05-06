@@ -10,15 +10,14 @@ slideController.controller('cardCreateController', ['$scope', '$http', '$cookies
 			$http.post(urlApi + '/card/create', {
 				'organization': $scope.organization,
 				'job': $scope.job,
-				'location': $scope.newLocation,
+				'location': $scope.location,
 				'email': $scope.email,
 				'phone': $scope.phone,
 				'slogan': $scope.slogan,
-				'color': $scope.newColor,
-
-
-				'firstname': $scope.firstname,
-				'lastname': $scope.lastname
+				'color': $scope.color,
+				'id_font': $scope.id_font,
+				'id_template': $scope.id_template,
+				'type': $scope.type
 			})
 			.success(function(data) {
 				console.log('newCard success');
@@ -30,3 +29,5 @@ slideController.controller('cardCreateController', ['$scope', '$http', '$cookies
 		}
 	}
 }]);
+
+// type, id_font, organisation, job, location, email, phone, slogan, id_template, color

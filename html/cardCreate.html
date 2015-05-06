@@ -2,33 +2,53 @@
 <div class="container" ng-controller="loginController">
 	<div class="bg-danger" ng-show="error">{{error}}</div>
 	<form class="form-signin" name="newCardForm" data-ng-submit="newCardForm.$valid && create()" novalidate>
+		<div class="col-mg-7 col-lg-7">
+			Organisation
+			<label for="inputPassword" class="sr-only">Organisation</label>
+			<input class="form-control" type="text" data-ng-model="organization" placeholder="Organisation" required />
+			</br>
+			Location / Adress
+			<label for="inputEmail" class="sr-only">Location / Address</label>
+			<input class="form-control" type="text" data-ng-model="location" placeholder="Location" required />
+			</br>
+			Job
+			<label for="inputPassword" class="sr-only">Job</label>
+			<input class="form-control" type="text" data-ng-model="job" placeholder="Job" required />
+			</br>
+			Slogan
+			<label for="inputPassword" class="sr-only">Slogan</label>
+			<input class="form-control" type="text" data-ng-model="slogan" placeholder="Slogan" required />
+			</br>
+			Email
+			<label for="inputPassword" class="sr-only">Email</label>
+			<input class="form-control" type="email" data-ng-model="email" placeholder="Email" required />
+			</br>
+		</div>
 
-		<h2 class="form-signin-heading">Create New Card</h2>
+		<div class="col-mg-5 col-lg-5">
+			Type
+			<label for="inputPassword" class="sr-only">Type</label>
+			<input class="form-control" type="text" data-ng-model="type" placeholder="Type" required />
+			</br>
+			Color
+			<label for="inputPassword" class="sr-only">Color</label>
+			<input class="form-control" type="tel" data-ng-model="color" placeholder="Color" required />
+			</br>
+			Phone Number
+			<label for="inputPassword" class="sr-only">Phone Number</label>
+			<input class="form-control" type="tel" data-ng-model="phone" placeholder="Phone number" required />
+			</br>
+			Type
+			<label for="inputPassword" class="sr-only">Type</label>
+			<input class="form-control" type="text" data-ng-model="id_template" placeholder="ID Template" required />
+			</br>
+			Font
+			<label for="inputPassword" class="sr-only">Id font select</label>
+			<input class="form-control" type="text" data-ng-model="id_font" placeholder="ID Font" required />
+			</br>
+		</div>
 
-		<label for="inputPassword" class="sr-only">Organisation</label>
-		<input class="form-control" type="text" data-ng-model="organization" placeholder="Organisation" required />
-		</br>
 
-		<label for="inputPassword" class="sr-only">Job</label>
-		<input class="form-control" type="text" data-ng-model="job" placeholder="Job" required />
-		</br>
-
-
-		<label for="inputEmail" class="sr-only">Location / Address</label>
-		<input class="form-control" type="text" data-ng-model="newLocation" placeholder="Location" required />
-		</br>
-
-		<label for="inputPassword" class="sr-only">Email</label>
-		<input class="form-control" type="email" data-ng-model="email" placeholder="Email" required />
-		</br>
-
-		<label for="inputPassword" class="sr-only">Phone Number</label>
-		<input class="form-control" type="tel" data-ng-model="phone" placeholder="Phone number" required />
-		</br>
-
-
-		<button class="btn btn-lg btn-primary btn-block" type="submit" value="Login" />Sign in</button>
+		<button class="btn btn-lg btn-primary btn-block" type="submit" value="Login" />Add Card</button>
 	</form>
-
 </div>
-
