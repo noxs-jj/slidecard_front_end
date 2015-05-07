@@ -7,7 +7,7 @@ slideController.controller('accountController', ['$scope', '$http', '$cookies', 
 
 		$scope.error = '';
 
-		$http.get('http://slidecard.tk/v1/account')
+		$http.get('http://slidecard.tk/v1/account?token=' + $cookies.usr_token)
 			.success(function(data, status) {
 				console.log(status + ' Account success');
 				$scope.firstname = data.data.firstname;

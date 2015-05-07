@@ -8,7 +8,7 @@ slideController.controller('cardDetailController',
 	else {
 		$scope.error = '';
 	console.log($routeParams.id)
-	$http.get(urlApi + '/card/' + $routeParams.id)
+	$http.get(urlApi + '/card/' + $routeParams.id + '?token=' + $cookies.usr_token)
 		.success(function(data, status) {
 			console.log(status + ' Card Info Success');
 		})

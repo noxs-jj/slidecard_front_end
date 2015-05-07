@@ -5,7 +5,7 @@ slideController.controller('templateListController', ['$scope', '$http', '$cooki
 		   $location.path('/login');
 	else {
 		$scope.error = '';
-		$http.get(urlApi + '/templates')
+		$http.get(urlApi + '/templates?token=' + $cookies.usr_token)
 		.success(function(data, status) {
 			console.log(status + ' templateList success');
 			$scope.result = data;

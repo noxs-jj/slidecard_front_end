@@ -7,7 +7,7 @@ slideController.controller('cardCreateController', ['$scope', '$http', '$cookies
 		$scope.error = '';
 
 		$scope.create = function() {
-			$http.post(urlApi + '/card/create', {
+			$http.post(urlApi + '/card/create?token=' + $cookies.usr_token, {
 				'organization': $scope.organization,
 				'job': $scope.job,
 				'location': $scope.location,

@@ -8,7 +8,7 @@ slideController.controller('cardUpdateController',
 	else {
 		$scope.error = '';
 		//console.log($routeParams.id)
-		$http.get(urlApi + '/card/update/' + $routeParams.id)
+		$http.get(urlApi + '/card/update/' + $routeParams.id + '?token=' + $cookies.usr_token)
 			.success(function(data, status) {
 				console.log(status + ' Card Update Success');
 				console.log(data);

@@ -60,7 +60,10 @@ slideApp.config(['$routeProvider', '$httpProvider',
 	}).
 	otherwise({ redirectTo: '/welcome' });
 
-
+	//$httpProvider.defaults.headers.common['X-CSRFToken'] = $cookies.usr_token
+	//$http.defaults.headers.common['X-Access-Token'] = $cookies.usr_token;
+	// $httpProvider.defaults.withCredentials = false;
+	// $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
 

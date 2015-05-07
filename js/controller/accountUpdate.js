@@ -5,7 +5,7 @@ slideController.controller('accountUpdateController', ['$scope', '$http', '$cook
 		$location.path('/login');
 	else {
 		$scope.error = '';
-		$http.get('http://slidecard.tk/v1/account')
+		$http.get('http://slidecard.tk/v1/account?token=' + $cookies.usr_token)
 			.success(function(data, status) {
 				console.log(status + ' Account success');
 				$scope.firstname = data.data.firstname;
@@ -22,7 +22,7 @@ slideController.controller('accountUpdateController', ['$scope', '$http', '$cook
 		$scope.update = function() {
 			if ($scope.update_password == $scope.retype_password) {
 				console.log('again password SUCCESS test');
-				$http.post(urlApi + '/account/update', {
+				$http.post(urlApi + '/account/update?token=' + $cookies.usr_token, {
 					'email': $scope.update_email,
 					'password': $scope.update_password,
 					'firstname': $scope.fupdate_irstname,
