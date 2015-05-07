@@ -8,3 +8,4 @@ var slideController = angular.module('slideController',[]);
 
 var slideApp = angular.module('slideApp',
 	['ngRoute', 'ngCookies', 'slideController']);
+

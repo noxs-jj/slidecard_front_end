@@ -13,12 +13,14 @@ slideController.controller('loginController', ['$scope', '$http', '$cookies', '$
 			$cookies.usr_token = data['data'].token;
 			console.log('Login success');
 			console.log($cookies.usr_token);
+
 			$location.path('/welcome');
 		})
 		.error(function(data, status) {
 			// REMOVE
 			console.log('Login error');
-			$scope.error = status + " / " + data.message;
+			//$scope.error = status + " / " + data.message;
+			console.log(data);
 		})
 		// REMOVE
 		console.log($scope.email + " / " + $scope.password);

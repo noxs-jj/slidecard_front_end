@@ -1,6 +1,7 @@
 console.log('route.js loaded');
 
-slideApp.config(['$routeProvider', function ($routeProvider) {
+slideApp.config(['$routeProvider', '$httpProvider',
+				function ($routeProvider, $httpProvider) {
 	$routeProvider.
 	when('/login', {
 		templateUrl: 'html/login.html',
@@ -58,6 +59,9 @@ slideApp.config(['$routeProvider', function ($routeProvider) {
 		controllerAs: 'welcome'
 	}).
 	otherwise({ redirectTo: '/welcome' });
+
+
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
 
 
