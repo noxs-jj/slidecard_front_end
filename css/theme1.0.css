@@ -26,7 +26,11 @@ h1.title , h2.title {
 
 .header-navbar {
 	padding: 35px 0;
-	background: #eee;
+	background: rgb(50, 120, 220);
+}
+
+.header-navbar a {
+	color: #fff;
 }
 
 .header-navbar nav > ul > li {
@@ -62,7 +66,7 @@ ul.inline > li {
 #header {
     position: relative;
     background-color: #eee;
-    background-image: url(/img/wood.jpg);
+    background-image: url();
     background-size: cover;
     width: 100vw;
     min-height: 610px;
@@ -79,17 +83,12 @@ ul.inline > li {
     -moz-align-items: center;
     -ms-align-items: center;
     align-items: center;
+
+    -webkit-filter: grayscale(70%);
 }
 
 #header .presentation {
     margin: 0 auto;
-}
-
-#header .presentation hr {
-    width: 542px;
-    height: 1px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.42);
 }
 
 #header .presentation > h1, #header .presentation > h2 {
@@ -101,6 +100,7 @@ ul.inline > li {
     -ms-font-smoothing: subpixel-antialiased;
     font-smoothing: subpixel-antialiased;
     text-rendering: optimizeLegibility;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #header .presentation > h1 {
@@ -113,7 +113,6 @@ ul.inline > li {
 
 div[class*='-container'] {
 	margin: 0 auto;
-    box-sizing: border-box;
 }
 
 div.lg-container {
@@ -130,6 +129,30 @@ div.sm-container {
 
 div.md-container {
 	width: 720px;
+}
+
+div.row-flex {
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-flex-direction: row space-around;
+    -moz-flex-direction: row space-around;
+    -ms-flex-direction: row space-around;
+    flex-direction: row space-around;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    -ms-justify-content: space-around;
+    justify-content: space-around;  
 }
 
 /** Buttons **/
@@ -204,4 +227,18 @@ form .submit-btn {
 	font-size: 1em;
 	padding: 13px 25px;
 	background-color: rgb(50, 150, 240);
+}
+
+/** Cards **/
+
+div.card {
+    display: inline-block;
+    width: 330px;
+    padding: 15px 32px;
+    margin: 20px 10px;
+    vertical-align: top;
+    background-color: #eee;
+    border-radius: 2px;
+    font-size: 0.9em;
+    border: 1px solid transparent !important;
 }

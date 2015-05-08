@@ -10,6 +10,7 @@ slideController.controller('cardListController',
 		$http.get(urlApi + '/cards?token=' + $cookies.usr_token)
 		.success(function(data, status) {
 			console.log(status + ' CardList success');
+			console.log(data);
 			$scope.result = data.data;
 		})
 		.error(function(data, status) {
