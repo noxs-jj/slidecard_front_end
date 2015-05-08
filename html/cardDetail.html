@@ -2,5 +2,22 @@
 
 <div class="container" ng-controller="cardListController">
 	<p class="bg-danger" data-ng-show="error">{{error}}</p>
-	Error API a regle
+	<div ng-repeat="entry in result">
+		id: [{{entry.id}}]</br>
+		hash_code: [{{entry.hash_code}}]</br>
+		owned_by: [{{entry.owned_by}}]</br>
+		type: [{{entry.type}}]</br>
+		id_font: [{{entry.id_font}}]</br>
+		organization: [{{entry.organization}}]</br>
+		job: [{{entry.job}}]</br>
+		location: [{{entry.location}}]</br>
+		email: [{{entry.email}}]</br>
+		phone: [{{entry.phone}}]</br>
+		slogan: [{{entry.slogan}}]</br>
+		id_template: [{{entry.id_template}}]</br>
+		color: [{{entry.color}}]</br>
+		created_at: [{{entry.created_at}}]</br>
+		updated_at: [{{entry.updated_at}}]</br>
+
+	</div>
 </div>
