@@ -13,8 +13,8 @@ slideController.controller('loginController', ['$scope', '$http', '$cookies', '$
 			$cookies.usr_token = data['data'].token;
 			console.log('Login success');
 			console.log($cookies.usr_token);
-
-			$location.path('/welcome');
+			$location.path('/cardList');
+			location.reload();
 		})
 		.error(function(data, status) {
 			// REMOVE
@@ -26,9 +26,3 @@ slideController.controller('loginController', ['$scope', '$http', '$cookies', '$
 		console.log($scope.email + " / " + $scope.password);
 	};
 }]);
-
-// test@test.test
-// test
-
-// jquilez@student.42.fr
-// jquilez
