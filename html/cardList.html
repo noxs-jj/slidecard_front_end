@@ -5,19 +5,38 @@
 		<button type="button" class="btn btn-info"><a href="#/card/{{card.id}}">More Info</a></button>
 		<button type="button" class="btn btn-info"><a href="#/card/update/{{card.id}}">Update this card</a></br></button>
 		</br></br></br>
-		id: [{{card.id}}]</br>
-		Location: [{{card.location}}]</br>
-		Organization: [{{card.organization}}]</br>
-		slogan: [{{card.slogan}}]</br>
-		job: [{{card.job}}]</br>
-		phone: [{{card.phone}}]</br>
-		email: [{{card.email}}]</br>
-		hash_code: [{{card.hash_code}}]</br>
-		color: [{{card.color}}]</br>
-		id_font: [{{card.id_font}}]</br>
-		id_template: [{{card.id_template}}]</br>
-		type: [{{card.type}}]</br>
-		owned_by: [{{card.email}}]</br>
+		<table>
+			<tr>
+				MAIN OBJECT::
+				id: [{{card.id}}]</br>
+				Location: [{{card.location}}]</br>
+				Organization: [{{card.organization}}]</br>
+				slogan: [{{card.slogan}}]</br>
+				job: [{{card.job}}]</br>
+				phone: [{{card.phone}}]</br>
+				email: [{{card.email}}]</br>
+				hash_code: [{{card.hash_code}}]</br>
+				color: [{{card.color}}]</br>
+				id_font: [{{card.id_font}}]</br>
+				id_template: [{{card.id_template}}]</br>
+				type: [{{card.type}}]</br>
+				owned_by: [{{card.email}}]</br></br></br>
+			<tr>
+				<td>
+					FONT::</br>
+					id: [{{card.font.id}}]</br>
+					name: [{{card.font.name}}]</br>
+					path: [{{card.font.path}}]
+				</td>
+				<td>| | | | | |</td>
+				<td>
+					TEMPLATE::</br>
+					name: [{{card.tamplate.name}}]</br>
+					path: [{{card.template.path}}]</br>
+					price: [{{card.template.price}}]
+				</td>
+			</tr>
+		</table>
 		------------------------------</br>
 		</br>
 	</div>

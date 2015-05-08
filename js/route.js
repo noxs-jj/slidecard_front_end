@@ -60,13 +60,10 @@ slideApp.config(['$routeProvider', '$httpProvider',
 	}).
 	otherwise({ redirectTo: '/welcome' });
 
-	//$httpProvider.defaults.headers.common['X-CSRFToken'] = $cookies.usr_token
-	//$http.defaults.headers.common['X-Access-Token'] = $cookies.usr_token;
-	// $httpProvider.defaults.withCredentials = false;
-	// $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
 
+//	Y3kXED2dX96LICoR9BGZ4unoFv9NRlR9uPQQkva.klxifeZT5Bru6
 
 slideApp.controller('contentController', ['$cookies', function($cookies) {
 	$scope.isLog = function() {

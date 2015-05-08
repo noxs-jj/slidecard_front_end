@@ -1,8 +1,11 @@
 console.log('logout.js loaded');
 
-slideController.controller('logoutController', ['$scope', '$http', '$cookies', '$location', function($scope, $http, $cookies, $location) {
+slideController.controller('logoutController',
+		['$scope', '$http', '$cookies', '$location',
+		function($scope, $http, $cookies, $location) {
 
 	$scope.error = '';
+	$cookies.usr_token = '';
 
 	$http.get(urlApi + '/logout')
 	.success(function(data, status) {
@@ -15,5 +18,6 @@ slideController.controller('logoutController', ['$scope', '$http', '$cookies', '
 		// REMOVE
 		console.log('Logout:: error');
 	});
+	$cookies.usr_token = '';
 
 }]);
