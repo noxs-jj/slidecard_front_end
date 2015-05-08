@@ -1,0 +1,202 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+
+html {
+	background-color: #fff;
+}
+
+*:focus { outline: none }
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Lato', Helvetica Neue, Helvetica, Verdana;
+	font-weight: normal;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1.title , h2.title {
+	font-weight: lighter;
+	word-spacing: 7px;
+	letter-spacing: 1px;	
+}
+
+.header-navbar {
+	padding: 35px 0;
+	background: #eee;
+}
+
+.header-navbar nav > ul > li {
+	margin: 0 14px;
+}
+
+.header-navbar nav a.highlight {
+	padding: 12px 14px;
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+	background-color: rgb(50, 150, 240);
+}
+
+nav.right {
+	float: right;
+}
+
+ul.inline {
+	list-style: none;
+}
+
+ul.no-margin {
+	margin: 0;
+}
+
+ul.inline > li {
+	float: left;
+	left: 0;
+	position: relative;
+}
+
+#header {
+    position: relative;
+    background-color: #eee;
+    background-image: url(/img/wood.jpg);
+    background-size: cover;
+    width: 100vw;
+    min-height: 610px;
+
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-justify-content: wrap;
+    -moz-justify-content: wrap;
+    -ms-justify-content: wrap;
+    justify-content: wrap;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+#header .presentation {
+    margin: 0 auto;
+}
+
+#header .presentation hr {
+    width: 542px;
+    height: 1px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.42);
+}
+
+#header .presentation > h1, #header .presentation > h2 {
+    text-align: center;
+    letter-spacing: 2px;
+    color: #fff;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-font-smoothing: subpixel-antialiased;
+    -ms-font-smoothing: subpixel-antialiased;
+    font-smoothing: subpixel-antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+#header .presentation > h1 {
+    font-size: 320%;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+/** Containers **/
+
+div[class*='-container'] {
+	margin: 0 auto;
+    box-sizing: border-box;
+}
+
+div.lg-container {
+	width: 1280px;
+}
+
+div.lg-flex-container {
+	width: 90%;
+}
+
+div.sm-container {
+	width: 420px;
+}
+
+div.md-container {
+	width: 720px;
+}
+
+/** Buttons **/
+
+a[class$='-btn'], a[class*='-btn'],
+ button[class$='-btn'], button[class*='-btn'] {
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+	background-color: rgb(50, 150, 240);
+	-webkit-transition: all 0.2s;
+}
+
+a[class$='-btn'].centered, a[class*='-btn'].centered,
+ button[class$='-btn'].centered, button[class*='-btn'].centered {
+    margin: 0 auto;
+}
+
+a.big-btn, button.big-btn {
+	padding: 15px 20px;
+	display: block;
+	width: 160px;
+	font-size: 1.5em;
+	font-weight: lighter;
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+a.big-btn.shadowed, button.big-btn.shadowed {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+a[class$='-btn']:hover, a[class*='-btn']:hover,
+ button[class$='-btn']:hover, button[class*='-btn']:hover {
+
+ 	background-color: rgb(40, 130, 220);
+}
+
+/** Form inputs **/
+
+form .form-input {
+	display:block;
+	width: 100%;
+	margin: 16px auto;
+	font-size: 0.9em;
+	padding: 12px 14px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	-webkit-transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+form .form-input:focus {
+	border: 1px solid rgb(50, 150, 240);
+}
+
+form .form-block {
+	display: block;
+	position: relative;
+}
+					
+form .submit-btn {
+	cursor: pointer;
+	width: 110px;
+	border: none;
+	border-radius:2px;
+	color: #fff;
+	font-size: 1em;
+	padding: 13px 25px;
+	background-color: rgb(50, 150, 240);
+}
