@@ -7,14 +7,16 @@ slideController.controller('cardDetailController',
 		$location.path('/login');
 	else {
 		$scope.error = '';
-	console.log($routeParams.id)
-	$http.get(urlApi + '/card/' + $routeParams.id + '?token=' + $cookies.usr_token)
-		.success(function(data, status) {
-			console.log(status + ' Card Info Success');
-		})
-		.error(function(data, status) {
-			$scope.error = status + ' / ' + data.message;
-			console.log(status + ' Card Info Failed');
-		})
+		console.log($routeParams.id)
+		$http.get(urlApi + '/card/' + $routeParams.id + '?token=' + $cookies.usr_token)
+			.success(function(data, status) {
+				console.log(status + ' Card Info Success');
+				$scope.data = data.data;
+				console.log($scope);
+			})
+			.error(function(data, status) {
+				$scope.error = status + ' / ' + data.message;
+				console.log(status + ' Card Info Failed');
+			})
 	}
 }]);

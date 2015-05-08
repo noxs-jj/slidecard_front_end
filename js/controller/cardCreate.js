@@ -7,24 +7,28 @@ slideController.controller('cardCreateController', ['$scope', '$http', '$cookies
 		$scope.error = '';
 
 		$scope.create = function() {
-			$http.post(urlApi + '/card/create?token=' + $cookies.usr_token, {
-				'organization': $scope.organization,
-				'job': $scope.job,
-				'location': $scope.location,
-				'email': $scope.email,
-				'phone': $scope.phone,
-				'slogan': $scope.slogan,
-				'color': $scope.color,
-				'id_font': $scope.id_font,
-				'id_template': $scope.id_template,
-				'type': $scope.type
-			})
+			$http.post(
+				urlApi + '/card/create?token=' + $cookies.usr_token,
+				{
+					'organization': $scope.organization,
+					'job': $scope.job,
+					'location': $scope.location,
+					'email': $scope.email,
+					'phone': $scope.phone,
+					'slogan': $scope.slogan,
+					'color': $scope.color,
+					'id_font': $scope.id_font,
+					'id_template': $scope.id_template,
+					'type': $scope.type
+				}
+			)
 			.success(function(data) {
 				console.log('newCard success');
 			})
 			.error(function(data, status) {
 				console.log(error);
 				$scope.error = "newCard Failed";
+				console.log(data);
 			})
 		}
 	}

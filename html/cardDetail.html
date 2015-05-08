@@ -1,23 +1,20 @@
 <h2 class="h2 text-center">Card Detail</h2>
 
-<div class="container" ng-controller="cardListController">
+<div class="container" ng-controller="cardDetailController">
 	<p class="bg-danger" data-ng-show="error">{{error}}</p>
-	<div ng-repeat="entry in result">
-		id: [{{entry.id}}]</br>
-		hash_code: [{{entry.hash_code}}]</br>
-		owned_by: [{{entry.owned_by}}]</br>
-		type: [{{entry.type}}]</br>
-		id_font: [{{entry.id_font}}]</br>
-		organization: [{{entry.organization}}]</br>
-		job: [{{entry.job}}]</br>
-		location: [{{entry.location}}]</br>
-		email: [{{entry.email}}]</br>
-		phone: [{{entry.phone}}]</br>
-		slogan: [{{entry.slogan}}]</br>
-		id_template: [{{entry.id_template}}]</br>
-		color: [{{entry.color}}]</br>
-		created_at: [{{entry.created_at}}]</br>
-		updated_at: [{{entry.updated_at}}]</br>
-
-	</div>
+	id: [{{data.id}}]</br>
+	hash_code: [{{data.hash_code}}]</br>
+	owned_by: [{{data.owned_by}}]</br>
+	type: [{{data.type}}]</br>
+	id_font: [{{data.id_font}}]</br>
+	organization: [{{data.organization}}]</br>
+	job: [{{data.job}}]</br>
+	location: [{{data.location}}]</br>
+	email: [{{data.email}}]</br>
+	phone: [{{data.phone}}]</br>
+	slogan: [{{data.slogan}}]</br>
+	id_template: [{{data.id_template}}]</br>
+	color: [{{data.color}}]</br>
+	created_at: [{{data.created_at}}]</br>
+	updated_at: [{{data.updated_at}}]</br>
 </div>
