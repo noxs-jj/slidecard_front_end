@@ -1,3 +1,14 @@
+<div class="md-container" ng-controller="accountController">
+	<div class="centered-box">
+		<img class="avatar" src="{{ avatar }}" alt="Profile {{ firstname }} {{ lastname }}">
+		<h2 class="title">{{ firstname }} {{ lastname }}</h2>
+		<p>{{ email }}</p>
+	</div>
+	<a href="#/account/update" class="simple-btn"><span class="icon-edit"></span> Edit profile</a>
+</div>
+
+
+<!--
 <h2 class="h2 text-center">My Profile</h2>
 
 <div class="container" ng-controller="accountController">
@@ -14,3 +25,5 @@
 	<div>LastLogin: [{{lastLogin}}]</div>
 	<div>???Card_Hash: [{{card_hash}}]</div>
 </div>
+
+-->

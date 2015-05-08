@@ -14,11 +14,27 @@
 			<div class="lg-flex-container" ng-controller="contentController">
 				<a href="#/welcome" class="logo">SlideCard</a>
 				<nav class="right">
-					<ul class="inline no-margin">
-						<li data-ng-hide="isLog()"><a href="#/login">Log in</a></li>
+					<ul class="inline no-margin" data-ng-hide="isLog()">
+						<li><a href="#/login">Log in</a></li>
+					</ul>
+					<ul class="inline no-margin" data-ng-show="isLog()">
+						<li><a href="#/cardList">Cards</a></li>
+						<li><a href="#/collection">Network</a></li>
+						<li ng-controller="welcomeController"><a href="#/account" title="">{{ firstname }} {{ lastname }}</a></li>
 					</ul>
 				</nav>
 			</div>
+		</div>
+		<ul class="inline no-margin">
+				<li><button type="button" class="btn btn-default"><a href="#/welcome">Welcome</a></button></li>
+				<li><button type="button" class="btn btn-default"><a href="#/cardList">Cards</a></button></li>
+				<li><button type="button" class="btn btn-default"><a href="#/cardCreate">AddCard</a></button></li>
+				<li><button type="button" class="btn btn-default"><a href="#/template">ADMIN Templates FULL list</a></button></li>
+				<li><button type="button" class="btn btn-default"><a href="#/register">Register</a></button></li>
+				<li><button type="button" class="btn btn-default"><a href="#/account">My Profile</a></button></li>
+				<li><button type="button" class="btn btn-default"><a href="#/login">Login</a></button></li>
+				<li><button type="button" class="btn btn-default"><a href="#/logout">Logout</a></button></li>
+			</ul>
 		</div>
 		<div id="wrap">
 			<div data-ng-view></div>

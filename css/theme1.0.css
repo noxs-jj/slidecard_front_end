@@ -9,6 +9,7 @@ html {
 body {
 	margin: 0;
 	padding: 0;
+	color: #333;
 	font-family: 'Lato', Helvetica Neue, Helvetica, Verdana;
 	font-weight: normal;
 }
@@ -165,6 +166,10 @@ a[class$='-btn']:hover, a[class*='-btn']:hover,
  button[class$='-btn']:hover, button[class*='-btn']:hover {
 
  	background-color: rgb(40, 130, 220);
+}
+
+a.simple-btn {
+	padding: 10px 20px;
 }
 
 /** Form inputs **/

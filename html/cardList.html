@@ -1,3 +1,12 @@
+<div class="lg-flex-container" ng-controller="cardListController">
+	<h2>Cards</h2>
+	<div class="row-flex" ng-repeat"card in result">
+		<article class="card" style="color: {{ card.color }}">
+			
+		</article>
+	</div>
+</div>
+
 <h2 class="h2 text-center">My Cards</h2>
 <div class="container" ng-controller="cardListController">
 	<p class="bg-danger" data-ng-show="error">{{error}}</p>
