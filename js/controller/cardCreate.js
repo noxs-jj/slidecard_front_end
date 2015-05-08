@@ -6,6 +6,18 @@ slideController.controller('cardCreateController', ['$scope', '$http', '$cookies
 	else {
 		$scope.error = '';
 
+		$http.get(urlApi + '/templates?token=' + $cookies.usr_token)
+			.success(function(data) {
+				console.log('cardCreate get templates success');
+				$scope.templates = data;
+				console.log(data);
+			})
+			.error(function(data, status) {
+				console.log(error);
+				$scope.error = $scope.error + " | cardCreate get templates failed";
+				console.log(data);
+			})
+
 		$scope.create = function() {
 			$http.post(
 				urlApi + '/card/create?token=' + $cookies.usr_token,
@@ -27,7 +39,7 @@ slideController.controller('cardCreateController', ['$scope', '$http', '$cookies
 			})
 			.error(function(data, status) {
 				console.log(error);
-				$scope.error = "newCard Failed";
+				$scope.error = $scope.error + " | newCard Failed";
 				console.log(data);
 			})
 		}

@@ -1,5 +1,5 @@
 <h2 class="h2 text-center">Create New Card</h2>
-<div class="container" ng-controller="loginController">
+<div class="container" ng-controller="cardCreateController">
 	<div class="bg-danger" ng-show="error">{{error}}</div>
 
 	<form class="form-signin" name="newCardForm" data-ng-submit="newCardForm.$valid && create()" novalidate>
@@ -51,11 +51,9 @@
 			</br>
 			
 			Template
-			<label for="inputPassword" class="sr-only">Templace</label>
+			<label for="inputPassword" class="sr-only">Template</label>
 			<select class="form-control" data-ng-model="id_template">
-				<option value="0" selected>Default</option>
-				<option value="1">Helvetica</option>
-				<option value="2">Helvetica New</option>
+				<option data-ng-repeat="entry in templates">{{entry.name}}</option>
 			</select>
 			</br>
 
