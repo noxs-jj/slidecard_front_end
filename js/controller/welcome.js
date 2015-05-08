@@ -3,9 +3,9 @@ console.log('welcome.js loaded');
 slideController.controller('welcomeController',
 	['$scope', '$http', '$cookies', '$location', function($scope, $http, $cookies, $location) {
 
-	if (!$cookies.usr_token)
-		$location.path('/login');
-	else {
+	// if (!$cookies.usr_token)
+	// 	$location.path('/login');
+	// else {
 		$scope.error = '';
 		$http.get('http://slidecard.tk/v1/account?token=' + $cookies.usr_token)
 			.success(function(data, status) {
@@ -16,5 +16,5 @@ slideController.controller('welcomeController',
 			.error(function(data, status) {
 				$scope.error = status + ' / ' + data.message;
 			})
-	}
+	// }
 }]);
