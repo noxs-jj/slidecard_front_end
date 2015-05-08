@@ -1,23 +1,73 @@
 <h2 class="h2 text-center">Update Card</h2>
 <div class="container" ng-controller="cardUpdateController">
-	<p class="bg-danger" data-ng-show="error">{{error}}</p>
-	API FAILED
-	<div ng-repeat="card in result">
-		id: [{{card.id}}]
-		Location: [{{card.location}}]</br>
-		Organization: [{{card.organization}}]</br>
-		slogan: [{{card.slogan}}]</br>
-		job: [{{card.job}}]</br>
-		phone: [{{card.phone}}]</br>
-		email: [{{card.email}}]</br>
-		hash_code: [{{card.hash_code}}]</br>
-		color: [{{card.color}}]</br>
-		id_font: [{{card.id_font}}]</br>
-		id_template: [{{card.id_template}}]</br>
-		type: [{{card.type}}]</br>
-		owned_by: [{{card.email}}]</br>
-		------------------------------</br>
-		</br>
-	</div>
-	</br>
+	<div class="bg-danger" ng-show="error">{{error}}</div>
+
+	<form class="form-signin" name="newCardForm" data-ng-submit="newCardForm.$valid && update()" novalidate>
+		<div class="col-sm-9 col-mg-9 col-lg-9">
+			Organisation
+			<label for="inputPassword" class="sr-only">Organisation</label>
+			<input class="form-control" type="text" data-ng-model="organization" placeholder="Organisation"/>
+			</br>
+
+			Job
+			<label for="inputPassword" class="sr-only">Job</label>
+			<input class="form-control" type="text" data-ng-model="job" placeholder="Job"/>
+			</br>
+
+			Location / Adress
+			<label for="inputEmail" class="sr-only">Location / Address</label>
+			<input class="form-control" type="text" data-ng-model="location" placeholder="Location"/>
+			</br>
+			
+			Email
+			<label for="inputPassword" class="sr-only">Email</label>
+			<input class="form-control" type="email" data-ng-model="email" placeholder="Email"/>
+			</br>
+
+			Phone Number
+			<label for="inputPassword" class="sr-only">Phone Number</label>
+			<input class="form-control" type="tel" data-ng-model="phone" placeholder="Phone number"/>
+			</br>
+
+			Slogan
+			<label for="inputPassword" class="sr-only">Slogan</label>
+			<input class="form-control" type="text" data-ng-model="slogan" placeholder="Slogan"/>
+			</br>
+			
+			Color
+			<label for="inputPassword" class="sr-only">Color</label>
+			<input class="form-control" type="tel" data-ng-model="color" placeholder="Color"/>
+			</br>
+		</div>
+
+		<div class="col-sm-3 col-mg-3 col-lg-3">
+			Type
+			<label for="inputPassword" class="sr-only">Type</label>
+			<select class="form-control" data-ng-model="type">
+				<option value="0" selected>Default</option>
+				<option value="1">Personnelle</option>
+				<option value="2">Ass</option>
+			</select>
+			</br>
+			
+			Template
+			<label for="inputPassword" class="sr-only">Template</label>
+			<select class="form-control" data-ng-model="id_template">
+				<option data-ng-repeat="entry in templates">{{entry.name}}</option>
+			</select>
+			</br>
+
+			Font
+			<label for="inputPassword" class="sr-only">Id font select</label>
+			<select class="form-control" data-ng-model="id_font">
+				<option value="0" selected>Default</option>
+				<option value="1">Helvetica</option>
+				<option value="2">Helvetica New</option>
+			</select>
+			</br>
+		</div>
+
+
+		<button class="btn btn-lg btn-primary btn-block" type="submit" value="Login" />Update Card</button>
+	</form>
 </div>
