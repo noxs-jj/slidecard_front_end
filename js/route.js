@@ -58,6 +58,11 @@ slideApp.config(['$routeProvider', '$httpProvider',
 		controller: 'collectionListController',
 		controllerAs: 'collectionList'
 	}).
+	when('/collection/delete/:id', {
+		templateUrl: 'html/collectionDelete.html',
+		controller: 'collectionDeleteController',
+		controllerAs: 'collectionDelete'
+	}).
 	when('/welcome', {
 		templateUrl: 'html/welcome.html',
 		controller: 'welcomeController',

@@ -1,8 +1,9 @@
 console.log('CardUpdate.js loaded');
 
 slideController.controller('cardUpdateController',
-			['$scope', '$http', '$cookies', '$location', '$routeParams',
-			function($scope, $http, $cookies, $location, $routeParams) {
+		['$scope', '$http', '$cookies', '$location', '$routeParams',
+		function($scope, $http, $cookies, $location, $routeParams) {
+
 	if (!$cookies.usr_token)
 		$location.path('/login');
 	else {

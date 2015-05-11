@@ -1,9 +1,10 @@
 console.log('login.js loaded');
 
-slideController.controller('loginController', ['$scope', '$http', '$cookies', '$location',
-							function($scope, $http, $cookies, $location) {
-	$scope.error = '';
+slideController.controller('loginController',
+		['$scope', '$http', '$cookies', '$location',
+		function($scope, $http, $cookies, $location) {
 
+	$scope.error = '';
 	$scope.auth = function() {
 		$http.post(urlApi + '/auth', {
 			'email': $scope.email,

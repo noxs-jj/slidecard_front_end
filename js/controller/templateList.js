@@ -1,6 +1,9 @@
 console.log('templateList.js loaded');
 
-slideController.controller('templateListController', ['$scope', '$http', '$cookies', '$location', function($scope, $http, $cookies, $location) {
+slideController.controller('templateListController',
+		['$scope', '$http', '$cookies', '$location',
+		function($scope, $http, $cookies, $location) {
+
 	if (!$cookies.usr_token)
 		   $location.path('/login');
 	else {

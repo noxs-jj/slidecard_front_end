@@ -1,7 +1,8 @@
 console.log('welcome.js loaded');
 
 slideController.controller('welcomeController',
-	['$scope', '$http', '$cookies', '$location', function($scope, $http, $cookies, $location) {
+		['$scope', '$http', '$cookies', '$location',
+		function($scope, $http, $cookies, $location) {
 
 	$scope.error = '';
 	if ($cookies.usr_token != '') {

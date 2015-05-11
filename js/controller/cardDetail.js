@@ -3,6 +3,7 @@ console.log('CardDetail.js loaded');
 slideController.controller('cardDetailController',
 		['$scope', '$http', '$cookies', '$location', '$routeParams',
 		function($scope, $http, $cookies, $location, $routeParams) {
+
 	if (!$cookies.usr_token)
 		$location.path('/login');
 	else {

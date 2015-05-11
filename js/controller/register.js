@@ -3,6 +3,7 @@ console.log('register.js loaded');
 slideController.controller('registerController',
 		['$scope', '$http', '$cookies', '$location',
 		function($scope, $http, $cookies, $location) {
+
 	$scope.error = '';
 	$scope.reg = function() {
 		if ($scope.password == $scope.retype_password && $scope.email_again == $scope.email) {
