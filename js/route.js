@@ -43,6 +43,11 @@ slideApp.config(['$routeProvider', '$httpProvider',
 		controller: 'cardCreateController',
 		controllerAs: 'cardCreate'
 	}).
+	when('/card/delete/:id', {
+		templateUrl: 'html/cardDelete.html',
+		controller: 'cardDeleteController',
+		controllerAs: 'cardDelete'
+	}).
 	when('/card/:id', {
 		templateUrl: 'html/cardDetail.html',
 		controller: 'cardDetailController',

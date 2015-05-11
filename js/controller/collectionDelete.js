@@ -18,11 +18,8 @@ slideController.controller('collectionDeleteController',
 		// 	console.log(data);
 		// })
 		$scope.delete = function() {
-			$http.get(
-				urlApi + '/collection/delete/'
-				+ $routeParams.id + '?token='
-				+ $cookies.usr_token
-			)
+			$http.get(urlApi + '/collection/delete/' + $routeParams.id
+				+ '?token=' + $cookies.usr_token)
 			.success(function(data, status) {
 				console.log(status + ' CollectionDelete success');
 				$location.path('/collection');

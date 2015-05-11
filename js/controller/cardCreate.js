@@ -8,19 +8,44 @@ slideController.controller('cardCreateController',
 		$location.path('/login');
 	else {
 		$scope.error = '';
-
-		$http.get(urlApi + '/templates?token=' + $cookies.usr_token)
+		// TEMPLATE LIST
+		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
 			.success(function(data) {
-				console.log('cardCreate get templates success');
-				$scope.templates = data;
-				console.log(data);
-			})
-			.error(function(data, status) {
-				console.log(error);
-				$scope.error = $scope.error + " | cardCreate get templates failed";
-				console.log(data);
-			})
-
+			console.log('cardCreate get templates success');
+			$scope.templates = data;
+			console.log(data);
+		})
+		.error(function(data, status) {
+			console.log(error);
+			$scope.error = $scope.error + " | cardCreate get templates failed";
+			console.log(data);
+		})
+		// TYPES LIST
+		$http.get(urlApi + '/card/types/all?token=' + $cookies.usr_token)
+		.success(function(data) {
+			console.log('cardCreate get types success');
+			$scope.type0 = data.data[0];
+			$scope.type1 = data.data[1];
+			console.log($scope.types);
+		})
+		.error(function(data, status) {
+			console.log(error);
+			$scope.error = $scope.error + " | cardCreate get types failed";
+			console.log(data);
+		})
+		// FONTS LIST
+		$http.get(urlApi + '/fonts?token=' + $cookies.usr_token)
+		.success(function(data) {
+			console.log('cardCreate get fonts success');
+			$scope.fonts = data.data;
+			console.log($scope.fonts);
+		})
+		.error(function(data, status) {
+			console.log(error);
+			$scope.error = $scope.error + " | cardCreate get fonts failed";
+			console.log(data);
+		})
+		// CREATE CARD POST
 		$scope.create = function() {
 			$http.post(urlApi + '/card/create?token=' + $cookies.usr_token,
 				{
@@ -38,6 +63,7 @@ slideController.controller('cardCreateController',
 			)
 			.success(function(data) {
 				console.log('newCard success');
+				$location.path('/cardList');
 			})
 			.error(function(data, status) {
 				console.log(error);
@@ -47,5 +73,3 @@ slideController.controller('cardCreateController',
 		}
 	}
 }]);
-
-// type, id_font, organisation, job, location, email, phone, slogan, id_template, color

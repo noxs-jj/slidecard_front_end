@@ -2,11 +2,12 @@
 	<h2>Cards</h2>
 	<div class="row-flex">
 		<div ng-repeat="card in result">
+			<div class="hovered-links">
+				<a href="#/card/{{ card.id }}">Show</a>
+				<a href="#/card/update/{{card.id }}">Edit</a>
+				<a href="#/card/delete/{{ card.id }}">Delete</a>
+			</div>
 			<div class="card" style="color: #{{ card.color }};background-image:url({{ card.template.path }});">
-				<!--<div class="hovered-links">
-					<a href="#/card/{{ card.id }}">Show</a>
-					<a href="#/card/update/{{ card.id }}">Edit</a>
-				</div>-->
 				<h3>{{ card.job }} at {{ card.organization }}</h3>
 				<p>{{ card.slogan }}</p>
 				<p><i>{{ card.email }}</i><br>{{ card.phone }}</p>

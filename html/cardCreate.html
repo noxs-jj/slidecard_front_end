@@ -72,25 +72,22 @@
 			Type
 			<label for="inputPassword" class="sr-only">Type</label>
 			<select class="form-control" data-ng-model="type">
-				<option value="0" selected>Default</option>
-				<option value="1">Personnelle</option>
-				<option value="2">Ass</option>
+				<option value="0">{{type0}}</option>
+				<option value="1">{{type1}}</option>
 			</select>
 			</br>
 			
 			Template
 			<label for="inputPassword" class="sr-only">Template</label>
 			<select class="form-control" data-ng-model="id_template">
-				<option data-ng-repeat="entry in templates">{{entry.name}}</option>
+				<option data-ng-repeat="entry in templates" value="{{entry.id}}">{{entry.name}}</option>
 			</select>
 			</br>
 
 			Font
 			<label for="inputPassword" class="sr-only">Id font select</label>
 			<select class="form-control"  data-ng-model="id_font">
-				<option value="0" selected>Default</option>
-				<option value="1">Helvetica</option>
-				<option value="2">Helvetica New</option>
+				<option data-ng-repeat="entry in fonts" value="{{entry.id}}">{{entry.name}}</option>
 			</select>
 			</br>
 		</div>
