@@ -1,10 +1,10 @@
 <h2 class="h2 text-center">Template List</h2>
 <div class="container" ng-controller="templateListController">
 	<p class="bg-danger" data-ng-show="error">{{error}}</p>
-	<button type="button" class="btn btn-info"><a href="#/card/{{card.id}}">More Info</a></button>
-	<button type="button" class="btn btn-info"><a href="#/card/update/{{card.id}}">Update this template</a>
-	</button></br></br></br>
 	<div ng-repeat="template in result">
+		<button type="button" class="btn btn-info"><a href="#/card/{{card.id}}">More Info</a></button>
+		<button type="button" class="btn btn-info"><a href="#/card/update/{{card.id}}">Update this template</a>
+		</button></br></br>
 		id: [{{template.id}}]</br>
 		type: [{{template.type}}]</br>
 		name: [{{template.name}}]</br>

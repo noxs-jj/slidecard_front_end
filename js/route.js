@@ -53,6 +53,11 @@ slideApp.config(['$routeProvider', '$httpProvider',
 		controller: 'cardCreateController',
 		controllerAs: 'cardUpdate'
 	}).
+	when('/collection', {
+		templateUrl: 'html/collectionList.html',
+		controller: 'collectionListController',
+		controllerAs: 'collectionList'
+	}).
 	when('/welcome', {
 		templateUrl: 'html/welcome.html',
 		controller: 'welcomeController',
