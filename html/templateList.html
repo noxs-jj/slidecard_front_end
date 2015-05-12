@@ -14,7 +14,10 @@
 					id: [{{template.id}}]</br>
 					type: [{{template.type}}]</br>
 					name: [{{template.name}}]</br>
-					path: [{{template.path}}]</br>
+					<div style="background: url({{ 'http://www.slidecard.tk' + template.path }}) no-repeat">
+						<h1>{{ template.created_by.firstname }} {{ template.created_by.lastname }}</h1>
+					</div>
+					path: [{{  'http://www.slidecard.tk' + template.path}}]</br>
 					price: [{{template.price}}]
 				</td>
 				<td>

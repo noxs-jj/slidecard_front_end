@@ -7,5 +7,4 @@ var	urlApi = 'http://slidecard.tk/v1';
 var slideController = angular.module('slideController',[]);
 
 var slideApp = angular.module('slideApp',
-	['ngRoute', 'ngCookies', 'slideController']);
-
+	['ngRoute', 'ngCookies', 'slideController', 'file-model']);

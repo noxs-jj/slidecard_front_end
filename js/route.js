@@ -33,6 +33,11 @@ slideApp.config(['$routeProvider', '$httpProvider',
 		controller: 'templateListController',
 		controllerAs: 'templateList'
 	}).
+	when('/templateCreate', {
+		templateUrl: 'html/templateCreate.html',
+		controller: 'templateCreateController',
+		controllerAs: 'templateCreate'
+	}).
 	when('/cardList', {
 		templateUrl: 'html/cardList.html',
 		controller: 'cardListController',

@@ -31,6 +31,7 @@
 				<li><button type="button" class="btn btn-default"><a href="#/cardCreate">AddCard</a></button></li>
 				<li><button type="button" class="btn btn-default"><a href="#/collection">Collection</a></button></li>
 				<li><button type="button" class="btn btn-default"><a href="#/template">Templates list</a></button></li>
+				<li><button type="button" class="btn btn-default"><a href="#/templateCreate">AddTemplates</a></button></li>
 				<li><button type="button" class="btn btn-default"><a href="#/register">Register</a></button></li>
 				<li><button type="button" class="btn btn-default"><a href="#/account">My Profile</a></button></li>
 				<li><button type="button" class="btn btn-default"><a href="#/login">Login</a></button></li>
@@ -41,30 +42,11 @@
 			<div data-ng-view></div>
 		</div>
 
-<!--		
-		<div class="jumbotron text-center"><h1>SlideCard</h1></div>
-		<div class="container">
-		<div ng-show="isLog">
-			GROS TEST
-		</div>
-			<ul class="nav nav-pills">
-				<li><button type="button" class="btn btn-default"><a href="#/welcome">Welcome</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/cardList">Cards</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/cardCreate">AddCard</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/template">ADMIN Templates FULL list</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/register">Register</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/account">My Profile</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/login">Login</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/logout">Logout</a></button></li>
-			</ul>
-		</div>
-		<div data-ng-view></div>
-
--->
 		<!--- libs -->
 		<script src="js/libs/angular/angular.js"></script>
 		<script src="js/libs/angular/angular-cookies.js"></script>
 		<script src="js/libs/angular/angular-route.js"></script>
+		<script src="js/libs/angular/angular-file-model.js"></script>
 		<!--- config angulars -->
 		<script src="js/config.js"></script>
 		<script src="js/controller.js"></script>
@@ -81,6 +63,7 @@
 		<script src="js/controller/accountUpdate.js"></script>
 		<script src="js/controller/cardUpdate.js"></script>
 		<script src="js/controller/templateList.js"></script>
+		<script src="js/controller/templateCreate.js"></script>
 		<script src="js/controller/cardDelete.js"></script>
 		<script src="js/controller/collectionList.js"></script>
 		<script src="js/controller/collectionDelete.js"></script>
@@ -88,15 +71,5 @@
 		<footer>
 			<p align="center" class="copyright">&copy; 2015 <a href="#/welcome">slidecard.com</a></p>
 		</footer>
-<!--		<footer>
-			<p class="text-center">
-				<a href="http://fr.linkedin.com/pub/jonathan-maurice/93/47a/a30/en" target="_blank">Jonathan Maurice</a>
-				<a href="http://fr.linkedin.com/in/jeanjacquesmoiroux/fr" target="_blank">Jean-Jacques Moiroux</a>
-				<a href="http://fr.linkedin.com/pub/julien-quilez/90/33/3a7/fr" target="_blank">Julien Quilez</a>
-				<a href="http://fr.linkedin.com/in/tbazire/fr" target="_blank">Thomas Bazire</a>
-			</p>
-			<span>Coded with &#10084; at <a href="http://42.fr">42</a> school</span>
-		</footer>
--->
 	</body>
 </html>

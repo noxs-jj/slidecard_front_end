@@ -1,31 +1,3 @@
-<!--
-<div class="sm-container" ng-controller="cardCreateController">
-	<h1>Add a new card</h1>
-	<form class="form" name="newCardForm" data-ng-submit="newCardForm.$valid && create()" novalidate>
-		<div class="form-block">
-			<input class="form-input" type="text" data-ng-model="organization" placeholder="Organisation name" required />
-		</div>
-		<div class="form-block">
-			<input class="form-input" type="text" data-ng-model="job" placeholder="Job name" required />
-		</div>
-		<div class="form-block">
-			<input class="form-input" type="text" data-ng-model="location" placeholder="Location" required />
-		</div>
-		<div class="form-block">
-			<input class="form-input" type="email" data-ng-model="email" placeholder="Email address" required />
-		</div>
-		<div class="form-block">
-			<input class="form-input" type="text" data-ng-model="phone" placeholder="Phone number" required />
-		</div>
-		<div class="form-block">
-			<input class="form-input" type="text" data-ng-model="slogan" placeholder="Slogan" required />
-		</div>
-		<div class="form-block">
-			<input class="form-input" type="text" data-ng-model="color" placeholder="Card color" required />
-		</div>										
-	</form>
-</div>
--->
 <h2 class="h2 text-center">Create New Card</h2>
 <div class="container" ng-controller="cardCreateController">
 	<div class="bg-danger" ng-show="error">{{error}}</div>
