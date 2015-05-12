@@ -8,10 +8,10 @@ slideController.controller('templateListController',
 		   $location.path('/login');
 	else {
 		$scope.error = '';
-		$http.get(urlApi + '/templates?token=' + $cookies.usr_token)
+		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
 		.success(function(data, status) {
 			console.log(status + ' templateList success');
-			$scope.result = data;
+			$scope.result = data.data;
 		})
 		.error(function(data, status) {
 			$scope.error = status + ' / ' + data.message;
