@@ -8,15 +8,15 @@ slideController.controller('cardUpdateController',
 		$location.path('/login');
 	else {
 		$scope.error = '';
-		$http.get(urlApi + '/templates?token=' + $cookies.usr_token)
+		$http.get(urlApi + '/card/' + $routeParams.id + '?token=' + $cookies.usr_token)
 			.success(function(data) {
-				console.log('update get templates success');
-				$scope.templates = data;
+				console.log('update get spe card success');
+				$scope.card = data.data;
 				console.log(data);
 			})
 			.error(function(data, status) {
 				console.log(error);
-				$scope.error = $scope.error + " | update get templates failed";
+				$scope.error = $scope.error + " | update get spe card failed";
 				console.log(data);
 			})
 

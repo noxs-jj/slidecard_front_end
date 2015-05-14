@@ -1,3 +1,47 @@
+<div class="sm-container" ng-controller="templateCreateController">
+	<h2 class="title">Create your new template!</h2>
+	<form class="form-signin" name="loginForm" data-ng-submit="create()" enctype="multipart/form-data" novalidate>
+		<div class="form-block">
+			<input type="text" class="form-input" placeholder="Template name" required="true" data-ng-model="name">
+		</div>
+		<div class="form-block">
+			<label for="price">Price (in €)</label>
+			<select placeholder="Price (in €)" required="true" data-ng-model="price" class="form-input select">
+				<option value="0" selected="true">Free!</option>
+				<option value="0.99">0.90 €</option>
+				<option value="1.99">1.90 €</option>
+				<option value="2.99">2.90 €</option>
+				<option value="3.99">3.90 €</option>
+				<option value="4.99">4.90 €</option>
+			</select>
+		</div>
+		<div class="form-block">
+			<label for="price">Type</label>
+			<select placeholder="Price (in €)" required="true" ng-data-model="type" class="form-input select">
+				<option value="0" selected="true">Professional</option>
+				<option value="1">Personal</option>
+			</select>
+		</div>
+		<div class="form-block">
+			<label for="price">Price (in €)</label>
+			<select placeholder="Price (in €)" required="true" class="form-input select">
+				<option value="0" selected="true">Free!</option>
+				<option value="0.99">0.90 €</option>
+				<option value="1.99">1.90 €</option>
+				<option value="2.99">2.90 €</option>
+				<option value="3.99">3.90 €</option>
+				<option value="4.99">4.90 €</option>
+			</select>
+		</div>
+		<div class="form-block">
+			<label for="template">Template background</label>
+			<input type="file" file-model="background" class="form-input">
+		</div>
+		<button class="submit-btn" type="submit" value="Login">Create!</button>
+	</form>
+</div>
+
+<!--
 <h2 class="h2 text-center">Create New Template</h2>
 <div class="container" data-ng-controller="templateCreateController">
 	<div class="bg-danger" data-ng-show="{{error}}">{{ error }}</div>
@@ -31,3 +75,4 @@
 		<input class="btn btn-lg btn-primary btn-block" type="submit" value="Add TEmplate"/>
 	</form>
 </div>
+-->
