@@ -28,7 +28,7 @@ slideController.controller('accountUpdateController',
 				$http.post(urlApi + '/account/update?token=' + $cookies.usr_token, {
 					'email': $scope.update_email,
 					'password': $scope.update_password,
-					'firstname': $scope.fupdate_irstname,
+					'firstname': $scope.fupdate_firstname,
 					'lastname': $scope.update_lastname,
 					'avatar': $scope.update_url_avatar
 				})

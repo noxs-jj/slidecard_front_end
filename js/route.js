@@ -85,7 +85,10 @@ slideApp.config(['$routeProvider', '$httpProvider',
 
 //	Y3kXED2dX96LICoR9BGZ4unoFv9NRlR9uPQQkva.klxifeZT5Bru6
 
-slideApp.controller('contentController', ['$cookies', '$scope', function($cookies, $scope) {
+slideApp.controller('contentController',
+		['$cookies', '$scope', '$location',
+		function($cookies, $scope, $location) {
+
 	$scope.isLog = function() {
 		if ($cookies.usr_token == '')
 			return 0;

@@ -8,10 +8,11 @@ html {
 
 body {
 	margin: 0;
-	padding: 100px 0 0;
+	padding: 67px 0 0;
 	color: #333;
 	font-family: 'Lato', Helvetica Neue, Helvetica, Verdana;
 	font-weight: normal;
+    font-size: 0.9em;
 }
 
 a {
@@ -25,28 +26,36 @@ h1.title , h2.title {
 }
 
 .header-navbar {
-	padding: 35px 0;
+	padding: 25px 0;
     position: absolute;
     width: 100%;
     left: 0;
     top: 0;
     z-index: 999;
     background: rgb(42, 112, 170);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 .header-navbar a {
-	color: #fff;
-    padding: 15px 20px;
+    color: #fff;
     -webkit-transition: all 0.2s;
+}
+
+.header-navbar nav a {
+    padding: 25px 30px;
+    color: rgb(0, 70, 120);
 }
 
 .header-navbar nav a:hover {
     background-color: rgb(62, 132, 190);
 }
 
+.header-navbar nav a.active {
+    color: #fff; 
+}
+
 .header-navbar nav > ul > li {
-	margin: 0 14px;
+	margin: 0;
 }
 
 .header-navbar nav a.highlight {
@@ -55,6 +64,14 @@ h1.title , h2.title {
 	border-radius: 3px;
 	color: #fff;
 	background-color: rgb(50, 150, 240);
+}
+
+nav.navbar-default {
+    position: relative;
+    padding: 20px 0;
+    margin: 0;
+    background-color: rgb(240, 240, 240);
+    border-bottom: 1px solid rgb(220, 220, 220);
 }
 
 nav.right {
@@ -141,6 +158,10 @@ div.sm-container {
 
 div.md-container {
 	width: 720px;
+}
+
+div.col-2 {
+    width: 40%;
 }
 
 div.row-flex {
@@ -258,11 +279,6 @@ form .submit-btn {
 div.card {
     position: relative;
     display: inline-block;
-    width: 20vw;
-    min-width: 330px;
-    min-height: 186px;
-    max-width: 330px;
-    max-height: 186px;
     padding: 15px 32px;
     margin: 10px 10px;
     vertical-align: top;
@@ -270,8 +286,13 @@ div.card {
     font-size: 0.9em;
     border: 1px solid transparent !important;
     border-radius: 2px;
-    min-height: 11.25vw;
     background-size: cover;
+    width: 20vw;
+    height: 11.25vw;
+    min-width: 330px;    
+    min-height: 186px;
+    max-width: 420px;
+    max-height: 236px;
 /*    border: 1px solid #bbbbbb;
     border-radius: 10px;
     -moz-border-radius: 10px;

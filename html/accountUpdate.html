@@ -1,28 +1,35 @@
-<div class="sm-container" ng-controller="accountUpdateController">
+<div class="lg-container" ng-controller="accountUpdateController">
 	<h2 class="title">Update profile</h2>
 	<form class="form-signin" name="newCardForm" data-ng-submit="update()" novalidate>
+		<p class="bg-danger" data-ng-show="error">{{error}}</p>
+		<div class="row-flex">
+			<div class="col-2">
 		<div class="form-block">
-			<input type="text" class="form-input" placeholder="{{ card.organization }}" value="{{ organization }}" data-ng-model="organization">
+			<label for="firstname">Firstname</label>
+			<input type="text" class="form-input" placeholder="{{ firstname }}" value="{{ update_firstname }}" data-ng-model="update_firstname">
 		</div>
 		<div class="form-block">
-			<input type="text" class="form-input" placeholder="{{ card.job }}" value="{{ job }}"  data-ng-model="job">
+			<label for="lastname">Lastname</label>
+			<input type="text" class="form-input" placeholder="{{ lastname }}" value="{{ update_lastname }}"  data-ng-model="update_lastname">
 		</div>
 		<div class="form-block">
-			<input type="text" class="form-input" placeholder="{{ card.location }}" value="{{ location }}" data-ng-model="location">
+			<label for="email">Email address</label>
+			<input type="text" class="form-input" placeholder="{{ email }}" value="{{ update_email }}" data-ng-model="update_email">
+		</div>
+		<button class="submit-btn" type="submit" value="Login">Save changes</button>
+		</div>
+		<div class="col-2">
+		<h2 class="title">Change password</h2>
+		<div class="form-block">
+			<label for="password">Password</label>
+			<input type="password" class="form-input"  data-ng-model="update_password">
 		</div>
 		<div class="form-block">
-			<input type="email" class="form-input" placeholder="{{ card.email }}" value="{{ email }}"  data-ng-model="email">
+			<label for="password">Confirm Password</label>
+			<input type="password" class="form-input" data-ng-model="retype_password">
 		</div>
-		<div class="form-block">
-			<input type="text" class="form-input sm" placeholder="{{ card.phone }}" value="{{ phone }}" data-ng-model="phone">
+		<button class="submit-btn" type="submit" value="Login">Save changes</button>
 		</div>
-		<div class="form-block">
-			<input type="text" class="form-input" placeholder="{{ card.slogan }}" value="{{ slogan }}" data-ng-model="slogan">
-		</div>
-		<div class="form-block">
-			<input type="text" class="form-input sm" placeholder="{{ card.color }}" value="{{ color }}" data-ng-model="color">
-		</div>		
-		<button class="submit-btn" type="submit" value="Login">Update my profile</button>
 	</form>
 </div>
 

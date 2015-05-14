@@ -18,14 +18,18 @@
 					<ul class="inline no-margin" data-ng-hide="isLog()">
 						<li><a href="#/login">Log in</a></li>
 					</ul>
-					<ul class="inline no-margin" data-ng-show="isLog()">
-						<li><a href="#/cardList">Cards</a></li>
-						<li><a href="#/collection">Network</a></li>
+					<ul ng-click="page()" class="inline no-margin" data-ng-show="isLog()">
+						<li>
+							<a href="#/cardList">Cards</a>
+						</li>
+						<li>
+							<a href="#/collection">Network</a></li>
 						<li ng-controller="welcomeController"><a href="#/account" title="">{{ firstname }} {{ lastname }}</a></li>
 					</ul>
 				</nav>
 			</div>
 		</div>
+<!--		
 		<ul class="inline no-margin">
 				<li><button type="button" class="btn btn-default"><a href="#/welcome">Welcome</a></button></li>
 				<li><button type="button" class="btn btn-default"><a href="#/cardList">Cards</a></button></li>
@@ -38,6 +42,7 @@
 				<li><button type="button" class="btn btn-default"><a href="#/login">Login</a></button></li>
 				<li><button type="button" class="btn btn-default"><a href="#/logout">Logout</a></button></li>
 			</ul>
+-->
 		</div>
 		<div id="wrap">
 			<div data-ng-view></div>
@@ -68,6 +73,8 @@
 		<script src="js/controller/cardDelete.js"></script>
 		<script src="js/controller/collectionList.js"></script>
 		<script src="js/controller/collectionDelete.js"></script>
+		<script src="js/libs/jquery.min.js"></script>
+		<script src="js/app.js"></script>
 
 		<footer>
 			<p align="center" class="copyright">&copy; 2015 <a href="#/welcome">slidecard.com</a></p>

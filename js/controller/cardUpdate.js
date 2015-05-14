@@ -36,6 +36,7 @@ slideController.controller('cardUpdateController',
 				})
 			.success(function(data) {
 				console.log('Update Card success');
+				$location.path('/cardList');
 			})
 			.error(function(data, status) {
 				console.log(error);
