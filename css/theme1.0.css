@@ -41,6 +41,11 @@ h1.title , h2.title {
     -webkit-transition: all 0.2s;
 }
 
+.header-navbar a.opened {
+    background-color: #fff;
+    color: #444;
+}
+
 .header-navbar nav a {
     padding: 25px 30px;
     color: rgb(0, 70, 120);
@@ -58,44 +63,107 @@ h1.title , h2.title {
 	margin: 0;
 }
 
-.header-navbar nav a.highlight {
-	padding: 12px 14px;
-	border: none;
-	border-radius: 3px;
-	color: #fff;
-	background-color: rgb(50, 150, 240);
+.header-navbar li.dropdown {
+    position: relative;
 }
 
-nav.navbar-default {
-    position: relative;
-    padding: 20px 0;
+.header-navbar li.dropdown a:hover {
+    background-color: #fff;
+    color: #444;
+}
+
+.header-navbar li.dropdown:hover > ul {
+    display: block;
+}
+
+.header-navbar li.dropdown > ul {
+    position: absolute;
+    top: 42px;
+    right: 0;
+    padding: 6px 15px;
+    min-width: 150px;
+    display: none;
+    background-color: #fff;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.header-navbar ul.dropped a {
+    display: block;
+    padding: 10px;
+    margin: 0;
+    color: #777;
+}
+
+
+.header-navbar ul.dropped a:hover {
+    padding: 10px 7px 10px 13px;
+    background-color: transparent;
+    color: #444;
+}
+
+.header-navbar li.dropdown > ul > li {
+    margin: 4px 0;
+}
+
+.header-navbar li.dropdown > ul > li.seperated {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.navbar-default {
+    padding: 0;
     margin: 0;
     background-color: rgb(240, 240, 240);
     border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.navbar-default ul {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-default li {
+    margin: 0;
+}
+
+.navbar-default a {
+    display: inline-block;
+    padding: 15px 20px;
+    color: #888;
+    -webkit-transition: all 0.2s;
+}
+
+.navbar-default a:hover {
+    background-color: rgb(210, 210, 210);
 }
 
 nav.right {
 	float: right;
 }
 
-ul.inline {
+ul.inline, ul.no-list {
 	list-style: none;
 }
 
 ul.no-margin {
 	margin: 0;
+    padding: 0;
 }
 
 ul.inline > li {
 	float: left;
 	left: 0;
-	position: relative;
+}
+
+ul.inline-block > li {
+    display: inline-block;
+    vertical-align: top;
 }
 
 #header {
     position: relative;
     background-color: #eee;
-    background-image: url();
     background-size: cover;
     width: 100vw;
     min-height: 610px;
@@ -283,7 +351,6 @@ div.card {
     margin: 10px 10px;
     vertical-align: top;
     background-color: #eee;
-    font-size: 0.9em;
     border: 1px solid transparent !important;
     border-radius: 2px;
     background-size: cover;
