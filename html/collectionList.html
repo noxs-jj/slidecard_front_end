@@ -18,73 +18,19 @@
 		<h1 class="title">Your Network</h1>
 		<p>Some description ...</p>
 	</div>
-		<div class="card">
+	<div data-ng-repeat="entry in result">
+		<div class="card" style="color:#{{ card.color }};background-image:url({{ 'http://www.slidecard.tk' + card.template.path }});font-family:{{ card.font.name }}, Helvetica, Verdana">
 			<div class="hovered-links">
 					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
 						<span class="helper"><span class="carret"></span>Remove</span>
 					</a>
+					<h3>{{ entry.owner.firstname }} {{ entry.owner.lastname }}</h3>
+					<p>{{ entry.id }}</p>
 			</div>
 		</div>
-		
-		<div class="card">
-			<div class="hovered-links">
-					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
-						<span class="helper"><span class="carret"></span>Remove</span>
-					</a>
-			</div>
-		</div>
-		
-		<div class="card">
-			<div class="hovered-links">
-					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
-						<span class="helper"><span class="carret"></span>Remove</span>
-					</a>
-			</div>
-		</div>
-		
-		<div class="card">
-			<div class="hovered-links">
-					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
-						<span class="helper"><span class="carret"></span>Remove</span>
-					</a>
-			</div>
-		</div>
-		
-		<div class="card">
-			<div class="hovered-links">
-					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
-						<span class="helper"><span class="carret"></span>Remove</span>
-					</a>
-			</div>
-		</div>
-		
-		<div class="card">
-			<div class="hovered-links">
-					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
-						<span class="helper"><span class="carret"></span>Remove</span>
-					</a>
-			</div>
-		</div>
-		
-		<div class="card">
-			<div class="hovered-links">
-					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
-						<span class="helper"><span class="carret"></span>Remove</span>
-					</a>
-			</div>
-		</div>
-		
-		<div class="card">
-			<div class="hovered-links">
-					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
-						<span class="helper"><span class="carret"></span>Remove</span>
-					</a>
-			</div>
-		</div>
-
-
+	</div>
 </div>
-
+<!--
 <h2 class="h2 text-center">Collection</h2>
 <div data-ng-controller="collectionListController">
 	<p class="bg-danger" data-ng-show="error">{{entry.error}}</p>
@@ -136,3 +82,4 @@
 	</table>
 	</div>
 </div>
+-->

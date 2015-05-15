@@ -8,6 +8,46 @@
 		</ul>
 	</div>
 </div>
+<div class="lg-flex-container">
+	<div class="alert-danger" data-ng-show="error">
+		<p><span class="icon-cross"></span>{{error}}</p>
+	</div>
+	<div class="title">
+		<h1 class="title">Template collection</h1>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Thumbnail</th>
+				<th>Type</th>
+				<th>Name</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="template in result">
+				<td align="center">{{ template.id }}</td>
+				<td>
+					<img src="{{ 'http://www.slidecard.tk' + template.path }}">
+				</td>
+				<td>
+					{{ template.type == '1' ? 'Professional' : 'Personal' }}
+				</td>
+				<td>
+					{{ template.name }}
+				</td>
+				<td>
+					<a href="#/card/{{ card.id }}" class="icon-text"></a>
+					<a href="#/card/update/{{card.id}}" class="icon-pencil"></a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!--
+
 <h2 class="h2 text-center">Template List</h2>
 <div class="container" ng-controller="templateListController">
 	<p class="bg-danger" data-ng-show="error">{{error}}</p>
@@ -42,3 +82,4 @@
 	</div>
 	</br>
 </div>
+-->

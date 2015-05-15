@@ -16,7 +16,8 @@ body {
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
+    color:rgb(52, 152, 219);
 }
 
 p {
@@ -229,7 +230,7 @@ div[class^='alert-'] {
     display: block;
     position: relative;
     padding: 15px 25px;
-    margin-bottom: 50px;
+    margin: 50px 0;
     border-radius: 2px;
 }
 
@@ -237,13 +238,15 @@ div[class^='alert-'] span[class^='icon-'] {
     margin-right: 15px;
 }
 
-.alert-danger {
+div[class^='alert-'] p {
     color: #fff;
+}
+
+.alert-danger {
     background-color: rgb(231, 76, 60);
 }
 
 .alert-success {
-    color: #fff;
     background-color: rgb(39, 174, 96);
 }
 
@@ -399,13 +402,14 @@ form .form-search {
     padding: 6px 10px;
     width: 100%;
     color: #444;
+    position: relative;
 }
 
 form .form-submit-search {
     position: absolute;
-    right: -10px;
-    top: 0;
-    padding: 6px 10px;
+    right: -8px;
+    top: 8px;
+    padding: 0 10px;
     cursor: pointer;
     border: none;
     font-size: 1em;
@@ -516,6 +520,38 @@ span.helper .carret {
 div.card > div.hovered-links a:hover > span.helper {
     display: block;
 }
+
+/** Tables **/
+
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+    box-sizing: border-box;
+}
+
+table.table th {
+    border: 1px solid #eee;
+}
+
+table.table td, table.table th {
+    padding: 10px 20px;
+}
+
+table.table td {
+    border: 1px solid #eee;
+}
+
+table.table img {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    max-width: 150px;
+}
+
+table.table a {
+    margin: 0 10px;
+}
+
 
 @media all and (max-width: 768px) {
 
