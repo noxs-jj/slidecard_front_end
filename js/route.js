@@ -60,7 +60,7 @@ slideApp.config(['$routeProvider', '$httpProvider',
 	}).
 	when('/card/update/:id', {
 		templateUrl: 'html/cardUpdate.html',
-		controller: 'cardCreateController',
+		controller: 'cardUpdateController',
 		controllerAs: 'cardUpdate'
 	}).
 	when('/collection', {
