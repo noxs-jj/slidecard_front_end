@@ -9,15 +9,22 @@ slideController.controller('templateCreateController',
 	else {
 		$scope.error = '';
 		console.log("debugg 0");
+		$scope.token = $cookies.usr_token;
+		$scope.url = 'http://api.slidecard.ovh/v1/template/create?token=' + $cookies.usr_token;
+
 		$scope.create = function() {
 			console.log("debugg 1");
 			console.log($scope.background);
+			var fd = new FormData();
 
-			$http.post(urlApi + '/template/create?token=' + $cookies.usr_token, {
-					'name': $scope.name,
-					'type': $scope.type,
-					'background': $scope.background,
-					'price': $scope.price,
+			fd.append("name",$scope.name);
+			fd.append("type",0);
+			fd.append("background",$scope.background);
+			fd.append("price",0);
+			 $http.post(urlApi + '/template/create?token=' + $cookies.usr_token,
+			 	fd, {
+					headers: {'Content-Type': undefined },
+					transformRequest: angular.identity
 				}
 			)
 			.success(function(data) {
@@ -25,13 +32,11 @@ slideController.controller('templateCreateController',
 				$location.path('/template');
 			})
 			.error(function(data, status) {
-				console.log(error);
 				$scope.error = $scope.error + " | TEmplate Create Failed";
-				console.log(data);
+				console.log($scope.error);
+				console.log(data.data);
 			})
 		}
 		console.log("debugg 2");
 	}
 }]);
-
-//type, nom, chemin, price

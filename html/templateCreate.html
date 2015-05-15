@@ -8,81 +8,34 @@
 		</ul>
 	</div>
 </div>
+
 <div class="sm-container" ng-controller="templateCreateController">
 	<h2 class="title">Create your new template!</h2>
 	<form class="form-signin" name="loginForm" data-ng-submit="create()" enctype="multipart/form-data" novalidate>
 		<div class="form-block">
-			<input type="text" class="form-input" placeholder="Template name" required="true" data-ng-model="name">
+			<input type="text"
+				class="form-input"
+				placeholder="Template name"
+				required="true"
+				data-ng-model="name">
 		</div>
+
 		<div class="form-block">
-			<label for="price">Price (in €)</label>
-			<select placeholder="Price (in €)" required="true" data-ng-model="price" class="form-input select">
-				<option value="0" selected="true">Free!</option>
-				<option value="0.99">0.90 €</option>
-				<option value="1.99">1.90 €</option>
-				<option value="2.99">2.90 €</option>
-				<option value="3.99">3.90 €</option>
-				<option value="4.99">4.90 €</option>
-			</select>
-		</div>
-		<div class="form-block">
-			<label for="price">Type</label>
-			<select placeholder="Price (in €)" required="true" ng-data-model="type" class="form-input select">
+			<label for="type">Type</label>
+			<select required="true"
+				type="text"
+				ng-data-model="type"
+				class="form-input select">
+
 				<option value="0" selected="true">Professional</option>
 				<option value="1">Personal</option>
 			</select>
 		</div>
+
 		<div class="form-block">
-			<label for="price">Price (in €)</label>
-			<select placeholder="Price (in €)" required="true" class="form-input select">
-				<option value="0" selected="true">Free!</option>
-				<option value="0.99">0.90 €</option>
-				<option value="1.99">1.90 €</option>
-				<option value="2.99">2.90 €</option>
-				<option value="3.99">3.90 €</option>
-				<option value="4.99">4.90 €</option>
-			</select>
-		</div>
-		<div class="form-block">
-			<label for="template">Template background</label>
+			<label for="BACKGROUND">Template background</label>
 			<input type="file" file-model="background" class="form-input">
 		</div>
 		<button class="submit-btn" type="submit" value="Login">Create!</button>
 	</form>
 </div>
-
-<!--
-<h2 class="h2 text-center">Create New Template</h2>
-<div class="container" data-ng-controller="templateCreateController">
-	<div class="bg-danger" data-ng-show="{{error}}">{{ error }}</div>
-	<form class="form-signin" name="newCardForm" data-ng-submit="create()" enctype="multipart/form-data" novalidate>
-		<div class="col-sm-3 col-mg-3 col-lg-3">
-
-			* Name
-			<label class="sr-only">Name</label>
-			<input class="form-control" type="text" data-ng-model="name" placeholder="Name" required />
-			</br>
-
-			* Price
-			<label class="sr-only">Price</label>
-			<input class="form-control" type="text" data-ng-model="price" placeholder="Price" required />
-			</br>
-
-			* Type
-			<label class="sr-only">Type</label>
-			<select class="form-control" data-ng-model="type">
-				<option value="0">Pros</option>
-				<option value="1">Perso</option>
-			</select>
-			</br>
-
-			* Template (image file) Image will be resize to 400-300
-			<label class="sr-only">Template</label>
-			<input class="form-control" type="file" file-model="background" placeholder="File" required />
-			</br>
-
-		</div>
-		<input class="btn btn-lg btn-primary btn-block" type="submit" value="Add TEmplate"/>
-	</form>
-</div>
--->
