@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/icomoon.eot?-dypmwq');
-	src:url('../fonts/icomoon.eot?#iefix-dypmwq') format('embedded-opentype'),
-		url('../fonts/icomoon.woff?-dypmwq') format('woff'),
-		url('../fonts/icomoon.ttf?-dypmwq') format('truetype'),
-		url('../fonts/icomoon.svg?-dypmwq#icomoon') format('svg');
+	src:url('../fonts/icomoon.eot?-gxcawv');
+	src:url('../fonts/icomoon.eot?#iefix-gxcawv') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-gxcawv') format('woff'),
+		url('../fonts/icomoon.ttf?-gxcawv') format('truetype'),
+		url('../fonts/icomoon.svg?-gxcawv#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -27,31 +27,35 @@
 	content: "\e600";
 }
 
-.icon-cog:before {
+.icon-check:before {
 	content: "\e601";
 }
 
-.icon-edit:before {
+.icon-cross:before {
 	content: "\e602";
 }
 
-.icon-old-mobile:before {
+.icon-magnifying-glass:before {
 	content: "\e603";
 }
 
-.icon-paper-plane:before {
+.icon-pencil:before {
 	content: "\e604";
 }
 
-.icon-pencil:before {
-	content: "\e605";
+.icon-plus:before {
+	content: "\e607";
+}
+
+.icon-share-alternitive:before {
+	content: "\e608";
 }
 
 .icon-text-document:before {
-	content: "\e606";
+	content: "\e605";
 }
 
 .icon-text:before {
-	content: "\e607";
+	content: "\e606";
 }
 

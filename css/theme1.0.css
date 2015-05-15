@@ -19,6 +19,10 @@ a {
 	text-decoration: none;
 }
 
+p {
+    color: #888;
+}
+
 h1.title , h2.title {
 	font-weight: lighter;
 	word-spacing: 7px;
@@ -32,7 +36,8 @@ h1.title , h2.title {
     left: 0;
     top: 0;
     z-index: 999;
-    background: rgb(42, 112, 170);
+    background-color: rgb(42, 112, 170);
+    background-color: rgb(41, 128, 185);
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -53,6 +58,7 @@ h1.title , h2.title {
 
 .header-navbar nav a:hover {
     background-color: rgb(62, 132, 190);
+    background-color: rgb(52, 152, 219);
 }
 
 .header-navbar nav a.active {
@@ -115,7 +121,9 @@ h1.title , h2.title {
     padding: 0;
     margin: 0;
     background-color: rgb(240, 240, 240);
+    background-color: #fff;
     border-bottom: 1px solid rgb(220, 220, 220);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .navbar-default ul {
@@ -129,13 +137,13 @@ h1.title , h2.title {
 
 .navbar-default a {
     display: inline-block;
-    padding: 15px 20px;
+    padding: 20px;
     color: #888;
-    -webkit-transition: all 0.2s;
+   -webkit-transition: all 0.2s;
 }
 
 .navbar-default a:hover {
-    background-color: rgb(210, 210, 210);
+    background-color: rgb(240, 240, 240);
 }
 
 nav.right {
@@ -181,7 +189,6 @@ ul.inline-block > li {
     -ms-align-items: center;
     align-items: center;
 
-    -webkit-filter: grayscale(70%);
 }
 
 #header .presentation {
@@ -206,10 +213,48 @@ ul.inline-block > li {
     width: 100%;
     text-align: center;
 }
+
+footer .copyright {
+    font-size: 0.8em;
+}
+
+footer div[class$='-container'] {
+    margin-top: 25px;
+    border-top: 1px solid #eee;
+}
+
+/** Alerts **/
+
+div[class^='alert-'] {
+    display: block;
+    position: relative;
+    padding: 15px 25px;
+    margin-bottom: 50px;
+    border-radius: 2px;
+}
+
+div[class^='alert-'] span[class^='icon-'] {
+    margin-right: 15px;
+}
+
+.alert-danger {
+    color: #fff;
+    background-color: rgb(231, 76, 60);
+}
+
+.alert-success {
+    color: #fff;
+    background-color: rgb(39, 174, 96);
+}
+
 /** Containers **/
 
 div[class*='-container'] {
 	margin: 0 auto;
+}
+
+div.title {
+    padding: 6% 0;
 }
 
 div.lg-container {
@@ -256,6 +301,27 @@ div.row-flex {
     justify-content: space-around;  
 }
 
+div.row-flex-left {
+    width: 100%;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;   
+}
+
 .centered-box {
     padding: 50px 0;
     width: 330px;
@@ -271,6 +337,7 @@ a[class$='-btn'], a[class*='-btn'],
 	border-radius: 3px;
 	color: #fff;
 	background-color: rgb(50, 150, 240);
+    background-color: rgb(41, 128, 185);
 	-webkit-transition: all 0.2s;
 }
 
@@ -305,10 +372,20 @@ a.simple-btn {
 
 /** Form inputs **/
 
-form .form-input {
+div.form-search-block {
+    width: 400px;
+    position: relative;
+}
+
+div.form-search-block > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+form .form-input, form .form-search {
 	display:block;
 	width: 100%;
-	margin: 16px auto;
+	margin: 36px auto;
 	font-size: 0.9em;
 	padding: 12px 14px;
 	border: 1px solid #ddd;
@@ -317,17 +394,41 @@ form .form-input {
     box-sizing: border-box;
 }
 
+form .form-search {
+    margin: 13px 10px;
+    padding: 6px 10px;
+    width: 100%;
+    color: #444;
+}
+
+form .form-submit-search {
+    position: absolute;
+    right: -10px;
+    top: 0;
+    padding: 6px 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 1em;
+    color: #888;
+    background-color: #fff;
+}
+
 form .form-input.sm {
     width: 50%;
     margin-left: 0;
 }
 
-form .form-input:focus {
+form .form-input:focus, form .form-search:focus {
 	border: 1px solid rgb(50, 150, 240);
+}
+
+form .form-search:focus + .form-submit-search {
+   color: rgb(50, 150, 240);
 }
 
 form .form-block {
 	display: block;
+    margin: 15px 0;
 	position: relative;
 }
 					
@@ -374,6 +475,55 @@ div.card > div.hovered-links {
 }
 
 div.card > div.hovered-links a {
+    position: relative;
     color: #fff;
     padding: 6px;
+    -webkit-transition: all 0.2s;
+}
+
+div.card > div.hovered-links a:hover {
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.42);
+}
+
+span.helper {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    display: none;
+    padding: 6px 10px;
+    border-radius: 2px;
+    z-index: 9;
+    font-size: 0.75em;
+    white-space: nowrap;
+    background-color: rgb(42, 112, 170);
+    background-color: rgb(52, 152, 219);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+span.helper .carret {
+    position: absolute;
+    display: inline-block;
+    float: left;
+    width: 0;
+    height: 0;
+    left: 8.5px;
+    top: -10px;
+    border: 5px solid transparent;
+    border-bottom: 5px solid rgb(42, 112, 170);
+    background-color: transparent;
+}
+
+div.card > div.hovered-links a:hover > span.helper {
+    display: block;
+}
+
+@media all and (max-width: 768px) {
+
+    .navbar-default li, .navbar-default a {
+        display: block;
+    }
+
+    ul.inline-block > li {
+        display: block;
+    }
 }

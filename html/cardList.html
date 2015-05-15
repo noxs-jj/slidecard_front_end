@@ -9,9 +9,40 @@
 	</div>
 </div>
 <div class="lg-flex-container" style="margin-top:50px;" ng-controller="cardListController">
-	<h2>Cards</h2>
-	<p><a href="#/cardCreate" class="simple-btn">Add a new card</a></p>
-	<div class="row-flex">
+	<div class="alert-success animated fadeIn" data-ng-show="error">
+		<p><span class="icon-cross"></span>{{ error }}</p>
+	</div>
+	<div class="title">
+		<h1 class="title">Managing cards</h1>
+		<p>Manage your business cards</p>
+		<p style="padding:50px 0;"><a href="#/cardCreate" class="simple-btn" style="padding:10px 20px 10px 10px;"><span class="icon-plus"></span> &nbsp; Add a new card</a></p>
+	</div>
+		<div ng-repeat="card in result">
+			<div class="card" style="color:#{{ card.color }};background-image:url({{ 'http://www.slidecard.tk' + card.template.path }});font-family:{{ card.font.name }}, Helvetica, Verdana">
+			<div class="hovered-links">
+					<a href="#/card/{{ card.id }}" class="icon-share-alternitive">
+						<span class="helper"><span class="carret"></span>Share</span>
+					</a>
+					<a href="#/card/{{ card.id }}" class="icon-text">
+						<span class="helper"><span class="carret"></span>More<span>
+					</a>
+					<a href="#/card/update/{{card.id }}" class="icon-pencil">
+						<span class="helper"><span class="carret"></span>Edit</span>
+					</a>
+					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
+						<span class="helper"><span class="carret"></span>Delete</span>
+					</a>
+			</div>
+			<h3>{{ card.job }} at {{ card.organization }}</h3>
+			<p>{{ card.slogan }}</p>
+			<p><i>{{ card.email }}</i><br>{{ card.phone }}</p>			
+		</div>
+
+</div>
+
+<!--
+
+
 		<div ng-repeat="card in result">
 			<div class="card" style="color:#{{ card.color }};background-image:url({{ 'http://www.slidecard.tk' + card.template.path }});font-family:{{ card.font.name }}, Helvetica, Verdana">
 				<div class="hovered-links">
@@ -24,10 +55,9 @@
 				<p><i>{{ card.email }}</i><br>{{ card.phone }}</p>
 			</div>
 		</div>
-	</div>
-</div>
 
-<!--
+//// JMOIROUX
+
 <h2 class="h2 text-center">My Cards</h2>
 <div class="container" ng-controller="cardListController">
 	<p class="bg-danger" data-ng-show="error">{{error}}</p>

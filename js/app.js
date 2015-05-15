@@ -1,5 +1,6 @@
 $(function ()
 {
+
 	$('.header-navbar ul.dropped').hover(function ()
 	{
 		$('.header-navbar li.dropdown a').addClass('opened');

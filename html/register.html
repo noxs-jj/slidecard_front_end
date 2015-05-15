@@ -1,6 +1,8 @@
-
-<div class="sm-container"  ng-controller="registerController">
-	<h2 class="title">Create your profile in a minute!</h2>
+<div class="md-container title"  ng-controller="registerController">
+	<div class="title">
+	<h1 class="title" align="center">Create your profile in a minute!</h1>
+	</div>
+	<div class="sm-container">
 	<form role="form" class="form" name="registerForm" data-ng-submit="registerForm.$valid && reg()" novalidate>
 		<div class="form-block">
 			<input type="text" class="form-input" placeholder="Firstname" required="true" data-ng-model="firstname">
@@ -22,6 +24,7 @@
 		</div>
 		<button class="submit-btn" type="submit" value="Login">Register</button>
 	</form>
+	</div>
 </div>
 <!--
 
