@@ -10,7 +10,7 @@ slideController.controller('accountUpdateController',
 		$scope.error = '';
 		$scope.cdn = urlCdn;
 
-		$http.get('http://slidecard.tk/v1/account?token=' + $cookies.usr_token)
+		$http.get(urlApi + '/account?token=' + $cookies.usr_token)
 			.success(function(data, status) {
 				console.log(status + ' Account success');
 				$scope.firstname = data.data.firstname;
@@ -22,25 +22,25 @@ slideController.controller('accountUpdateController',
 				$scope.id = data.data.id;
 			})
 			.error(function(data, status) {
-				$scope.error = status + ' / ' + data.message;
+				$scope.error = data.message;
 			})
 		$scope.update = function() {
 			if ($scope.update_password == $scope.retype_password) {
 				console.log('again password SUCCESS test');
 				var fd = new FormData();
 
-
-
-				fd.append("email",$scope.email);
-				fd.append("firstname",$scope.update_firstname);
-				fd.append("lastname",$scope.update_lastname);
-				fd.append("avatar",$scope.update_url_avatar);
-
+				if ($scope.email != undefined)
+					fd.append("email", $scope.email);
+				if ($scope.update_firstname != undefined)
+					fd.append("firstname", $scope.update_firstname);
+				if ($scope.update_lastname != undefined)
+					fd.append("lastname", $scope.update_lastname);
+				if ($scope.update_url_avatar != undefined)
+					fd.append("avatar", $scope.update_url_avatar);
 				var passLength = new String($scope.update_password).length;
-
 				if (passLength > 0)
 					fd.append("password",$scope.update_password);
-
+				console.log(fd);
 				$http.post(
 					urlApi + '/account/update?token=' + $cookies.usr_token,
 				 	fd, {
@@ -49,31 +49,17 @@ slideController.controller('accountUpdateController',
 					}
 				)
 				.success(function(data) {
-					$cookies.usr_token = data['data'].token;
 					console.log('Account Update success');
 					$location.path('/account');
 				})
 				.error(function(data, status) {
-					console.log(error);
 					$scope.error = "Account Update Failed";
 				})
-
-
-
-
 			}
 			else {
 				$scope.error = 'Passwords doesn\'t matchs, try again';
 				console.log('again password FAILED test');
 			}
-
-		//REMOVE
-		console.log(
-			$scope.firstname + " / " +
-			$scope.lastname + " / " +
-			$scope.email + " / " +
-			$scope.retypeEmail + " / " +
-			$scope.password);
 		}
 	}
 }]);
