@@ -38,8 +38,8 @@ slideController.controller('accountUpdateController',
 				if ($scope.update_url_avatar != undefined)
 					fd.append("avatar", $scope.update_url_avatar);
 				var passLength = new String($scope.update_password).length;
-				if (passLength > 0)
-					fd.append("password",$scope.update_password);
+				if ($scope.update_password != undefined)
+					fd.append("password", $scope.update_password);
 				console.log(fd);
 				$http.post(
 					urlApi + '/account/update?token=' + $cookies.usr_token,

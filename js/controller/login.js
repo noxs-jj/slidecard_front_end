@@ -12,6 +12,7 @@ slideController.controller('loginController',
 		})
 		.success(function(data, status) {
 			$cookies.usr_token = data['data'].token;
+			$cookies.logged = true;
 			console.log('Login success');
 			console.log($cookies.usr_token);
 			$location.path('/cardList');

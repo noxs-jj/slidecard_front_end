@@ -5,8 +5,11 @@ slideController.controller('welcomeController',
 		function($scope, $http, $cookies, $location) {
 
 	$scope.error = '';
-	if ($cookies.usr_token != '') {
-		$http.get('http://slidecard.tk/v1/account?token=' + $cookies.usr_token)
+	if ($cookies.logged == undefined)
+		$cookies.logged == false;
+	console.log($cookies.logged);
+	if ($cookies.usr_token != undefined && $cookies.usr_token != '') {
+		$http.get(urlApi + '/account?token=' + $cookies.usr_token)
 		.success(function(data, status) {
 			$scope.firstname = data.data.firstname;
 			$scope.lastname = data.data.lastname;

@@ -83,14 +83,12 @@ slideApp.config(['$routeProvider', '$httpProvider',
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
 
-//	Y3kXED2dX96LICoR9BGZ4unoFv9NRlR9uPQQkva.klxifeZT5Bru6
-
 slideApp.controller('contentController',
 		['$cookies', '$scope', '$location',
 		function($cookies, $scope, $location) {
 
 	$scope.isLog = function() {
-		if ($cookies.usr_token == '')
+		if ($cookies.usr_token == '' || $cookies.usr_token == undefined)
 			return 0;
 		return 1;
 	};

@@ -9,7 +9,7 @@ slideController.controller('logoutController',
 		$http.get(urlApi + '/logout?token=' + $cookies.usr_token)
 		.success(function(data, status) {
 			$cookies.usr_token = '';
-			//$location.path('/welcome');
+			$location.path('/welcome');
 			console.log('Logout:: Success');
 		})
 		.error(function(data, status) {
@@ -17,7 +17,7 @@ slideController.controller('logoutController',
 			// REMOVE
 			console.log('Logout:: error');
 		});
-		$cookies.usr_token = '';
+		$cookies.usr_token = undefined;
 		$location.path('/welcome');
 	}
 }]);
