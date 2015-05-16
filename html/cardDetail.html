@@ -1,9 +1,9 @@
 <div class="sm-container" style="margin:5% auto;">
-	<article class="card-detailed animated fadeInDown" style="color:#{{ card.color }};background-image:url({{ cdn + data.template.path }});font-family:{{ card.font.name }}, Helvetica, Verdana">
+	<article class="card-detailed animated fadeInDown" style="color:#{{ data.color }};background-image:url({{ cdn + data.template.path }});font-family:{{ card.font.name }}, Helvetica, Verdana">
 		<h1 class="title">{{ data.job }} at {{ data.organization }}</h1>
-		<p>{{ data.slogan }}</p>
-		<p><i>{{ data.email }}</i></p>
-		<p>{{ data.phone }}</p>
+		<p style="color:#{{ data.color }}">{{ data.slogan }}</p>
+		<p style="color:#{{ data.color }}"><i>{{ data.email }}</i></p>
+		<p style="color:#{{ data.color }}">{{ data.phone }}</p>
 	</article>
 </div>
 <div class="lg-flex-container">

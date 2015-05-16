@@ -58,8 +58,8 @@ slideController.controller('cardCreateController',
 					'phone': $scope.phone,
 					'slogan': $scope.slogan,
 					'color': $scope.color,
-					'id_font': $scope.id_font,
-					'id_template': $scope.id_template,
+					'font': $scope.id_font,
+					'template': $scope.id_template,
 					'type': $scope.type
 				}
 			)

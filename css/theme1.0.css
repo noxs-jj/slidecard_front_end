@@ -403,7 +403,7 @@ div.form-search-block > * {
 form .form-input, form .form-search {
 	display:block;
 	width: 100%;
-	margin: 36px auto;
+	margin: 16px auto;
 	font-size: 0.9em;
 	padding: 12px 14px;
 	border: 1px solid #ddd;
@@ -447,7 +447,7 @@ form .form-search:focus + .form-submit-search {
 
 form .form-block {
 	display: block;
-    margin: 15px 0;
+    margin: 35px 0;
 	position: relative;
 }
 					
