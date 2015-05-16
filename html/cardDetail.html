@@ -1,9 +1,37 @@
-<div class="sm-container">
-	<article class="card-detailed slideInUp">
-		<h1>Hello Card!</h1>
+<div class="sm-container" style="margin:5% auto;">
+	<article class="card-detailed animated fadeInDown" style="color:#{{ card.color }};background-image:url({{ cdn + data.template.path }});font-family:{{ card.font.name }}, Helvetica, Verdana">
+		<h1 class="title">{{ data.job }} at {{ data.organization }}</h1>
+		<p>{{ data.slogan }}</p>
+		<p><i>{{ data.email }}</i></p>
+		<p>{{ data.phone }}</p>
 	</article>
 </div>
-<h2 class="h2 text-center">Card Detail</h2>
+<div class="lg-flex-container">
+	<h3>Card #{{ data.id }} owned by {{ data.owner.firstname }} {{ data.owner.lastname }}</h3>
+	<p>
+		<a href="#/card/update/{{ data.id }}" title="Update card #{{ data.id }}" class="simple-btn">Edit</a>
+		<a href="#/card/delete/{{ data.id }}" title="Delete card #{{ data.id }}" class="simple-btn">Delete</a>
+	</p>
+	<table class="table">
+		<tbody>
+			<tr>
+				<td>Template</td>
+				<td>{{ data.template.name }}<span class="small right" style="margin-top:2px;">by {{ data.template.author.firstname }} {{ data.template.author.lastname }}</span></td>
+			</tr>
+			<tr>
+				<td>Font</td>
+				<td>{{ data.font.name }}</td>
+			</tr>
+			<tr>
+				<td>Id</td>
+				<td>{{ data.hash_code }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+<!-- <h2 class="h2 text-center">Card Detail</h2>
 
 <div class="container" ng-controller="cardDetailController">
 	<div class="alert-danger animated fadeIn" data-ng-show="error">
@@ -25,4 +53,4 @@
 	color: [{{data.color}}]</br>
 	created_at: [{{data.created_at}}]</br>
 	updated_at: [{{data.updated_at}}]</br>
-</div>
+</div> -->

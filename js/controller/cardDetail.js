@@ -13,6 +13,9 @@ slideController.controller('cardDetailController',
 			.success(function(data, status) {
 				console.log(status + ' Card Info Success');
 				$scope.data = data.data;
+
+				console.log(data.data);
+
 				$scope.cdn = urlCdn;
 				console.log($scope);
 			})

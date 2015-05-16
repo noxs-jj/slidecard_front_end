@@ -1,3 +1,18 @@
+<div class="md-container" style="margin:5% auto;">
+	<h2 class="title">Confirm you want to delete the following card from your cards</h2>
+</div>
+<div class="sm-container"  style="margin:5% auto;" data-ng-controller="cardDeleteController">
+	<article class="card-detailed" ng-controller="cardDetailController" style="color:#{{ card.color }};background-image:url({{ cdn + data.template.path }});font-family:{{ card.font.name }}, Helvetica, Verdana">
+		<h1 class="title">{{ data.job }} at {{ data.organization }}</h1>
+		<p>{{ data.slogan }}</p>
+		<p><i>{{ data.email }}</i></p>
+		<p>{{ data.phone }}</p>
+	</article>
+	<button type="button" class="simple-btn" ng-click="delete()">Delete</button>
+</div>
+
+
+<!--
 <h2 class="h2 text-center">Confirm you want to delete Following card from your cards</h2>
 <div data-ng-controller="cardDeleteController">
 	<div class="alert-danger animated fadeIn" data-ng-show="error">
@@ -30,3 +45,5 @@
 				<p><i>{{ data.email }}</i><br>{{ data.phone }}</p>
 	</div>
 </div>
+
+-->

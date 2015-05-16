@@ -8,27 +8,24 @@
 		</ul>
 	</div>
 </div>
-
-<div class="row-flex" ng-controller="cardUpdateController">
+<div class="lg-flex-container">
 	<div class="alert-danger animated fadeIn" data-ng-show="error">
 		<p><span class="icon-cross"></span>{{ error }}</p>
 	</div>
-	<div class="card">
-		OLD:
-		<p>-------------</p>
-		id: {{ card.id }}</br>
-		organization: {{ card.organization }}</br>
-		job: {{ card.job }}</br>
-		location: {{ card.location }}</br>
-		email: {{ card.email }}</br>
-		phone: {{ card.phone }}</br>
-		slogan: {{ card.slogan }}</br>
-		color: {{ card.color }}</br>
-		type: {{ card.type }}</br>
-		id_template: {{ card.id_template }}</br>
-		id_font: {{ card.id_font }}
-	</div>
+</div>
+<div class="row-flex" ng-controller="cardUpdateController">
+
 	<div>
+		<h2 class="title">Old card</h2>
+		<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + card.template.path }});font-family:{{ card.font.name }}, Helvetica, Verdana">
+
+			<h3>{{ card.job }} at {{ card.organization }}</h3>
+			<p>{{ card.slogan }}</p>
+			<p>{{ card.email }} / {{ card.phone }}</p>
+			<p>{{ card.location }}</p>
+		</div>
+	</div>
+	<div style="width:33%;">
 		<h2 class="title">Edit card #{{ card.id }}</h2>
 		<form class="form-signin" name="newCardForm" data-ng-submit="update()" novalidate>
 			<div class="form-block">
@@ -82,19 +79,16 @@
 			<button class="submit-btn" type="submit" value="Login">Update card</button>
 		</form>
 	</div>
-	<div class="card">
-		NEW:
-		<p>-------------</p>
-		organization: {{ organization }}</br>
-		job: {{ job }}</br>
-		location: {{ location }}</br>
-		email: {{ email }}</br>
-		phone: {{ phone }}</br>
-		slogan: {{ slogan }}</br>
-		color: {{ color }}</br>
-		type: {{ type }}</br>
-		id_template: {{ id_template }}</br>
-		id_font: {{ id_font }}
+	<div>
+		<h2 class="title">New card</h2>	
+		<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + template.path }});font-family:{{ font.name }}, Helvetica, Verdana">
+
+
+			<h3>{{job != undefined ? job : card.job }} at {{ organization != undefined ? organization : card.organization }}</h3>
+			<p>{{ slogan != undefined ? slogan : card.slogan }}</p>
+			<p>{{ email != undefined ? email : card.email }} / {{ phone != udefined ? phone : card.phone }}</p>
+			<p>{{ location }}</p>
+		</div>
 	</div>
 </div>
 

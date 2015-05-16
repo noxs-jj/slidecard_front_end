@@ -15,13 +15,22 @@ body {
     font-size: 0.9em;
 }
 
+.small {
+    font-size: 0.75em;
+    color: #888;
+}
+
+.right {
+    float: right;
+}
+
 a {
     text-decoration: none;
     color:rgb(52, 152, 219);
 }
 
 p {
-    color: #888;
+    color: #444;
 }
 
 h1.title , h2.title {
@@ -339,6 +348,7 @@ a[class$='-btn'], a[class*='-btn'],
 	border: none;
 	border-radius: 3px;
 	color: #fff;
+    cursor: pointer;
 	background-color: rgb(50, 150, 240);
     background-color: rgb(41, 128, 185);
 	-webkit-transition: all 0.2s;
@@ -369,8 +379,13 @@ a[class$='-btn']:hover, a[class*='-btn']:hover,
  	background-color: rgb(40, 130, 220);
 }
 
-a.simple-btn {
+a.simple-btn,button.simple-btn {
 	padding: 10px 20px;
+}
+
+button.simple-btn {
+    font-size: 1em;
+    margin: 25px 0 0 10px;
 }
 
 /** Form inputs **/
@@ -449,28 +464,33 @@ form .submit-btn {
 
 /** Cards **/
 
-div.card {
+.card-detailed, div.card {
     position: relative;
     display: inline-block;
     padding: 15px 32px;
     margin: 10px 10px;
-    vertical-align: top;
-    background-color: #eee;
-    border: 1px solid transparent !important;
-    border-radius: 2px;
-    background-size: cover;
-    width: 20vw;
-    height: 11.25vw;
     min-width: 330px;    
     min-height: 186px;
     max-width: 420px;
     max-height: 236px;
+    border: 1px solid transparent !important;
+    background-color: #eee;
+    border-radius: 2px;
+    background-size: cover;
+    width: 20vw;
+    height: 11.25vw;
+}
+
+div.card p {
+    vertical-align: top;
+
 /*    border: 1px solid #bbbbbb;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 */
 }
+
 
 div.card > div.hovered-links {
     position: absolute;
