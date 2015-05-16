@@ -27,13 +27,21 @@ slideController.controller('accountUpdateController',
 		$scope.update = function() {
 			if ($scope.update_password == $scope.retype_password) {
 				console.log('again password SUCCESS test');
-				$http.post(urlApi + '/account/update?token=' + $cookies.usr_token, {
-					'email': $scope.update_email,
-					'password': $scope.update_password,
-					'firstname': $scope.fupdate_firstname,
-					'lastname': $scope.update_lastname,
-					'avatar': $scope.update_url_avatar
-				})
+				var fd = new FormData();
+
+				fd.append("email",$scope.email);
+				fd.append("password",$scope.update_password);
+				fd.append("firstname",$scope.update_firstname);
+				fd.append("lastname",$scope.update_lastname);
+				fd.append("avatar",$scope.update_url_avatar);
+
+				$http.post(
+					urlApi + '/account/update?token=' + $cookies.usr_token,
+				 	fd, {
+						headers: {'Content-Type': undefined },
+						transformRequest: angular.identity
+					}
+				)
 				.success(function(data) {
 					$cookies.usr_token = data['data'].token;
 					console.log('Account Update success');

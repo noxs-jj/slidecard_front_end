@@ -20,7 +20,7 @@ slideController.controller('loginController',
 		.error(function(data, status) {
 			// REMOVE
 			console.log('Login error');
-			//$scope.error = status + " / " + data.message;
+			$scope.error = data.message;
 			console.log(data);
 		})
 		// REMOVE

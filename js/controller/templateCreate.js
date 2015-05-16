@@ -21,7 +21,7 @@ slideController.controller('templateCreateController',
 			fd.append("type",0);
 			fd.append("background",$scope.background);
 			fd.append("price",0);
-			 $http.post(urlApi + '/template/create?token=' + $cookies.usr_token,
+			$http.post(urlApi + '/template/create?token=' + $cookies.usr_token,
 			 	fd, {
 					headers: {'Content-Type': undefined },
 					transformRequest: angular.identity

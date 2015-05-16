@@ -1,4 +1,7 @@
 <div style="margin-top:50px" class="md-container" ng-controller="accountController">
+	<div class="alert-success animated fadeIn" data-ng-show="error">
+		<p><span class="icon-cross"></span>{{ error }}</p>
+	</div>
 	<div class="centered-box">
 		<img class="avatar" src="{{ avatar }}" alt="Profile {{ firstname }} {{ lastname }}">
 		<h2 class="title">{{ firstname }} {{ lastname }}</h2>

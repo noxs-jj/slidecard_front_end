@@ -10,6 +10,9 @@
 </div>
 
 <div class="row-flex" ng-controller="cardUpdateController">
+	<div class="alert-success animated fadeIn" data-ng-show="error">
+		<p><span class="icon-cross"></span>{{ error }}</p>
+	</div>
 	<div class="card">
 		OLD:
 		<p>-------------</p>
