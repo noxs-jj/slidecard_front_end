@@ -15,6 +15,16 @@ body {
     font-size: 0.9em;
 }
 
+.inline {
+    display: block;
+    width: 100%;
+}
+
+.inline > div {
+    display: inline-block;
+    vertical-align: top;
+}
+
 .small {
     font-size: 0.75em;
     color: #888;
