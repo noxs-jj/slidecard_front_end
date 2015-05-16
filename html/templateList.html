@@ -29,7 +29,7 @@
 			<tr ng-repeat="template in result">
 				<td align="center">{{ template.id }}</td>
 				<td>
-					<img src="{{ 'http://www.slidecard.tk' + template.path }}">
+					<img src="{{ cdn + template.path }}">
 				</td>
 				<td>
 					{{ template.type == '1' ? 'Professional' : 'Personal' }}

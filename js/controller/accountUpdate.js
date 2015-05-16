@@ -29,11 +29,17 @@ slideController.controller('accountUpdateController',
 				console.log('again password SUCCESS test');
 				var fd = new FormData();
 
+
+
 				fd.append("email",$scope.email);
-				fd.append("password",$scope.update_password);
 				fd.append("firstname",$scope.update_firstname);
 				fd.append("lastname",$scope.update_lastname);
 				fd.append("avatar",$scope.update_url_avatar);
+
+				var passLength = new String($scope.update_password).length;
+
+				if (passLength > 0)
+					fd.append("password",$scope.update_password);
 
 				$http.post(
 					urlApi + '/account/update?token=' + $cookies.usr_token,
@@ -51,6 +57,10 @@ slideController.controller('accountUpdateController',
 					console.log(error);
 					$scope.error = "Account Update Failed";
 				})
+
+
+
+
 			}
 			else {
 				$scope.error = 'Passwords doesn\'t matchs, try again';

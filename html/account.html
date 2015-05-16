@@ -1,33 +1,12 @@
 <div style="margin-top:50px" class="md-container" ng-controller="accountController">
-	<div class="alert-success animated fadeIn" data-ng-show="error">
+	<div class="alert-danger animated fadeIn" data-ng-show="error">
 		<p><span class="icon-cross"></span>{{ error }}</p>
 	</div>
 	<div class="centered-box">
-		<img class="avatar" src="{{ avatar }}" alt="Profile {{ firstname }} {{ lastname }}">
+		<img class="avatar" src="{{ cdn +  avatar }}" alt="Profile {{ firstname }} {{ lastname }}">
 		<h2 class="title">{{ firstname }} {{ lastname }}</h2>
 		<p>{{ card_hash }}</p>
 		<p>{{ email }}</p>
 		<a href="#/account/update" class="simple-btn"><span class="icon-edit"></span> Edit profile</a>
 	</div>
 </div>
-
-
-<!--
-<h2 class="h2 text-center">My Profile</h2>
-
-<div class="container" ng-controller="accountController">
-	<p class="bg-danger" data-ng-show="error">{{error}}</p>
-	<a href="#/account/update">
-		<button type="button" class="btn btn-warning align-right">Edit Profile</button>
-	</a>
-	</br></br></br>
-	<div>Firstname:	[{{firstname}}]</div>
-	<div>Lastname: [{{lastname}}]</div>
-	<div>Email: [{{email}}]</div>
-	<div>Avatar: [{{avatar}}]</div>
-	<div>User_id: [{{id}}]</div>
-	<div>LastLogin: [{{lastLogin}}]</div>
-	<div>???Card_Hash: [{{card_hash}}]</div>
-</div>
-
--->

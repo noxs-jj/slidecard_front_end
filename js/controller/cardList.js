@@ -8,12 +8,12 @@ slideController.controller('cardListController',
 		   $location.path('/login');
 	else {
 		$scope.error = '';
+		$scope.cdn = urlCdn;
 		$http.get(urlApi + '/cards?token=' + $cookies.usr_token)
 		.success(function(data, status) {
 			console.log(status + ' CardList success');
 			console.log(data);
 			$scope.result = data.data;
-			$scope.cdn = urlCdn;
 		})
 		.error(function(data, status) {
 			$scope.error = status + ' / ' + data.message;

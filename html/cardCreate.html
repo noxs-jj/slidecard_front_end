@@ -11,7 +11,7 @@
 <div class="sm-container" ng-controller="cardCreateController">
 	<h2 class="title">Add a new Card</h2>
 	<form class="form-signin" name="newCardForm" data-ng-submit="newCardForm.$valid && create()" novalidate>
-		<div class="alert-success animated fadeIn" data-ng-show="error">
+		<div class="alert-danger animated fadeIn" data-ng-show="error">
 			<p><span class="icon-cross"></span>{{ error }}</p>
 		</div>
 		<div class="form-block">

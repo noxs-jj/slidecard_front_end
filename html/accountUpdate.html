@@ -1,7 +1,9 @@
 <div class="lg-container" ng-controller="accountUpdateController">
 	<h2 class="title">Update profile</h2>
 	<form class="form-signin" name="newCardForm" data-ng-submit="update()" novalidate>
-		<p class="bg-danger" data-ng-show="error">{{error}}</p>
+		<div class="alert-danger animated fadeIn" data-ng-show="error">
+			<p><span class="icon-cross"></span>{{ error }}</p>
+		</div>
 		<div class="row-flex">
 			<div class="col-2">
 		<div class="form-block">
@@ -18,7 +20,7 @@
 		</div>
 
 		<div class="form-block">
-			<label for="avatar">Avatar</label>
+			<label for="avatar">Avatar (< 2Mbits) </label>
 			<input type="file" file-model="update_url_avatar" class="form-input">
 		</div>
 
