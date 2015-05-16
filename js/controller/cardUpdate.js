@@ -8,6 +8,7 @@ slideController.controller('cardUpdateController',
 		$location.path('/login');
 	else {
 		$scope.error = '';
+		$scope.cdn = urlCdn;
 		$http.get(urlApi + '/card/' + $routeParams.id + '?token=' + $cookies.usr_token)
 			.success(function(data) {
 				console.log('update get spe card success');

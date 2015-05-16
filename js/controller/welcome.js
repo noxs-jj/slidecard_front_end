@@ -11,6 +11,7 @@ slideController.controller('welcomeController',
 			$scope.firstname = data.data.firstname;
 			$scope.lastname = data.data.lastname;
 			$cookies.user_id = $scope.id;
+			$scope.cdn = urlCdn;
 		})
 		.error(function(data, status) {
 			$scope.error = status + ' / ' + data.message;

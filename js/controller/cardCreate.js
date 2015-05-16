@@ -8,6 +8,8 @@ slideController.controller('cardCreateController',
 		$location.path('/login');
 	else {
 		$scope.error = '';
+		$scope.cdn = urlCdn;
+
 		// TEMPLATE LIST
 		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
 			.success(function(data) {

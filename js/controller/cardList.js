@@ -13,6 +13,7 @@ slideController.controller('cardListController',
 			console.log(status + ' CardList success');
 			console.log(data);
 			$scope.result = data.data;
+			$scope.cdn = urlCdn;
 		})
 		.error(function(data, status) {
 			$scope.error = status + ' / ' + data.message;

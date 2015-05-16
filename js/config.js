@@ -4,6 +4,8 @@ console.log("config.js loaded");
 //
 var	urlApi = 'http://api.slidecard.ovh/v1';
 
+var urlCdn = 'http://cdn.slidecard.ovh';
+
 var slideController = angular.module('slideController',[]);
 
 var slideApp = angular.module('slideApp',

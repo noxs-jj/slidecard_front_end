@@ -8,6 +8,8 @@ slideController.controller('accountUpdateController',
 		$location.path('/login');
 	else {
 		$scope.error = '';
+		$scope.cdn = urlCdn;
+
 		$http.get('http://slidecard.tk/v1/account?token=' + $cookies.usr_token)
 			.success(function(data, status) {
 				console.log(status + ' Account success');

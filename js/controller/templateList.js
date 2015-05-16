@@ -12,6 +12,7 @@ slideController.controller('templateListController',
 		.success(function(data, status) {
 			console.log(status + ' templateList success');
 			$scope.result = data.data;
+			$scope.cdn = urlCdn;
 		})
 		.error(function(data, status) {
 			$scope.error = status + ' / ' + data.message;
