@@ -11,22 +11,35 @@ slideController.controller('templateCreateController',
 		$scope.create = function() {
 			var fd = new FormData();
 
-			fd.append("name",$scope.name);
-			fd.append("type",0);
-			fd.append("background",$scope.background);
-			fd.append("price",0);
-			$http.post(urlApi + '/template/create?token=' + $cookies.usr_token,
-			 	fd, {
-					headers: {'Content-Type': undefined },
-					transformRequest: angular.identity
-				}
-			)
-			.success(function(data) {
-				$location.path('/template');
-			})
-			.error(function(data, status) {
-				$scope.error = data.message;
-			})
+			fd.append("name", $scope.name);
+			fd.append("type", 0);
+			fd.append("background", $scope.background);
+			fd.append("price", 0);
+
+			console.log($scope.background.type);
+
+			if ($scope.background.size >= 2097152) {
+				$scope.error = "File must be < to 2 Mo";
+			}
+			else if ($scope.background.type != 'image/png'
+						&& $scope.background.type != 'image/jpeg'
+						&& $scope.background.type != 'image/gif') {
+				$scope.error = "File must be:  .png  /  .jpeg  /  .gif";
+			}
+			else {
+				$http.post(urlApi + '/template/create?token=' + $cookies.usr_token,
+					fd, {
+						headers: {'Content-Type': undefined },
+						transformRequest: angular.identity
+					}
+				)
+				.success(function(data) {
+					$location.path('/template');
+				})
+				.error(function(data, status) {
+					$scope.error = data.message;
+				})
+			}
 		}
 	}
 }]);

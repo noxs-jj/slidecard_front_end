@@ -7,7 +7,6 @@ slideController.controller('accountUpdateController',
 	else {
 		$scope.error = '';
 		$scope.cdn = urlCdn;
-
 		$http.get(urlApi + '/account?token=' + $cookies.usr_token)
 		.success(function(data, status) {
 			console.log(status + ' Account success');
@@ -22,36 +21,47 @@ slideController.controller('accountUpdateController',
 		.error(function(data, status) {
 			$scope.error = data.message;
 		})
-
 		$scope.update = function() {
+			$scope.error = '';
 			if ($scope.update_password == $scope.retype_password) {
-				console.log('again password SUCCESS test');
 				var fd = new FormData();
 
+				if ($scope.update_url_avatar != undefined && $scope.update_url_avatar != '') {
+					if ($scope.update_url_avatar.size >= 2097152) {
+						$scope.error = "File must be < to 2 Mo";
+					}
+					else if ($scope.update_url_avatar.type != 'image/png'
+								&& $scope.update_url_avatar.type != 'image/jpeg'
+								&& $scope.update_url_avatar.type != 'image/gif') {
+						$scope.error = "File must be:  .png  /  .jpeg  /  .gif";
+					}
+					else {
+						fd.append("avatar", $scope.update_url_avatar);
+					}
+				}
 				if ($scope.email != undefined)
 					fd.append("email", $scope.email);
 				if ($scope.update_firstname != undefined)
 					fd.append("firstname", $scope.update_firstname);
 				if ($scope.update_lastname != undefined)
 					fd.append("lastname", $scope.update_lastname);
-				if ($scope.update_url_avatar != undefined)
-					fd.append("avatar", $scope.update_url_avatar);	
-				if ($scope.update_password != undefined)
+				if ($scope.update_password != undefined && $scope.update_password != '')
 					fd.append("password", $scope.update_password);
-
-				$http.post(
-					urlApi + '/account/update?token=' + $cookies.usr_token,
-				 	fd, {
-						headers: {'Content-Type': undefined },
-						transformRequest: angular.identity
-					}
-				)
-				.success(function(data) {
-					$location.path('/account');
-				})
-				.error(function(data, status) {
-					$scope.error = data.message;
-				})
+				if ($scope.error == '') {
+					$http.post(
+						urlApi + '/account/update?token=' + $cookies.usr_token,
+					 	fd, {
+							headers: {'Content-Type': undefined },
+							transformRequest: angular.identity
+						}
+					)
+					.success(function(data) {
+						$location.path('/account');
+					})
+					.error(function(data, status) {
+						$scope.error = data.message;
+					})
+				}
 			}
 			else
 				$scope.error = 'Passwords doesn\'t matchs, try again';
