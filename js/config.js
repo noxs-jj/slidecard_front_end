@@ -1,4 +1,3 @@
-console.log("config.js loaded");
 //
 // Set API url
 //

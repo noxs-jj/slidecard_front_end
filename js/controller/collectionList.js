@@ -1,5 +1,3 @@
-console.log('collectionList.js loaded');
-
 slideController.controller('collectionListController',
 		['$scope', '$http', '$cookies', '$location',
 		function($scope, $http, $cookies, $location) {
@@ -8,15 +6,13 @@ slideController.controller('collectionListController',
 		   $location.path('/login');
 	else {
 		$scope.error = '';
+		$scope.cdn = urlCdn;
 		$http.get(urlApi + '/collection?token=' + $cookies.usr_token)
 		.success(function(data, status) {
-			console.log(status + ' CardList success');
 			$scope.result = data.data;
-			$scope.cdn = urlCdn;
 		})
 		.error(function(data, status) {
-			$scope.error = status + ' / ' + data.message;
-			console.log(data);
+			$scope.error = data.message;
 		})
 	}
 }]);

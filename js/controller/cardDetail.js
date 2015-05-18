@@ -1,5 +1,3 @@
-console.log('CardDetail.js loaded');
-
 slideController.controller('cardDetailController',
 		['$scope', '$http', '$cookies', '$location', '$routeParams',
 		function($scope, $http, $cookies, $location, $routeParams) {
@@ -8,20 +6,13 @@ slideController.controller('cardDetailController',
 		$location.path('/login');
 	else {
 		$scope.error = '';
-		console.log($routeParams.id)
+		$scope.cdn = urlCdn;
 		$http.get(urlApi + '/card/' + $routeParams.id + '?token=' + $cookies.usr_token)
-			.success(function(data, status) {
-				console.log(status + ' Card Info Success');
-				$scope.data = data.data;
-
-				console.log(data.data);
-
-				$scope.cdn = urlCdn;
-				console.log($scope);
-			})
-			.error(function(data, status) {
-				$scope.error = status + ' / ' + data.message;
-				console.log(status + ' Card Info Failed');
-			})
+		.success(function(data, status) {
+			$scope.data = data.data;
+		})
+		.error(function(data, status) {
+			$scope.error = data.message;
+		})
 	}
 }]);

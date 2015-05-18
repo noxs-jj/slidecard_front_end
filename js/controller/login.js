@@ -1,5 +1,3 @@
-console.log('login.js loaded');
-
 slideController.controller('loginController',
 		['$scope', '$http', '$cookies', '$location',
 		function($scope, $http, $cookies, $location) {
@@ -13,18 +11,14 @@ slideController.controller('loginController',
 		.success(function(data, status) {
 			$cookies.usr_token = data['data'].token;
 			$cookies.logged = true;
-			console.log('Login success');
-			console.log($cookies.usr_token);
-			$location.path('/cardList');
-			location.reload();
+			if (window.location.hostname == '192.168.59.103')
+				window.location.assign('http://' + window.location.hostname + ':' + window.location.port + '/#/cardList');
+			else
+				window.location.assign('http://' + window.location.hostname + '/#/cardList');
+			window.location.reload();
 		})
 		.error(function(data, status) {
-			// REMOVE
-			console.log('Login error');
 			$scope.error = data.message;
-			console.log(data);
 		})
-		// REMOVE
-		console.log($scope.email + " / " + $scope.password);
 	};
 }]);

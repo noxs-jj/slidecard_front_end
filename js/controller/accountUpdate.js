@@ -1,5 +1,3 @@
-console.log('acountUpdate.js loaded');
-
 slideController.controller('accountUpdateController',
 		['$scope', '$http', '$cookies', '$location',
 		function($scope, $http, $cookies, $location) {
@@ -11,19 +9,20 @@ slideController.controller('accountUpdateController',
 		$scope.cdn = urlCdn;
 
 		$http.get(urlApi + '/account?token=' + $cookies.usr_token)
-			.success(function(data, status) {
-				console.log(status + ' Account success');
-				$scope.firstname = data.data.firstname;
-				$scope.lastname = data.data.lastname;
-				$scope.email = data.data.email;
-				$scope.avatar = data.data.avatar;
-				$scope.lastLogin = data.data.last_login;
-				$scope.card_hash = data.data.card_hash;
-				$scope.id = data.data.id;
-			})
-			.error(function(data, status) {
-				$scope.error = data.message;
-			})
+		.success(function(data, status) {
+			console.log(status + ' Account success');
+			$scope.firstname = data.data.firstname;
+			$scope.lastname = data.data.lastname;
+			$scope.email = data.data.email;
+			$scope.avatar = data.data.avatar;
+			$scope.lastLogin = data.data.last_login;
+			$scope.card_hash = data.data.card_hash;
+			$scope.id = data.data.id;
+		})
+		.error(function(data, status) {
+			$scope.error = data.message;
+		})
+
 		$scope.update = function() {
 			if ($scope.update_password == $scope.retype_password) {
 				console.log('again password SUCCESS test');
@@ -36,11 +35,10 @@ slideController.controller('accountUpdateController',
 				if ($scope.update_lastname != undefined)
 					fd.append("lastname", $scope.update_lastname);
 				if ($scope.update_url_avatar != undefined)
-					fd.append("avatar", $scope.update_url_avatar);
-				var passLength = new String($scope.update_password).length;
+					fd.append("avatar", $scope.update_url_avatar);	
 				if ($scope.update_password != undefined)
 					fd.append("password", $scope.update_password);
-				console.log(fd);
+
 				$http.post(
 					urlApi + '/account/update?token=' + $cookies.usr_token,
 				 	fd, {
@@ -49,17 +47,14 @@ slideController.controller('accountUpdateController',
 					}
 				)
 				.success(function(data) {
-					console.log('Account Update success');
 					$location.path('/account');
 				})
 				.error(function(data, status) {
-					$scope.error = "Account Update Failed";
+					$scope.error = data.message;
 				})
 			}
-			else {
+			else
 				$scope.error = 'Passwords doesn\'t matchs, try again';
-				console.log('again password FAILED test');
-			}
 		}
 	}
 }]);

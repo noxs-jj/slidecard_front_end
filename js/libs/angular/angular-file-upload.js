@@ -5,7 +5,6 @@
 // Directive that makes the inputs with type `file` to be
 // available in the `$scope` and be assigned to a model.
 //
-console.log('file upload loaded');
 (function () {
 	'use strict';
 
@@ -34,5 +33,4 @@ console.log('file upload loaded');
 			};
 		}
 	]);
-
 })();

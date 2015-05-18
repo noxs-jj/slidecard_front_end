@@ -1,5 +1,3 @@
-console.log('route.js loaded');
-
 slideApp.config(['$routeProvider', '$httpProvider',
 				function ($routeProvider, $httpProvider) {
 	$routeProvider.

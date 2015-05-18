@@ -1,5 +1,3 @@
-console.log('templateList.js loaded');
-
 slideController.controller('templateListController',
 		['$scope', '$http', '$cookies', '$location',
 		function($scope, $http, $cookies, $location) {
@@ -11,12 +9,10 @@ slideController.controller('templateListController',
 		$scope.cdn = urlCdn;
 		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
 		.success(function(data, status) {
-			console.log(status + ' templateList success');
 			$scope.result = data.data;
 		})
 		.error(function(data, status) {
-			$scope.error = status + ' / ' + data.message;
-			console.log(status + 'templateList Failed');
+			$scope.error = data.message;
 		})
 	}
 }]);

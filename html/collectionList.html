@@ -1,25 +1,10 @@
-<!-- <div class="navbar-default">
-	<div class="lg-flex-container">
-		<ul class="inline-block">
-			<li><a href="#">Test default</a></li>
-			<li>
-				<form method="#" action="#" role="form">
-					<div class="form-search-block">
-						<input type="text" name="search" placeholder="Looking for someone?" class="form-search">
-						<button class="form-submit-search icon-magnifying-glass"></button>
-					</div>
-				</form>
-			</li>
-		</ul>
-	</div>
-</div> -->
 <div class="lg-flex-container">
 	<div class="title">
 		<h1 class="title">Your Network</h1>
 		<p>Some description ...</p>
 	</div>
 	<div data-ng-repeat="entry in result">
-		<div class="card" style="color:#{{ card.color }};background-image:url({{ 'http://www.slidecard.tk' + card.template.path }});font-family:{{ card.font.name }}, Helvetica, Verdana">
+		<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + entry.template.path }});font-family:{{ card.font.name }}, Helvetica, Verdana">
 			<div class="hovered-links">
 					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
 						<span class="helper"><span class="carret"></span>Remove</span>
