@@ -8,7 +8,7 @@
 		</ul>
 	</div>
 </div>
-<div class="sm-container" ng-controller="cardCreateController">
+<div class="sm-container" data-ng-controller="cardCreateController">
 	<div class="title"><h1 class="title">Add a new Card</h1></div>
 	<form class="form-signin" name="newCardForm" data-ng-submit="newCardForm.$valid && create()" novalidate>
 		<div class="alert-danger animated fadeIn" data-ng-show="error">
@@ -38,8 +38,8 @@
 		<div class="form-block">
 			<label for="type">Card type</label>
 			<select class="form-input select" data-ng-model="type">
-				<option value="0" ng-selected="true">{{type0}}</option>
-				<option value="1">{{type1}}</option>
+				<option value="0" data-ng-selected="true">Professional</option>
+				<option value="1">Personal</option>
 			</select>
 		</div>
 		<div class="form-block">
@@ -58,7 +58,7 @@
 				<option
 					data-ng-repeat="entry in fonts"
 					value="{{entry.id}}"
-					ng-selected="entry.id == 1">{{entry.name}}
+					data-ng-selected="entry.id == 1">{{entry.name}}
 				</option>
 			</select>
 		</div>		

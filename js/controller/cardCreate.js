@@ -17,16 +17,6 @@ slideController.controller('cardCreateController',
 			$scope.error = $scope.error + " | cardCreate get templates failed";
 		})
 
-		// TYPES LIST
-		$http.get(urlApi + '/card/types/all?token=' + $cookies.usr_token)
-		.success(function(data) {
-			$scope.type0 = data.data[0];
-			$scope.type1 = data.data[1];
-		})
-		.error(function(data, status) {
-			$scope.error = $scope.error + " | cardCreate get types failed";
-		})
-
 		// FONTS LIST
 		$http.get(urlApi + '/fonts?token=' + $cookies.usr_token)
 		.success(function(data) {

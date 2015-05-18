@@ -9,7 +9,7 @@
 	</div>
 </div>
 
-<div class="sm-container" ng-controller="templateCreateController">
+<div class="sm-container" data-ng-controller="templateCreateController">
 	<h2 class="title">Create your new template!</h2>
 	<form class="form-signin" name="loginForm" data-ng-submit="create()" enctype="multipart/form-data" novalidate>
 		<div class="alert-danger animated fadeIn" data-ng-show="error">
@@ -27,11 +27,11 @@
 			<label for="type">Type</label>
 			<select required="true"
 				type="text"
-				ng-data-model="type"
+				data-ng-model="type"
 				class="form-input select">
 
-				<option value="0" selected="true">Professional</option>
-				<option value="1">Personal</option>
+				<option value="0" data-ng-selected="true">Professional / {{}}</option>
+				<option value="1">Personal / {{}}</option>
 			</select>
 		</div>
 
