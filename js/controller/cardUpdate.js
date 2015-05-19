@@ -16,11 +16,11 @@ slideController.controller('cardUpdateController',
 			})
 		// TEMPLATE LIST
 		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
-			.success(function(data) {
+		.success(function(data) {
 			$scope.templates = data;
 		})
 		.error(function(data, status) {
-			$scope.error = $scope.error + " | cardUpdate get templates failed";
+			$scope.error = data.message;
 		})
 		// FONTS LIST
 		$http.get(urlApi + '/fonts?token=' + $cookies.usr_token)
@@ -30,16 +30,17 @@ slideController.controller('cardUpdateController',
 		.error(function(data, status) {
 			$scope.error = data.message;
 		})
-		$scope.update = function() {		
-			if ($scope.color == undefined)
+		$scope.update = function() {
+				if ($scope.color == undefined)
 				$scope.color = $scope.card.color;
+			else
+				$scope.color = $scope.color.substring(1, 7);
 			if ($scope.type == undefined)
 				$scope.type = $scope.card.type;
 			if ($scope.id_template == undefined)
 				$scope.id_template = $scope.card.template.id;
 			if ($scope.id_font == undefined)
 				$scope.id_font = $scope.card.id_font;
-			$scope.color = $scope.color.substring(1, 7);
 			$http.post(
 				urlApi + '/card/update/' + $routeParams.id + '?token=' + $cookies.usr_token, {
 					'organization': $scope.organization,
@@ -57,7 +58,7 @@ slideController.controller('cardUpdateController',
 				$location.path('/cardList');
 			})
 			.error(function(data, status) {
-				$scope.error = $scope.error + " | Update Card Failed";
+				$scope.error = data.message;
 			})
 		}
 	}

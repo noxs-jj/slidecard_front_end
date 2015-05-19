@@ -68,8 +68,8 @@
 				<select class="form-input select" data-ng-model="id_template">
 					<option
 						data-ng-repeat="entry in templates.data"
-						value="{{entry.id}}"
-						ng-selected="card.id_template == entry.id">{{entry.name}}
+						data-ng-value="{{entry.id}}"
+						data-ng-selected="card.id_template == entry.id">{{entry.name}}
 					</option>
 				</select>
 			</div>
@@ -78,8 +78,8 @@
 				<select  class="form-input select" data-ng-model="id_font">
 					<option
 						data-ng-repeat="entry in fonts"
-						value="{{entry.id}}"
-						ng-selected="card.id_font == entry.id">{{entry.name}}
+						data-ng-value="{{entry.id}}"
+						data-ng-selected="card.id_font == entry.id">{{entry.name}}
 					</option>
 				</select>
 			</div>		
@@ -88,7 +88,7 @@
 	</div>
 	<div>
 		<h2 class="title">New card</h2>	
-		<div class="card" style="color:{{ color }};background-image:url({{ cdn + card.template.path }});font-family:{{ font.name }}, Helvetica, Verdana">
+		<div class="card" style="color:{{ color }};background-image:url({{ cdn + templates.data[id_template - 1].path }});font-family:{{ fonts[id_font - 1].name }}, Helvetica, Verdana">
 
 			<h3 ng-if="organization == undefined">{{ card.organization }}</h3>
 			<h3 ng-if="organization == ''">{{ card.organization }}</h3>
