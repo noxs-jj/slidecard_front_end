@@ -53,8 +53,8 @@
 				<input type="text" class="form-input" placeholder="{{ card.slogan }}" value="{{ slogan }}" data-ng-model="slogan">
 			</div>
 			<div class="form-block">
-				<label for="font">Font color</label>
-				<input type="text" class="form-input sm" placeholder="{{ card.color }}" value="{{ color }}" data-ng-model="color">
+				<color-picker ng-model="color"></color-picker>
+				<input type="text" class="form-input sm" placeholder="#{{ card.color }}" value="{{ color }}" data-ng-model="color">
 			</div>
 			<div class="form-block">
 				<label for="type">Card type</label>
@@ -88,7 +88,7 @@
 	</div>
 	<div>
 		<h2 class="title">New card</h2>	
-		<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + template.path }});font-family:{{ font.name }}, Helvetica, Verdana">
+		<div class="card" style="color:{{ color }};background-image:url({{ cdn + card.template.path }});font-family:{{ font.name }}, Helvetica, Verdana">
 
 			<h3 ng-if="organization == undefined">{{ card.organization }}</h3>
 			<h3 ng-if="organization == ''">{{ card.organization }}</h3>

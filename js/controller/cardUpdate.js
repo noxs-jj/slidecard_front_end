@@ -9,14 +9,10 @@ slideController.controller('cardUpdateController',
 		$scope.cdn = urlCdn;
 		$http.get(urlApi + '/card/' + $routeParams.id + '?token=' + $cookies.usr_token)
 			.success(function(data) {
-				console.log('update get spe card success');
 				$scope.card = data.data;
-				console.log(data);
 			})
 			.error(function(data, status) {
-				console.log(error);
-				$scope.error = $scope.error + " | update get spe card failed";
-				console.log(data);
+				$scope.error = data.message;
 			})
 		// TEMPLATE LIST
 		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
@@ -32,9 +28,18 @@ slideController.controller('cardUpdateController',
 			$scope.fonts = data.data;
 		})
 		.error(function(data, status) {
-			$scope.error = $scope.error + " | cardUpdate get fonts failed";
+			$scope.error = data.message;
 		})
-		$scope.update = function() {
+		$scope.update = function() {		
+			if ($scope.color == undefined)
+				$scope.color = $scope.card.color;
+			if ($scope.type == undefined)
+				$scope.type = $scope.card.type;
+			if ($scope.id_template == undefined)
+				$scope.id_template = $scope.card.template.id;
+			if ($scope.id_font == undefined)
+				$scope.id_font = $scope.card.id_font;
+			$scope.color = $scope.color.substring(1, 7);
 			$http.post(
 				urlApi + '/card/update/' + $routeParams.id + '?token=' + $cookies.usr_token, {
 					'organization': $scope.organization,
