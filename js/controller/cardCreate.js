@@ -12,12 +12,10 @@ slideController.controller('cardCreateController',
 		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
 			.success(function(data) {
 			$scope.templates = data.data;
-			console.log($scope.templates);
 		})
 		.error(function(data, status) {
 			$scope.error = $scope.error + " | cardCreate get templates failed";
 		})
-
 
 		// FONTS LIST
 		$http.get(urlApi + '/fonts?token=' + $cookies.usr_token)
@@ -34,6 +32,7 @@ slideController.controller('cardCreateController',
 				$scope.type = 0;
 			if ($scope.id_template == undefined)
 				$scope.id_template = $scope.templates[0].id;
+			$scope.color = $scope.color.substring(1, 7);
 			$http.post(urlApi + '/card/create?token=' + $cookies.usr_token, {
 					'organization': $scope.organization,
 					'job': $scope.job,

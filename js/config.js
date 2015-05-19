@@ -8,4 +8,4 @@ var urlCdn = 'http://cdn.slidecard.ovh';
 var slideController = angular.module('slideController',[]);
 
 var slideApp = angular.module('slideApp',
-	['ngRoute', 'ngCookies', 'slideController', 'file-model']);
+	['ngRoute', 'ngCookies', 'slideController', 'file-model', 'mp.colorPicker']);

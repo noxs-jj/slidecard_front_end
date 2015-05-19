@@ -33,7 +33,8 @@
 			<input type="text" class="form-input" placeholder="An amazing slogan! (required)" required="true" data-ng-model="slogan">
 		</div>
 		<div class="form-block">
-			<input type="text" class="form-input" placeholder="Font color (ex: FF9900) (required)" required="true" data-ng-model="color">
+			<color-picker ng-model="color"></color-picker>
+			<input type="text" class="form-input" placeholder="Font color (ex: FF9900) (required)" required="true" data-ng-model="color" disabled="true" ng-init="color = '#FFFFFF'">
 		</div>
 
 
@@ -44,8 +45,6 @@
 				<option value="1">Personal</option>
 			</select>
 		</div>
-
-
 		<div class="form-block">
 			<label for="template">Choose a template</label>
 			<select name="id_template" class="form-input select" data-ng-model="id_template">
