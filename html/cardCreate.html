@@ -53,7 +53,7 @@
 				<option
 					data-ng-repeat="entry in templates"
 					value="{{entry.id}}"
-					data-ng-selected="entry.index == 0">{{entry.name}}
+					data-ng-selected="entry.$first.id == entry.id">{{entry.name}}
 				</option>
 			</select>
 		</div>
