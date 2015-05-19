@@ -28,8 +28,9 @@ slideController.controller('cardCreateController',
 
 		// CREATE CARD POST
 		$scope.create = function() {
-			$http.post(urlApi + '/card/create?token=' + $cookies.usr_token,
-				{
+			if ($scope.type == undefined)
+				$scope.type = 0;
+			$http.post(urlApi + '/card/create?token=' + $cookies.usr_token, {
 					'organization': $scope.organization,
 					'job': $scope.job,
 					'location': $scope.location,
@@ -51,3 +52,9 @@ slideController.controller('cardCreateController',
 		}
 	}
 }]);
+
+// <select name="type" ng-model="cards.type" class="typecards" form="typeform">
+// 	<option value="0">professional</option>
+// 	<option value="1">personal</option>
+// 	<option value="2" selected="selected">all</option>
+// </select>

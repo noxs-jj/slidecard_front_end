@@ -35,26 +35,30 @@
 		<div class="form-block">
 			<input type="text" class="form-input" placeholder="Font color (ex: FF9900) (required)" required="true" data-ng-model="color">
 		</div>
+
+
 		<div class="form-block">
 			<label for="type">Card type</label>
-			<select class="form-input select" data-ng-model="type">
+			<select name="type" class="form-input select" data-ng-model="type" form="typeform">
 				<option value="0" data-ng-selected="true">Professional</option>
 				<option value="1">Personal</option>
 			</select>
 		</div>
+
+
 		<div class="form-block">
 			<label for="template">Choose a template</label>
-			<select class="form-input select"  data-ng-model="id_template">
+			<select class="form-input select" data-ng-model="id_template">
 				<option
 					data-ng-repeat="entry in templates"
 					value="{{entry.id}}"
-					ng-selected="entry.id == 1">{{entry.name}}
+					data-ng-selected="entry.index == 0">{{entry.name}}
 				</option>
 			</select>
 		</div>
 		<div class="form-block">
 			<label for="template">Choose a font</label>
-			<select  class="form-input select"   data-ng-model="id_font">
+			<select  class="form-input select" data-ng-model="id_font">
 				<option
 					data-ng-repeat="entry in fonts"
 					value="{{entry.id}}"
