@@ -12,7 +12,7 @@ slideController.controller('cardCreateController',
 		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
 			.success(function(data) {
 			$scope.templates = data.data;
-			// console.log($scope.templates);
+			console.log($scope.templates);
 		})
 		.error(function(data, status) {
 			$scope.error = $scope.error + " | cardCreate get templates failed";
@@ -32,7 +32,7 @@ slideController.controller('cardCreateController',
 		$scope.create = function() {
 			if ($scope.type == undefined)
 				$scope.type = 0;
-			console.log($scope.id_template);
+			if ($scope.id_template == undefined)
 			$http.post(urlApi + '/card/create?token=' + $cookies.usr_token, {
 					'organization': $scope.organization,
 					'job': $scope.job,

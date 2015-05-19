@@ -10,7 +10,6 @@
 </div>
 <div class="sm-container" data-ng-controller="cardCreateController">
 	<div class="title"><h1 class="title">Add a new Card</h1></div>
-	<form class="form-signin" name="newCardForm" data-ng-submit="create()" novalidate>
 	<form class="form-signin" name="newCardForm" data-ng-submit="newCardForm.$valid && create()" novalidate>
 		<div class="alert-danger animated fadeIn" data-ng-show="error">
 			<p><span class="icon-cross"></span>{{ error }}</p>
@@ -49,14 +48,13 @@
 
 		<div class="form-block">
 			<label for="template">Choose a template</label>
-			<select class="form-input select" data-ng-model="id_template">
+			<select name="id_template" class="form-input select" data-ng-model="id_template">
 				<option
 					data-ng-repeat="entry in templates"
 					value="{{entry.id}}"
-					data-ng-selected="entry.$first.id == entry.id">{{entry.name}}
+					data-ng-selected="templates[0].id == entry.id">{{entry.name}}
 				</option>
 			</select>
-		</div>
 		<div class="form-block">
 			<label for="template">Choose a font</label>
 			<select  class="form-input select" data-ng-model="id_font">
