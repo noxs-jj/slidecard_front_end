@@ -30,8 +30,6 @@ slideController.controller('cardCreateController',
 		$scope.create = function() {
 			if ($scope.type == undefined)
 				$scope.type = 0;
-			if ($scope.id_template == undefined)
-				$scope.id_template = $scope.templates[0].id;
 			$scope.color = $scope.color.substring(1, 7);
 			$http.post(urlApi + '/card/create?token=' + $cookies.usr_token, {
 					'organization': $scope.organization,
