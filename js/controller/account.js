@@ -19,7 +19,6 @@ slideController.controller('accountController',
 			$scope.accept_news = data.data.accept_news;
 			$scope.accept_notif = data.data.accept_notif;
 			$cookies.user_id = $scope.id;
-
 		})
 		.error(function(data, status) {
 			$scope.error = status + ' / ' + data.message;
