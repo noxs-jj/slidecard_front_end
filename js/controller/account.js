@@ -17,6 +17,7 @@ slideController.controller('accountController',
 			$scope.card_hash = data.data.card_hash;
 			$scope.id = data.data.id;
 			$scope.accept_news = data.data.accept_news;
+			$scope.accept_notif = data.data.accept_notif;
 			$cookies.user_id = $scope.id;
 
 		})
