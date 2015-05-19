@@ -9,7 +9,6 @@ slideController.controller('accountUpdateController',
 		$scope.cdn = urlCdn;
 		$http.get(urlApi + '/account?token=' + $cookies.usr_token)
 		.success(function(data, status) {
-			console.log(status + ' Account success');
 			$scope.firstname = data.data.firstname;
 			$scope.lastname = data.data.lastname;
 			$scope.email = data.data.email;
