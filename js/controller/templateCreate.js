@@ -11,13 +11,12 @@ slideController.controller('templateCreateController',
 		$scope.create = function() {
 			var fd = new FormData();
 
+			if ($scope.type == undefined)
+				$scope.type = 0;
 			fd.append("name", $scope.name);
-			fd.append("type", 0);
+			fd.append("type", $scope.type);
 			fd.append("background", $scope.background);
 			fd.append("price", 0);
-
-			console.log($scope.background.type);
-
 			if ($scope.background.size >= 2097152) {
 				$scope.error = "File must be < to 2 Mo";
 			}

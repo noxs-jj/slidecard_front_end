@@ -52,9 +52,3 @@ slideController.controller('cardCreateController',
 		}
 	}
 }]);
-
-// <select name="type" ng-model="cards.type" class="typecards" form="typeform">
-// 	<option value="0">professional</option>
-// 	<option value="1">personal</option>
-// 	<option value="2" selected="selected">all</option>
-// </select>
