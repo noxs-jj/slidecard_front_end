@@ -16,7 +16,9 @@ slideController.controller('accountController',
 			$scope.lastLogin = data.data.last_login;
 			$scope.card_hash = data.data.card_hash;
 			$scope.id = data.data.id;
+			$scope.accept_news = data.data.accept_news;
 			$cookies.user_id = $scope.id;
+
 		})
 		.error(function(data, status) {
 			$scope.error = status + ' / ' + data.message;
