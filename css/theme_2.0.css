@@ -25,7 +25,7 @@ a {
 
 p {
 	line-height: 23px;
-	color: rgb(170, 190, 200);
+	color: rgb(140, 170, 190);
 }
 
 h1.title,
@@ -76,6 +76,34 @@ div.lightgrey-container {
 	background-color: rgb(230, 235, 245);
 }
 
+div.blue-container {
+	background-color: rgb(0, 100, 200);
+}
+
+div.flex-row {
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-flex-direction: row space-around;
+	-moz-flex-direction: row space-around;
+	-ms-flex-direction: row space-around;
+	flex-direction: row space-around;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: space-around;
+	-moz-justify-content: space-around;
+	-ms-justify-content: space-around;
+	justify-content: space-around;
+}
+
 div.lg-container {
 	max-width: 1000px;
 	width: 90%;
@@ -107,9 +135,20 @@ header {
 	background-image: radial-gradient(bottom left, rgb(50, 150, 220) 0%, rgb(0, 100, 200) 100%);
 }
 
+header.standard {
+	height: 100%;
+	background-image: none;
+	background-color: rgb(33, 115, 205);
+}
+
 .header-navbar {
 	padding: 35px 0;
 	border-top: 3px solid #fff;
+}
+
+header.standard .header-navbar {
+	padding: 28px 0;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .header-navbar a {
@@ -206,8 +245,13 @@ a[class$='-btn'] {
 /** Footer **/
 
 footer {
-	padding: 60px 0 10px 0;
+	padding: 60px 0 10px 0;	
+	color: rgba(255, 255, 255, 0.3);
 	background-color: rgb(20, 35, 60);
+}
+
+footer h3 {
+	color: rgba(255, 255, 255, 0.7);
 }
 
 footer .copyright {
@@ -218,8 +262,6 @@ footer .copyright {
 /** Form **/
 
 .form-footer-newsletter {
-	position: absolute;
-	right: 0;
 }
 
 .form-footer-newsletter > * {
@@ -246,6 +288,48 @@ footer .copyright {
 	border-radius: 0 3px 3px 0;
 }
 
+.form-block > label, .form-block > .form-input {
+	display: block;
+	margin: 5px 0;
+	box-sizing: box-size;
+}
+
+.form-input {
+	padding: 8px 14px;
+	color: #777;
+	min-width: 220px;
+	width: 100%;
+	font-family: Helvetica Neue, Helvetica, "sans-serif";
+	font-weight: normal;
+	font-size: 0.9em;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.form-input:focus {
+	border: 1px solid rgb(50, 150, 220);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+}
+
+.form-block > label {
+	font-size: 1em;
+	color: #888;
+}
+
+.form-submit {
+	cursor: pointer;
+	color: #fff;
+	border: none;
+	border-radius: 2px;
+	padding: 10px 17px;
+	font-size: 1em;
+	background-color: rgb(33, 115, 205);
+}
+
 /** Custom **/
 
 .team .avatar {
@@ -266,12 +350,16 @@ footer .copyright {
 }
 
 .player {
-	height: 330px;
-	width: 50%;
+	width: 43.33vw;
+	height: 28.75vw;
 	margin-right: 50px;
 	background-color: #eee;
 }
 
 .player + div {
 	width: 40%;
+}
+
+.newsletter {
+	padding: 10px 0;
 }
