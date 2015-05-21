@@ -13,8 +13,7 @@
 		<p><span class="icon-cross"></span>{{ error }}</p>
 	</div>
 </div>
-<div class="row-flex" ng-controller="cardUpdateController">
-
+<div class="row-flex">
 	<div>
 		<h2 class="title">Old card</h2>
 		<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + card.template.path }});font-family:{{ card.font.name }}, Helvetica, Verdana">
@@ -91,9 +90,9 @@
 	<div>
 		<h2 class="title">New card</h2>
 		<div class="card"
-		style="color:{{ color }};
-		background-image:url({{ cdn + templates[indexTemplate].path }});
-		font-family:{{ fonts[id_font - 1].name }}, Helvetica, Verdana">
+			style="color:{{ color }};
+			background-image:url({{ cdn + templates[indexTemplate].path }});
+			font-family:{{ fonts[id_font - 1].name }}, Helvetica, Verdana">
 
 			<h3 ng-if="organization == undefined">{{ card.organization }}</h3>
 			<h3 ng-if="organization == ''">{{ card.organization }}</h3>
@@ -114,7 +113,6 @@
 			<p ng-if="location == undefined">{{ card.location }}</p>
 			<p ng-if="location == ''">{{ card.location }}</p>
 			<p ng-if="location">{{ location }}</p>
-
 		</div>
 	</div>
 </div>

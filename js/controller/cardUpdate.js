@@ -21,7 +21,6 @@ slideController.controller('cardUpdateController',
 		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
 		.success(function(data) {
 			$scope.templates = data.data;
-			console.log($scope.templates);
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;

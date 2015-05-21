@@ -16,7 +16,6 @@ slideController.controller('templateDeleteController',
 		})
 
 		$scope.delete = function() {
-			console.log('debugg 1');
 			$http.get(urlApi + '/template/delete/' + $routeParams.id
 				+ '?token=' + $cookies.usr_token)
 			.success(function(data, status) {

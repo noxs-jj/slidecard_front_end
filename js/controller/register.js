@@ -20,7 +20,7 @@ slideController.controller('registerController',
 			})	
 		}
 		else if ($scope.email_again != $scope.email) {
-			$scope.error = "Emails don't match";
+			$scope.error = "Emails don't matchs";
 		}
 		else if ($scope.password != $scope.retype_password) {
 			$scope.error = "Passwords don't match";

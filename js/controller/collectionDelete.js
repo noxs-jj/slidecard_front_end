@@ -10,7 +10,6 @@ slideController.controller('collectionDeleteController',
 			$http.get(urlApi + '/collection/delete/' + $routeParams.id
 				+ '?token=' + $cookies.usr_token)
 			.success(function(data, status) {
-				console.log(status + ' CollectionDelete success');
 				$location.path('/collection');
 			})
 			.error(function(data, status) {
