@@ -14,7 +14,7 @@ slideController.controller('cardCreateController',
 			$scope.templates = data.data;
 		})
 		.error(function(data, status) {
-			$scope.error = $scope.error + " | cardCreate get templates failed";
+			$scope.error = data.message;
 		})
 
 		// FONTS LIST
@@ -23,7 +23,7 @@ slideController.controller('cardCreateController',
 			$scope.fonts = data.data;
 		})
 		.error(function(data, status) {
-			$scope.error = $scope.error + " | cardCreate get fonts failed";
+			$scope.error = data.message;
 		})
 
 		// CREATE CARD POST

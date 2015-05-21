@@ -69,7 +69,10 @@
 	</div>
 	<div>
 		<h2 class="title">New card</h2>	
-		<div class="card" style="color:{{ color }};background-image:url({{ cdn + templates.data[id_template - 1].path }});font-family:{{ fonts[id_font - 1].name }}, Helvetica, Verdana">
+		<div class="card"
+			style="color:{{ color }};
+			background-image:url({{ cdn + templates.data[id_template - 1].path }});
+			font-family:{{ fonts[id_font - 1].name }}, Helvetica, Verdana">
 
 		<h3 ng-if="organization == undefined">Organization</h3>
 		<h3 ng-if="organization == ''">Organization</h3>
@@ -90,6 +93,5 @@
 		<p ng-if="location == undefined">Location</p>
 		<p ng-if="location == ''">Location</p>
 		<p ng-if="location">{{ location }}</p>
-
 	</div>
 </div>
