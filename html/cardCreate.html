@@ -46,7 +46,8 @@
 		</div>
 		<div class="form-block">
 			<label for="template">Choose a template</label>
-			<select name="id_template" class="form-input select" data-ng-model="id_template">
+			<select name="id_template" class="form-input select" data-ng-model="id_template"
+					ng-click="getIndexTemplate(id_template)">
 				<option
 					data-ng-repeat="entry in templates"
 					value="{{entry.id}}"
@@ -68,10 +69,10 @@
 	
 	</div>
 	<div>
-		<h2 class="title">New card</h2>	
+		<h2 class="title">New card</h2>
 		<div class="card"
 			style="color:{{ color }};
-			background-image:url({{ cdn + templates.data[id_template - 1].path }});
+			background-image:url({{ cdn + templates[indexTEmplate].path }});
 			font-family:{{ fonts[id_font - 1].name }}, Helvetica, Verdana">
 
 		<h3 ng-if="organization == undefined">Organization</h3>

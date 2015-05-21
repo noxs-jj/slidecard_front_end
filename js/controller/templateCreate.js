@@ -33,6 +33,7 @@ slideController.controller('templateCreateController',
 					}
 				)
 				.success(function(data) {
+					$scope.error = 'Success';
 					$location.path('/template');
 				})
 				.error(function(data, status) {

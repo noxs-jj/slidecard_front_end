@@ -31,7 +31,7 @@ slideController.controller('cardUpdateController',
 			$scope.error = data.message;
 		})
 		$scope.update = function() {
-				if ($scope.color == undefined)
+			if ($scope.color == undefined)
 				$scope.color = $scope.card.color;
 			else
 				$scope.color = $scope.color.substring(1, 7);

@@ -7,15 +7,33 @@ slideController.controller('cardCreateController',
 	else {
 		$scope.error = '';
 		$scope.cdn = urlCdn;
+		$scope.indexTEmplate = 0;
 
 		// TEMPLATE LIST
 		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
 			.success(function(data) {
 			$scope.templates = data.data;
+			console.log($scope.templates);
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
 		})
+
+		// Get Index
+		$scope.getIndexTemplate = function(template_id) {
+			var index = 0,
+			templatesLen = $scope.templates.length;
+
+			while (index < templatesLen) {
+				if ($scope.templates[index].id == template_id) {
+					console.log('function id_template: ' + index);
+					console.log('function index: ' + index);
+					$scope.indexTEmplate = index;
+					return index
+				}
+				index++;
+			}
+		}
 
 		// FONTS LIST
 		$http.get(urlApi + '/fonts?token=' + $cookies.usr_token)
