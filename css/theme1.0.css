@@ -56,13 +56,16 @@ h1.title , h2.title {
     left: 0;
     top: 0;
     z-index: 999;
+/*
     background-color: rgb(42, 112, 170);
     background-color: rgb(41, 128, 185);
+*/
+    background-color: #fff;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 .header-navbar a {
-    color: #fff;
+    color: rgb(20, 100, 200);
     -webkit-transition: all 0.2s;
 }
 
@@ -191,28 +194,21 @@ ul.inline-block > li {
 
 #header {
     position: relative;
-    background-color: #eee;
     background-size: cover;
     width: 100vw;
     min-height: 610px;
-
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: flex;
-    -webkit-justify-content: wrap;
-    -moz-justify-content: wrap;
-    -ms-justify-content: wrap;
-    justify-content: wrap;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
-    align-items: center;
-
+    z-index: 1;
+    background-image: -webkit-radial-gradient(bottom left, rgb(50, 150, 220) 0%, rgb(10, 100, 200) 100%);
 }
 
-#header .presentation {
-    margin: 0 auto;
+#header .presentation, #header .mockup {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#header .presentation p {
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #header .presentation > h1, #header .presentation > h2 {
@@ -230,7 +226,6 @@ ul.inline-block > li {
 #header .presentation > h1 {
     font-size: 320%;
     display: inline-block;
-    width: 100%;
     text-align: center;
 }
 
@@ -377,6 +372,13 @@ a.big-btn, button.big-btn {
 	font-weight: lighter;
 	letter-spacing: 2px;
 	text-align: center;
+}
+
+a.big-btn {
+    border-radius: 4px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
 }
 
 a.big-btn.shadowed, button.big-btn.shadowed {

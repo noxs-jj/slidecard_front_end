@@ -1,0 +1,277 @@
+@import url(http://fonts.googleapis.com/css?family=Nunito:300|Lato:100,300,400);
+
+html {
+	background-color: #fff;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Nunito, Lato, Helvetica Neue, Helvetica, Verdana;
+	font-weight: normal;
+	font-size: 0.9em;
+}
+
+*:focus {
+	outline: none;
+}
+
+/** General **/
+
+a {
+	color: rgb(40, 150, 220);
+	text-decoration: none;
+}
+
+p {
+	line-height: 23px;
+	color: rgb(170, 190, 200);
+}
+
+h1.title,
+h2.title,
+h3.title,
+h4.title,
+h5.title {
+	font-weight: lighter;
+}
+
+ul.inline, ul.no-list {
+	list-style: none;
+}
+
+ul.inline > li {
+	float: left;
+	left: 0;
+}
+
+ul.inline-block > li {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.no-margin {
+	margin: 0;
+	padding: 0;
+}
+
+nav.right {
+	float: right;
+}
+
+/** Containers **/
+
+div[class*='-container'] {
+	position: relative;
+	margin: 0 auto;
+}
+
+div.centered {
+	text-align: center;
+}
+
+div.lightgrey-container {
+	padding: 5% 0;
+	margin: 5% 0;
+	background-color: rgb(230, 235, 245);
+}
+
+div.lg-container {
+	max-width: 1000px;
+	width: 90%;
+}
+
+div.md-container {
+	max-width: 860px;
+	width: 90%;
+}
+
+div.flex-container {
+	width: 100%;
+}
+
+div.flex-container > div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/** Header **/
+
+header {
+	position: relative;
+	height: 642px;
+/*	overflow: hidden; */
+	background-image: -webkit-radial-gradient(bottom left, rgb(50, 150, 220) 0%, rgb(0, 100, 200) 100%);
+	background-image: -moz-radial-gradient(bottom left, rgb(50, 150, 220) 0%, rgb(0, 100, 200) 100%);
+	background-image: -ms-radial-gradient(bottom left, rgb(50, 150, 220) 0%, rgb(0, 100, 200) 100%);
+	background-image: radial-gradient(bottom left, rgb(50, 150, 220) 0%, rgb(0, 100, 200) 100%);
+}
+
+.header-navbar {
+	padding: 35px 0;
+	border-top: 3px solid #fff;
+}
+
+.header-navbar a {
+	color: #fff;
+}
+
+.header-menu > ul > li > a {
+	padding: 10px 16px;
+	color: rgb(70, 170, 255);
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.header-menu > ul > li > a:hover {
+	color: #fff;
+}
+
+
+.header-description p {
+	display: block;
+	margin: 0 0 40px 0;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.header-description .presentation h1 {
+	color: #fff;
+	font-family: Nunito;
+	font-weight: lighter;
+	font-size: 320%;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.header-description .presentation a:not(.big-btn) {
+	color: rgba(255, 255, 255, 0.5);
+	margin-left: 30px;
+	text-decoration: underline;
+}
+
+.header-description .presentation a:not(.big-btn):hover {
+	color: #fff;
+}
+
+.header-description .phone-mockup {
+	position: absolute;
+	bottom: -42%;
+	right: 5%;
+	width: 28%;
+}
+
+.header-description .phone-mockup img {
+	float: right;
+	width: 95%;
+}
+
+/** Buttons **/
+
+a[class$='-btn'] {
+	border-radius: 3px;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.big-btn {
+	color: #fff;
+	font-size: 1.2em;
+	display: inline-block;
+	border: 2px solid #fff;
+	padding: 13px 25px;
+	font-weight: bold;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.big-btn:hover {
+	color: rgb(0, 100, 200);
+	background: #fff;
+}
+
+.colored-btn {
+	padding: 7px 20px;
+	color: rgb(50, 150, 220);
+	font-weight: bold;
+	border: 2px solid rgb(50, 150, 220);
+}
+
+.colored-btn:hover {
+	color: #fff;
+	background-color: rgba(50, 150, 220, 1);
+}
+
+/** Footer **/
+
+footer {
+	padding: 60px 0 10px 0;
+	background-color: rgb(20, 35, 60);
+}
+
+footer .copyright {
+	font-size: 0.7em;
+	color: rgba(255, 255, 255, 0.3);
+}
+
+/** Form **/
+
+.form-footer-newsletter {
+	position: absolute;
+	right: 0;
+}
+
+.form-footer-newsletter > * {
+	display: inline-block;
+}
+
+.form-footer-newsletter > .form-input {
+	border: none;
+	font-family: Helvetica Neue, Helvetica;
+	font-weight: normal;
+	font-size: 0.9em;
+	width: 300px;
+	padding: 8px 16px;
+	border-radius: 3px 0 0 3px;
+	background-color: rgb(60, 75, 120);
+}
+
+.form-footer-newsletter > button {
+	background-color: #fff;
+	border: none;
+	font-size: 0.9em;
+	padding: 7px 12px 8px;
+	margin-left: -5px;
+	border-radius: 0 3px 3px 0;
+}
+
+/** Custom **/
+
+.team .avatar {
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+	border-radius: 100%;
+	background-size: cover;
+}
+
+.team li {
+	margin: 0 42px;
+}
+
+.team .social a {
+	margin: 0 5px;
+	font-size: 1.3em;
+}
+
+.player {
+	height: 330px;
+	width: 50%;
+	margin-right: 50px;
+	background-color: #eee;
+}
+
+.player + div {
+	width: 40%;
+}
