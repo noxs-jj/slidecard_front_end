@@ -1,0 +1,12 @@
+<div class="md-container" style="margin:5% auto;">
+	<h2 class="title" align="center">Confirm you want to delete the following template</h2>
+</div>
+<div class="sm-container"  style="margin:5% auto;" data-ng-controller="templateDeleteController">
+	<div class="alert-danger animated fadeIn" data-ng-show="error">
+		<p><span class="icon-cross"></span>{{ error }}</p>
+	</div>
+	<h2>{{ result.name }}</h2>
+	<article class="card-detailed" style="color:#{{ card.color }};background-image:url({{ cdn + result.path }});">
+	</article>
+	<button type="button" class="simple-btn" data-ng-click="delete()">Delete</button>
+</div>

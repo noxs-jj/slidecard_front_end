@@ -10,6 +10,7 @@ slideController.controller('templateListController',
 		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
 		.success(function(data, status) {
 			$scope.result = data.data;
+			console.log($scope.result);
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
