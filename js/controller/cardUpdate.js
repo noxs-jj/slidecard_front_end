@@ -7,21 +7,38 @@ slideController.controller('cardUpdateController',
 	else {
 		$scope.error = '';
 		$scope.cdn = urlCdn;
+		$scope.indexTemplate = 0;
+
 		$http.get(urlApi + '/card/' + $routeParams.id + '?token=' + $cookies.usr_token)
-			.success(function(data) {
-				$scope.card = data.data;
-			})
-			.error(function(data, status) {
-				$scope.error = data.message;
-			})
-		// TEMPLATE LIST
-		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
 		.success(function(data) {
-			$scope.templates = data;
+			$scope.card = data.data;
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
 		})
+
+		// TEMPLATE LIST
+		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
+		.success(function(data) {
+			$scope.templates = data.data;
+			console.log($scope.templates);
+		})
+		.error(function(data, status) {
+			$scope.error = data.message;
+		})
+
+		// Get Index
+		$scope.getIndexTemplate = function(template_id) {
+			var index = 0,
+			templatesLen = $scope.templates.length;
+
+			while (index < templatesLen) {
+				if ($scope.templates[index].id == template_id)
+					$scope.indexTemplate = index;
+				index++;
+			}
+		}
+
 		// FONTS LIST
 		$http.get(urlApi + '/fonts?token=' + $cookies.usr_token)
 		.success(function(data) {

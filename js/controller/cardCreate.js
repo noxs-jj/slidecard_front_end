@@ -25,12 +25,8 @@ slideController.controller('cardCreateController',
 			templatesLen = $scope.templates.length;
 
 			while (index < templatesLen) {
-				if ($scope.templates[index].id == template_id) {
-					console.log('function id_template: ' + index);
-					console.log('function index: ' + index);
+				if ($scope.templates[index].id == template_id)
 					$scope.indexTEmplate = index;
-					return index
-				}
 				index++;
 			}
 		}

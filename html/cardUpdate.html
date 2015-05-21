@@ -65,11 +65,13 @@
 			</div>
 			<div class="form-block">
 				<label for="template">Choose a template</label>
-				<select class="form-input select" data-ng-model="id_template">
+				<select class="form-input select"
+						data-ng-model="id_template"
+						ng-click="getIndexTemplate(id_template)">
 					<option
-						data-ng-repeat="entry in templates.data"
+						data-ng-repeat="entry in templates"
 						data-ng-value="{{entry.id}}"
-						data-ng-selected="card.id_template == entry.id">{{entry.name}}
+						data-ng-selected="templates[0].id == entry.id">{{entry.name}}
 					</option>
 				</select>
 			</div>
@@ -87,8 +89,18 @@
 		</form>
 	</div>
 	<div>
-		<h2 class="title">New card</h2>	
-		<div class="card" style="color:{{ color }};background-image:url({{ cdn + templates.data[id_template - 1].path }});font-family:{{ fonts[id_font - 1].name }}, Helvetica, Verdana">
+		<h2 class="title">New card</h2>
+		<div>
+			DEBUGG </br>
+			index: {{indexTemplate}}</br>
+			id_template: {{id_template}}</br>
+			path: {{template[2].path}}</br>
+
+		</div>
+		<div class="card"
+		style="color:{{ color }};
+		background-image:url({{ cdn + templates[indexTemplate].path }});
+		font-family:{{ fonts[id_font - 1].name }}, Helvetica, Verdana">
 
 			<h3 ng-if="organization == undefined">{{ card.organization }}</h3>
 			<h3 ng-if="organization == ''">{{ card.organization }}</h3>

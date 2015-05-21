@@ -18,6 +18,7 @@ cat ../js/controller/accountUpdate.js >> one_file.js
 cat ../js/controller/cardUpdate.js >> one_file.js
 cat ../js/controller/templateList.js >> one_file.js
 cat ../js/controller/templateCreate.js >> one_file.js
+cat ../js/controller/templateDelete.js >> one_file.js
 cat ../js/controller/cardDelete.js >> one_file.js
 cat ../js/controller/collectionList.js >> one_file.js
 cat ../js/controller/collectionDelete.js >> one_file.js
