@@ -7,9 +7,11 @@ slideController.controller('templateCreateController',
 	else {
 		$scope.error = '';
 		$scope.token = $cookies.usr_token;
+		$scope.type;
 		$scope.url = 'http://api.slidecard.ovh/v1/template/create?token=' + $cookies.usr_token;
 		$scope.create = function() {
 			var fd = new FormData();
+
 
 			if ($scope.type == undefined)
 				$scope.type = 0;
