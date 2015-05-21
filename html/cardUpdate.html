@@ -66,7 +66,8 @@
 				<label for="template">Choose a template</label>
 				<select class="form-input select"
 						data-ng-model="id_template"
-						ng-click="getIndexTemplate(id_template)">
+						data-ng-click="getIndexTemplate(id_template)"
+						data-ng-change="getIndexTemplate(id_template)">
 					<option
 						data-ng-repeat="entry in templates"
 						data-ng-value="{{entry.id}}"
