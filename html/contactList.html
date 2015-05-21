@@ -1,0 +1,26 @@
+<div class="lg-flex-container">
+	<div class="title">
+		<h1 class="title">Your Contact</h1>
+		<p>Some description ...</p>
+	</div>
+	<div class="alert-danger animated fadeIn" data-ng-show="error">
+		<p><span class="icon-cross"></span>{{ error }}</p>
+	</div>
+	<div data-ng-repeat="entry in result">
+		------------------------------------------------------------------------------------------------</br>
+		id: {{entry.owner.id}}</br>
+		id_rights: {{entry.owner.id_rights}}</br>
+		card_hash: {{entry.owner.card_hash}}</br>
+		active: {{entry.owner.active}}</br>
+		firstname: {{entry.owner.firstname}}</br>
+		lastname: {{entry.owner.lastname}}</br>
+		avatar: {{entry.owner.avatar}}</br>
+		email: {{entry.owner.email}}</br>
+		last_login: {{entry.owner.last_login}}</br>
+		api_token: {{entry.owner.api_token}}</br>
+		accept_notif: {{entry.owner.accept_notif}}</br>
+		accept_news: {{entry.owner.accept_news}}</br>
+		created_at: {{entry.owner.created_at}}</br>
+		updated_at: {{entry.owner.updated_at}}</br>
+	</div>
+</div>

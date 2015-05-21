@@ -21,6 +21,7 @@ cat ../js/controller/templateCreate.js >> one_file.js
 cat ../js/controller/templateDelete.js >> one_file.js
 cat ../js/controller/cardDelete.js >> one_file.js
 cat ../js/controller/collectionList.js >> one_file.js
+cat ../js/controller/contactList.js >> one_file.js
 cat ../js/controller/collectionDelete.js >> one_file.js
 cat ../js/libs/jquery.js >> one_file.js
 cat ../js/app.js >> one_file.js
