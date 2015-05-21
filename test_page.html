@@ -3,6 +3,8 @@
 	<head>
 		<title>Test page</title>
 		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/icons.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
 		<link rel="stylesheet" type="text/css" href="css/theme_2.0.css">
 	</head>
 	<body>
@@ -20,17 +22,95 @@
 			</div>
 			</header>
 			<section>
+
+				<div style="margin: 0 auto;width:90%;">
+					<h1 class="title">Manage your business cards</h1>
+					<p><a href="#" class="colored-btn">Create a card</a></p>
+				</div>
+				<div class="flex-row">
+			
+						<div class="card animated flipInX">
+							<h3>Thomas Bazire</h3>
+							<p>CEO at Slidecard<br><span class="icon-location-pin" style="margin-right:5px;"></span> Paris</p>
+							<p>+33 6 38 19 04 89<br>
+							<a href="#">http://thomasbazire.me</a></p>
+						</div>
+						<div class="card2 animated flipInX">
+							<h3>Thomas Bazire</h3>
+							<p>CEO at Slidecard<br><span class="icon-location-pin" style="margin-right:5px;"></span> Paris</p>
+							<p>+33 6 38 19 04 89<br>
+							<a href="#">http://thomasbazire.me</a></p>
+						</div>
+						<div class="card3 animated flipInX">
+							<h3 align="center">Thomas Bazire</h3>
+							<p align="center">CEO at Slidecard<br><span class="icon-location-pin" style="margin-right:5px;"></span> Paris</p>
+							<p align="center">+33 6 38 19 04 89<br>
+							<a href="#">http://thomasbazire.me</a></p>
+						</div>
+
+				</div>
+
+				<div style="padding:20%"></div>
+
 				<div class="lg-container">
 					<h1 class="title">Hello There!</h1>
+					<h1>Test without light font</h1>
 					<form method action>
 						<div class="form-block">
 							<label for="text">Sample text</label>
 							<input type="text" class="form-input">
 						</div>
+						<div class="form-block">
+							<input type="text" class="form-input" placeholder="Placeholdered field">
+						</div>
 						<button type="submit" class="form-submit">Submit</button>
 					</form>
 					<p>Nullam tempor volutpat est, nec ultricies nunc euismod tincidunt. Mauris egestas maximus justo, ut congue arcu imperdiet at. Phasellus bibendum consectetur purus. Vivamus sed tristique neque, consequat posuere purus.</p>
+					<h2>Business card sample</h2>
+					<div class="card animated flipInX">
+						<h3>Thomas Bazire</h3>
+						<p>CEO at Slidecard<br><span class="icon-location-pin" style="margin-right:5px;"></span> Paris</p>
+						<p>+33 6 38 19 04 89<br>
+						<a href="#">http://thomasbazire.me</a></p>
+					</div>
 				</div>
+				<div class="lg-container" style="padding:10% 0;">
+					<h1 class="title">Card grid</h1>
+</div>
+					<div class="flex-row">
+						<div class="card animated flipInX">
+							<h3>Thomas Bazire</h3>
+							<p>CEO at Slidecard<br><span class="icon-location-pin" style="margin-right:5px;"></span> Paris</p>
+							<p>+33 6 38 19 04 89<br>
+							<a href="#">http://thomasbazire.me</a></p>
+						</div>
+						<div class="card2 animated flipInX">
+							<h3>Thomas Bazire</h3>
+							<p>CEO at Slidecard<br><span class="icon-location-pin" style="margin-right:5px;"></span> Paris</p>
+							<p>+33 6 38 19 04 89<br>
+							<a href="#">http://thomasbazire.me</a></p>
+						</div>
+						<div class="card3 animated flipInX">
+							<h3 align="center">Thomas Bazire</h3>
+							<p align="center">CEO at Slidecard<br><span class="icon-location-pin" style="margin-right:5px;"></span> Paris</p>
+							<p align="center">+33 6 38 19 04 89<br>
+							<a href="#">http://thomasbazire.me</a></p>
+						</div>
+
+					</div>
 			</section>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>			
+		<script type="text/javascript">
+
+		$(function ()
+		{
+			$('div[class^=\'card\']').click(function (e)
+			{
+				console.log(e);
+				$(this).prepend('<span class="badge-checked icon-check animated bounce"></span>');
+			});
+		});
+
+		</script>
 	</body>
 </html>

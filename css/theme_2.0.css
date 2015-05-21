@@ -72,15 +72,39 @@ div.centered {
 
 div.lightgrey-container {
 	padding: 5% 0;
-	margin: 5% 0;
+	margin: 5% 0 0;
 	background-color: rgb(230, 235, 245);
 }
 
 div.blue-container {
-	background-color: rgb(0, 100, 200);
+	background-color: rgb(0, 100, 200);	
+}
+
+div.blue-container p {
+	color: rgba(255, 255, 255, 0.7);
 }
 
 div.flex-row {
+	width: 90%;
+	margin: 0 auto;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-flex-direction: row space-around;
+	-moz-flex-direction: row space-around;
+	-ms-flex-direction: row space-around;
+	flex-direction: row space-around;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;	
+/*	
 	-webkit-flex-flow: row wrap;
 	-moz-flex-flow: row wrap;
 	-ms-flex-flow: row wrap;
@@ -102,6 +126,14 @@ div.flex-row {
 	-moz-justify-content: space-around;
 	-ms-justify-content: space-around;
 	justify-content: space-around;
+*/
+}
+
+div.flex-row.spaced {
+	-webkit-justify-content: space-around;
+	-moz-justify-content: space-around;
+	-ms-justify-content: space-around;
+	justify-content: space-around;
 }
 
 div.lg-container {
@@ -111,6 +143,11 @@ div.lg-container {
 
 div.md-container {
 	max-width: 860px;
+	width: 90%;
+}
+
+div.sm-container {
+	max-width: 720px;
 	width: 90%;
 }
 
@@ -148,6 +185,7 @@ header.standard {
 
 header.standard .header-navbar {
 	padding: 28px 0;
+	border-top: none;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -242,16 +280,38 @@ a[class$='-btn'] {
 	background-color: rgba(50, 150, 220, 1);
 }
 
+/** Badges **/
+
+.badge-checked {
+	position: absolute;
+	padding: 5px;
+	color: #fff;
+	font-size: 0.8em;
+	right: 10px;
+	top: 10px;
+	border-radius: 100%;
+	border: 2px solid #fff;
+/*	
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	background-image: -webkit-linear-gradient(top, rgb(50, 150, 220) 0%, rgb(0, 100, 200) 100%);
+*/
+	background-color: rgb(50, 150, 220);
+/*	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+*/
+}
+
 /** Footer **/
 
 footer {
-	padding: 60px 0 10px 0;	
+	padding: 30px 0 10px 0;	
 	color: rgba(255, 255, 255, 0.3);
 	background-color: rgb(20, 35, 60);
 }
 
 footer h3 {
+	padding: 10px 4px;
 	color: rgba(255, 255, 255, 0.7);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 footer .copyright {
@@ -259,9 +319,30 @@ footer .copyright {
 	color: rgba(255, 255, 255, 0.3);
 }
 
+footer .flex-row > div {
+	width: 20%;
+	margin: 0 15px;
+}
+
 /** Form **/
 
+::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, 0.5);
+}
+:-moz-placeholder {
+	color: rgba(255, 255, 255, 0.5);
+	opacity:  1;
+}
+::-moz-placeholder {
+	color: rgba(255, 255, 255, 0.5);
+	opacity:  1;
+}
+:-ms-input-placeholder {
+	color: rgba(255, 255, 255, 0.5);
+}
+
 .form-footer-newsletter {
+	margin: 0 15px;
 }
 
 .form-footer-newsletter > * {
@@ -275,15 +356,25 @@ footer .copyright {
 	font-size: 0.9em;
 	width: 300px;
 	padding: 8px 16px;
+	color: #fff;
 	border-radius: 3px 0 0 3px;
-	background-color: rgb(60, 75, 120);
+	border: 1px solid transparent;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.form-footer-newsletter > .form-input:focus {
+	border: 1px solid transparent !important;
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 .form-footer-newsletter > button {
+	cursor: pointer;
 	background-color: #fff;
+	color: #fff;
+	background-color: rgb(20, 130, 240);
 	border: none;
 	font-size: 0.9em;
-	padding: 7px 12px 8px;
+	padding: 8px 12px 9px;
 	margin-left: -5px;
 	border-radius: 0 3px 3px 0;
 }
@@ -337,7 +428,17 @@ footer .copyright {
 	height: 120px;
 	margin: 0 auto;
 	border-radius: 100%;
+	border: 6px solid #fff;
 	background-size: cover;
+	-webkit-filter: grayscale(42%);
+}
+
+.team .avatar:hover {
+	-webkit-filter: grayscale(0%);	
+}
+
+.team h4 {
+	color: rgba(0, 0, 0, 0.4);
 }
 
 .team li {
@@ -347,11 +448,20 @@ footer .copyright {
 .team .social a {
 	margin: 0 5px;
 	font-size: 1.3em;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.team .social a:hover {
+	color: rgb(60, 170, 250);	
 }
 
 .player {
-	width: 43.33vw;
+/*	width: 43.33vw;
 	height: 28.75vw;
+*/
 	margin-right: 50px;
 	background-color: #eee;
 }
@@ -362,4 +472,61 @@ footer .copyright {
 
 .newsletter {
 	padding: 10px 0;
+}
+
+.newsletter > div > * {
+	display: inline-block;
+}
+
+
+/*********************** To Remove ***********************/
+
+div[class^='card'] {
+	border-radius: 2px;
+	height: 170px;
+	width: 300px;
+	padding: 10px 30px;
+	color: #fff;
+	margin: 10px;
+	position: relative;
+/*	border: 1px solid transparent !important;
+*/
+}
+
+div.card {
+	background-image: -webkit-linear-gradient(33deg, rgb(30, 35, 40) 70%, rgb(200, 210, 220) 70%);	
+}
+
+div.card2 {
+	text-align: right;
+	background-image: -webkit-linear-gradient(left, rgb(70, 80, 100) 20%, rgb(200, 210, 220) 20%);	
+}
+
+div.card2 a, div.card2 h3 {
+	color: #fff;
+}
+
+div.card2 p {
+	color:  rgb(110, 140, 160);	
+}
+
+div.card3 {
+	color: rgb(50, 150, 220);
+	border: 1px solid rgb(50, 150, 220);
+	background-image: -webkit-radial-gradient(top , ellipse, rgb(255, 255, 255) 80%, rgb(50, 150, 220) 80%);
+}
+
+div.card4 {
+	background-image: -webkit-radial-gradient(top right,
+		rgb(155, 152, 140) 60%, 
+		rgb(100, 90, 70) 61%,
+		rgb(200, 190, 160) 60%);
+}
+
+div.card4 p {
+	color: #fff;
+}
+
+.card a:hover {
+	text-decoration: underline;
 }
