@@ -41,6 +41,11 @@ slideApp.config(['$routeProvider', '$httpProvider',
 		controller: 'templateDeleteController',
 		controllerAs: 'templateDelete'
 	}).
+	when('/share', {
+		templateUrl: 'html/share.html',
+		controller: 'shareController',
+		controllerAs: 'share'
+	}).
 	when('/cardList', {
 		templateUrl: 'html/cardList.html',
 		controller: 'cardListController',
