@@ -6,12 +6,12 @@
 	<div class="alert-danger animated fadeIn" data-ng-show="error">
 		<p><span class="icon-cross"></span>{{ error }}</p>
 	</div>
-	<div data-ng-repeat="entry in result">
+	<div data-ng-repeat="entry in newObj">
 		------------------------------------------------------------------------------------------------</br>
-<!-- 		<div ng-click="">
+		<div ng-click="">
 			<b>{{entry.owner.lastname | uppercase}} {{entry.owner.firstname}}</b>
 		</div>
-		<div ng-show=""> -->
+<!-- 		<div ng-show=""> -->
 			id: {{entry.owner.id}}</br>
 			id_rights: {{entry.owner.id_rights}}</br>
 			card_hash: {{entry.owner.card_hash}}</br>
