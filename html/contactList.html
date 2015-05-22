@@ -8,10 +8,10 @@
 	</div>
 	<div data-ng-repeat="entry in newObj">
 		------------------------------------------------------------------------------------------------</br>
-		<div ng-click="">
-			<b>{{entry.owner.lastname | uppercase}} {{entry.owner.firstname}}</b>
+		<div ng-click="choseIt(entry.owner.id)">
+			<b>{{entry.owner.lastname | uppercase}} {{entry.owner.firstname}}</b></br>
 		</div>
-<!-- 		<div ng-show=""> -->
+		<div ng-show="userSelect == entry.owner.id">
 			id: {{entry.owner.id}}</br>
 			id_rights: {{entry.owner.id_rights}}</br>
 			card_hash: {{entry.owner.card_hash}}</br>
@@ -26,6 +26,6 @@
 			accept_news: {{entry.owner.accept_news}}</br>
 			created_at: {{entry.owner.created_at}}</br>
 			updated_at: {{entry.owner.updated_at}}</br>
-<!-- 		</div> -->
+		</div>
 	</div>
 </div>

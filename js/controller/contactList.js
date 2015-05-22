@@ -7,6 +7,8 @@ slideController.controller('contactListController',
 	else {
 		$scope.error = '';
 		$scope.cdn = urlCdn;
+		$scope.userSelect = 0;
+
 		$http.get(urlApi + '/collection?token=' + $cookies.usr_token)
 		.success(function(data, status) {
 			$scope.result = data.data;
@@ -18,7 +20,10 @@ slideController.controller('contactListController',
 						if (itm.owner.id == itm2.owner.id)
 							unique = false;
 					});
-					if (unique)  cleaned.push(itm);
+					if (unique) {
+						itm.htmlSelected = false;
+						cleaned.push(itm);
+					}
 				});
 				return cleaned;
 			}
@@ -28,5 +33,10 @@ slideController.controller('contactListController',
 		.error(function(data, status) {
 			$scope.error = data.message;
 		})
+
+		$scope.choseIt = function(id_owner) {
+			$scope.userSelect = id_owner;
+			console.log($scope.userSelect);
+		}
 	}
 }]);

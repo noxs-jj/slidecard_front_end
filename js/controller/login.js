@@ -1,4 +1,4 @@
-slideController.controller('loginController',
+ slideController.controller('loginController',
 		['$scope', '$http', '$cookies', '$location',
 		function($scope, $http, $cookies, $location) {
 
