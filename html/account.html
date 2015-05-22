@@ -1,3 +1,18 @@
+<div class="sm-container">
+	<div class="alert-error animated fadeIn" data-ng-show="error">
+		<p><span class="icon-cross"></span>{{ error }}</p>
+	</div>
+	<div>
+		<img src="{{ cdn + avatar }}" style="width:120px;">
+		<h2 class="title">{{ firstname }} {{ lastname }}</h2>
+		<p>Your slidecard code<br>{{ card_hash }}</p>
+		<p>{{ email }}</p>
+		<p>NewsLetter subscription: <b>{{ accept_news }}</b></p>
+		<p>Notifications subscription: <b>{{ accept_notif }}</b></p>
+		<a href="#/account/update" class="simple-btn"><span class="icon-edit"></span> Edit profile</a>
+	</div>
+</div>
+<!--
 <div style="margin-top:50px" class="md-container">
 	<div class="alert-danger animated fadeIn" data-ng-show="error">
 		<p><span class="icon-cross"></span>{{ error }}</p>
@@ -12,3 +27,4 @@
 		<a href="#/account/update" class="simple-btn"><span class="icon-edit"></span> Edit profile</a>
 	</div>
 </div>
+-->

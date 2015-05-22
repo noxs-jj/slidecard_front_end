@@ -28,6 +28,11 @@ p {
 	color: rgb(140, 170, 190);
 }
 
+hr {
+	border: none;
+	border-top: 1px solid #ddd;
+}
+
 h1.title,
 h2.title,
 h3.title,
@@ -136,6 +141,17 @@ div.flex-row.spaced {
 	justify-content: space-around;
 }
 
+div.flex-block {
+	max-width: 420px;
+	margin-right: 3%;
+	min-width: 330px;
+	-webkit-transition: all 0.2s;
+}
+
+div.lg-flex-container {
+	width: 90%;
+}
+
 div.lg-container {
 	max-width: 1000px;
 	width: 90%;
@@ -148,6 +164,16 @@ div.md-container {
 
 div.sm-container {
 	max-width: 720px;
+	width: 90%;
+}
+
+div.s-container {
+	max-width: 550px;
+	width: 90%;
+}
+
+div.xs-container {
+	max-width: 330px;
 	width: 90%;
 }
 
@@ -183,15 +209,82 @@ header.standard {
 	border-top: 3px solid #fff;
 }
 
+.header-navbar .brand > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.header-navbar .brand img {
+	max-width: 60px;
+	float: left;
+	left: 0;
+	margin: -15px 15px 0 0;
+}
+
 header.standard .header-navbar {
 	padding: 28px 0;
 	border-top: none;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+header.standard .header-description {
+	display: none;
+}
+
 .header-navbar a {
 	color: #fff;
 }
+
+
+.header-navbar li.dropdown {
+    position: relative;
+}
+
+.header-navbar li.dropdown a:hover {
+    background-color: #fff;
+    color: #444;
+}
+
+.header-navbar li.dropdown:hover > ul {
+    display: block;
+}
+
+.header-navbar li.dropdown > ul {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    padding: 6px 15px;
+    min-width: 150px;
+    display: none;
+    z-index: 9;
+    background-color: #fff;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.header-navbar ul.dropped a {
+    display: block;
+    padding: 10px;
+    margin: 0;
+    color: #777;
+}
+
+
+.header-navbar ul.dropped a:hover {
+    padding: 10px 7px 10px 13px;
+    background-color: transparent;
+    color: #444;
+}
+
+.header-navbar li.dropdown > ul > li {
+    margin: 4px 0;
+}
+
+.header-navbar li.dropdown > ul > li.seperated {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
 
 .header-menu > ul > li > a {
 	padding: 10px 16px;
@@ -278,6 +371,32 @@ a[class$='-btn'] {
 .colored-btn:hover {
 	color: #fff;
 	background-color: rgba(50, 150, 220, 1);
+}
+
+/** Navigation **/
+
+.navbar-default {
+	padding: 8px 0;
+	background-color: rgb(230, 235, 245);
+}
+
+.navbar-default a {
+	padding: 8px 12px;
+	border-radius: 3px;
+	color: rgb(120, 135, 160);
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.navbar-default a:hover {
+	background-color: #fff;	
+}
+
+.navbar-default .active {
+	color: rgb(80, 95, 120);
+	background-color: #fff;	
 }
 
 /** Badges **/
@@ -399,6 +518,11 @@ footer .flex-row > div {
 	-moz-transition: all 0.2s;
 	-o-transition: all 0.2s;
 	transition: all 0.2s;
+	box-sizing: border-box;
+}
+
+..form-input.sm {
+	width: 40%;
 }
 
 .form-input:focus {
@@ -410,9 +534,15 @@ footer .flex-row > div {
 	margin: 10px 0;
 }
 
+.form-block > .note {
+	font-size: 0.8em;
+	color: rgb(140, 170, 190);
+}
+
 .form-block > label {
 	font-size: 1em;
 	color: #888;
+	color: rgb(140, 170, 190);
 }
 
 button[class^='form-submit'] {
@@ -444,6 +574,41 @@ button[class^='form-submit'] {
 .form-submit-default:hover {
 
 }
+
+
+/** Tables **/
+
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+    box-sizing: border-box;
+}
+
+table.table th {
+	font-weight: lighter;
+    border: 1px solid #eee;
+}
+
+table.table td, table.table th {
+    padding: 10px 20px;
+}
+
+table.table td {
+    border: 1px solid #eee;
+}
+
+table.table img {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    max-width: 150px;
+}
+
+table.table a {
+    margin: 0 10px;
+}
+
+
 
 /** Custom **/
 

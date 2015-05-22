@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html data-ng-app="slideApp">
+<head>
+	<title>Slidecard</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/icons.css">
+	<link rel="stylesheet" type="text/css" href="css/theme_2.0.css">
+	<link rel="stylesheet" type="text/css" href="css/angular-color-picker.css">
+</head>
+<body ng-controller="contentController as content">
+	<header ng-class="{'standard': !content.isPage('/welcome') }">
+		<div class="header-navbar">
+			<div class="lg-flex-container">
+				<a href="#/welcome" class="brand"><img src="img/logo.png"><span>SlideCard</span></a>
+				<nav class="right header-menu">
+					<ul class="inline no-margin" data-ng-hide="isLog()">
+						<li><a href="#/login">Login</a></li>
+					</ul>
+					<ul ng-click="page()" class="inline no-margin" data-ng-show="isLog()">
+						<li>
+							<a href="#/cardList">Cards</a>
+						</li>
+						<li>
+							<a href="#/collection">Network</a>
+						</li>
+						<li>
+							<a href="#/contactList">Contact</a>
+						</li>
+						<li class="dropdown" ng-controller="welcomeController"><a onclick="return false;">{{ firstname }} {{ lastname }}</a>
+							<ul class="dropped no-list no-margin">
+								<li><a href="#/account">Profile</a></li>
+								<li><a href="#/account/settings">Settings</a></li>
+								<li class="seperated"><a href="#/logout">Logout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="header-description lg-container">
+			<div class="presentation animated fadeIn" style="padding:10% 0;">
+				<h1>Renew business cards</h1>
+				<p>Share your business cards as easy as a slide on your phone!</p>
+				<p><a href="#/register" class="big-btn">Get started</a> <a href="#/login">Already have an account?</a></p>
+			</div>
+			<div class="phone-mockup animated fadeInRight">
+				<img src="img/screen_settings.png">
+			</div>
+		</div>
+	</header>
+	<section>
+
+		<data-ng-view></data-ng-view>
+
+	</section>
+	<footer>
+		<div class="flex-row spaced">	
+			<div>
+				<h3 class="title">Vivamus</h3>
+			</div>
+			<div>
+				<h3 class="title">Quisque diam</h3>
+			</div>
+			<div>
+				<h3 class="title">Nulla facilisi</h3>
+				<ul class="no-margin no-list">
+					<li><a href>bibendum blandit</a></li>
+					<li><a href>bibendum blandit</a></li>
+					<li><a href>bibendum blandit</a></li>
+				</ul>
+			</div>
+			<div>
+				<h3 class="title">Integer</h3>
+			</div>
+		</div>
+		<div class="xs-container">
+			<p><a href="http://cdn.slidecard.ovh/android/app-release.apk">Slidecard Android</a></p>
+		</div>
+		<div class="lg-container">
+			<p class="copyright">&copy; 2015 &middot; slidecard.com</p>
+		</div>
+	</footer>
+
+		<!-- Development -->
+		<script src="js/libs/angular/angular.js"></script>
+		<script src="js/libs/angular/angular-cookies.js"></script>
+		<script src="js/libs/angular/angular-route.js"></script>
+		<script src="js/libs/angular/angular-file-upload.js"></script>
+		<script src="js/libs/angular/angular-color-picker.js"></script>
+
+		<script src="js/config.js"></script>
+		<script src="js/route.js"></script>
+
+		<script src="js/controller/login.js"></script>
+		<script src="js/controller/logout.js"></script>
+		<script src="js/controller/account.js"></script>
+		<script src="js/controller/welcome.js"></script>
+		<script src="js/controller/register.js"></script>
+		<script src="js/controller/cardCreate.js"></script>
+		<script src="js/controller/cardList.js"></script>
+		<script src="js/controller/cardDetail.js"></script>
+		<script src="js/controller/accountUpdate.js"></script>
+		<script src="js/controller/cardUpdate.js"></script>
+		<script src="js/controller/templateList.js"></script>
+		<script src="js/controller/templateCreate.js"></script>
+		<script src="js/controller/templateDelete.js"></script>
+		<script src="js/controller/cardDelete.js"></script>
+		<script src="js/controller/collectionList.js"></script>
+		<script src="js/controller/collectionDelete.js"></script>
+		<script src="js/controller/contactList.js"></script>
+		<script src="js/libs/jquery.js"></script>
+		<script src="js/app.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>			
+		<script type="text/javascript">
+
+		$(function ()
+		{
+			$('div[class^=\'card\']').click(function (e)
+			{
+				console.log(e);
+				$(this).prepend('<span class="badge-checked icon-check animated bounce"></span>');
+			});
+		});
+
+		</script>
+</body>
+</html>

@@ -21,6 +21,11 @@ slideApp.config(['$routeProvider', '$httpProvider',
 		controller: 'accountUpdateController',
 		controllerAs: 'accountUpdate'
 	}).
+	when('/account/settings', {
+		templateUrl: 'html/settings.html',
+		controller: 'accountUpdateController',
+		controllerAs: 'accountUpdate'
+	}).
 	when('/register', {
 		templateUrl: 'html/register.html',
 		controller: 'registerController',
@@ -99,6 +104,11 @@ slideApp.config(['$routeProvider', '$httpProvider',
 slideApp.controller('contentController',
 		['$cookies', '$scope', '$location',
 		function($cookies, $scope, $location) {
+			var content = this;
+
+	content.isPage = function (page) {
+		return page == $location.path();
+	};
 
 	$scope.isLog = function() {
 		if ($cookies.usr_token == '' || $cookies.usr_token == undefined)

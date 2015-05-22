@@ -1,3 +1,49 @@
+<div class="xs-container" style="padding:10% 0;">
+
+	<h2 class="title">Register</h2>
+
+	<div class="alert-error animated fadeIn" data-ng-show="error">
+		<p><span class="icon-cross"></span> {{ error }}</p>
+	</div>
+
+	<form name="registerForm" data-ng-submit="registerForm.$valid && reg()" novalidate="true">
+
+		<div class="form-block">
+			<label for="firstname">Firsname</label>
+			<input type="text" name="firstname" required="true" class="form-input" data-ng-model="firstname">
+		</div>
+		
+		<div class="form-block">
+			<label for="lastname">Lastname</label>
+			<input type="text" name="lastname" required="true" class="form-input" data-ng-model="lastname">
+		</div>
+
+		<div class="form-block">
+			<label for="email">Email address</label>
+			<input type="email" name="email" required="true" class="form-input" data-ng-model="email">
+		</div>
+
+		<div class="form-block">
+			<label for="email_again">Confirm email address</label>
+			<input type="email" name="email_again" required="true" class="form-input" data-ng-model="email_again">
+		</div>
+
+		<div class="form-block">
+			<label form="password">Password</label>
+			<input type="password" name="password" required="true" class="form-input" data-ng-model="password">
+		</div>
+
+		<div class="form-block">
+			<label form="password">Confirm Password</label>
+			<input type="password" name="retype_password" required="true" class="form-input" data-ng-model="retype_password">
+		</div>
+
+		<button type="submit" class="form-submit">Register</button>
+	</form>
+</div>
+
+<!--
+
 <div class="md-container title">
 	<div class="alert-danger animated fadeIn" data-ng-show="error">
 		<p><span class="icon-cross"></span>{{ error }}</p>
@@ -29,3 +75,4 @@
 	</form>
 	</div>
 </div>
+-->

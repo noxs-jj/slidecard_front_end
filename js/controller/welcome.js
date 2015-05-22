@@ -2,6 +2,8 @@ slideController.controller('welcomeController',
 		['$scope', '$http', '$cookies', '$location',
 		function($scope, $http, $cookies, $location) {
 
+			console.log($location.path());
+
 	$scope.error = '';
 	if ($cookies.logged == undefined)
 		$cookies.logged == false;

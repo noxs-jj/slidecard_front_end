@@ -2,6 +2,149 @@
 	<div class="lg-flex-container">
 		<ul class="inline-block">
 			<li><a href="#/cardList">Manage cards</a></li>
+			<li><a href="#/cardCreate" class="active">Create a card</a></li>
+			<li><a href="#/template">Templates</a></li>
+			<li><a href="#/templateCreate">Create a template</a></li>
+		</ul>
+	</div>
+</div>
+<div style="padding:4% 0;">
+<form name="newCardForm" data-ng-submit="newCardForm.$valid && create()" novalidate>
+
+	<div class="alert-danger animated fadeIn" data-ng-show="error">
+		<p><span class="icon-cross"></span>{{ error }}</p>
+	</div>
+
+	<div class="flex-row">
+
+		<div class="flex-block">
+			<h3 class="title">Company informations</h3>
+		
+			<div class="alert-danger animated fadeIn" data-ng-show="error">
+				<p><span class="icon-cross"></span>{{ error }}</p>
+			</div>
+			<div class="form-block">
+				<label for="organization">Company name</label>
+				<input type="text" name="organization" class="form-input" required="true" data-ng-model="organization">
+			</div>
+			<div class="form-block">
+				<label for="slogan">Company slogan</label>
+				<input type="text" class="form-input" name="slogan" required="true" data-ng-model="slogan">
+			</div>
+
+			<div class="form-block">
+				<label for="location">Location</label>
+				<input type="text" name="location" class="form-input" required="true" data-ng-model="location">
+			</div>
+
+			<div class="form-block">
+				<label for="job">Job name</label>
+				<input type="text" name="job" class="form-input" required="true" data-ng-model="job">
+			</div>
+
+		<div class="form-block">
+			<color-picker ng-model="color"></color-picker>
+			<input type="text" class="form-input" placeholder="Font color (ex: FF9900) (required)" required="true" data-ng-model="color" disabled="true" ng-init="color = '#FFFFFF'">
+		</div>
+		
+		</div>
+
+		<div class="flex-block">
+			<h3 class="title">Contact informations</h3>
+			<div class="form-block">
+				<label for="phone">Phone number</label>
+				<input type="text" name="phone" class="form-input sm" required="true" data-ng-model="phone">
+			</div>
+
+			<div class="form-block">
+				<label for="email">Contact address</label>
+				<input type="email" name="email" class="form-input" required="true" data-ng-model="email">
+			</div>
+
+			<hr>
+
+			<h3 class="title">Card details</h3>
+
+			<div class="form-block">
+				<label for="type">Card type</label>
+				<select name="type" class="form-input select" data-ng-model="type" form="typeform">
+					<option value="0" data-ng-selected="true">Professional</option>
+					<option value="1">Personal</option>
+				</select>
+			</div>
+			
+			<div class="form-block">
+				<label for="template">Choose a template</label>
+				<select name="id_template" class="form-input select" data-ng-model="id_template"
+						ng-click="getIndexTemplate(id_template)" ng-change="getIndexTemplate(id_template)">
+					<option
+						data-ng-repeat="entry in templates"
+						value="{{entry.id}}"
+						data-ng-selected="templates[0].id == entry.id">{{entry.name}}
+					</option>
+				</select>
+			</div>
+
+			<div class="form-block">
+				<label for="template">Choose a font</label>
+				<select  class="form-input select" data-ng-model="id_font">
+					<option
+						data-ng-repeat="entry in fonts"
+						value="{{entry.id}}"
+						data-ng-selected="entry.id == 1" style="font-family: {{ entry.name }}">{{entry.name}}
+					</option>
+				</select>
+			</div>
+
+		</div>
+
+
+
+
+		<div class="flex-block">
+			<h3 class="title">Preview</h3>
+			<div class="card"
+				style="color:{{ color * 1.5 }};
+				background-image:url({{ cdn + templates[indexTEmplate].path }});background-size:cover;
+				font-family:{{ fonts[id_font - 1].name }}, Helvetica, Verdana">
+
+				<h3 ng-if="organization == undefined">Organization</h3>
+				<h3 ng-if="organization == ''">Organization</h3>
+				<h3 ng-if="organization">{{ organization }}</h3>
+
+				<p style="color:{{ color }};">
+					<span ng-if="slogan == undefined">Slogan</span>
+					<span ng-if="slogan == ''">Slogan</span>
+					<span ng-if="slogan">{{ slogan }}</span>
+					<br>
+
+					<span ng-if="location == undefined"><span class="icon-location-pin"></span> Location</span>
+					<span ng-if="location == ''"><span class="icon-location-pin"></span> Location</span>
+					<span ng-if="location"><span class="icon-location-pin"></span> {{ location }}</span>
+				</p>
+				<p style="color:{{ color }};">
+					<span ng-if="email == undefined">Email</span>
+					<span ng-if="email == ''">Email</span>
+					<span ng-if="email">{{ email }}</span>
+					<br>
+					<span ng-if="phone == undefined">Phone</span>
+					<span ng-if="phone == ''">Phone</span>
+					<span ng-if="phone">{{ phone }}</span>
+				</p>
+			</div>
+		</div>
+
+		<div style="display:block;width:100%;">
+			<button type="submit" class="form-submit">Create</button>
+		</div>
+	</div>
+</form>
+</div>
+<!--
+<div class="navbar-default">
+	<div class="lg-flex-container">
+		<ul class="inline-block">
+			<li><a href="#/cardList">Manage cards</a></li>
 			<li><a href="#/cardCreate">Create a card</a></li>
 			<li><a href="#/template">Templates</a></li>
 			<li><a href="#/templateCreate">Create a template</a></li>
@@ -96,3 +239,4 @@
 		<p ng-if="location">{{ location }}</p>
 	</div>
 </div>
+-->
