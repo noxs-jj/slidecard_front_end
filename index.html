@@ -1,31 +1,25 @@
 <!DOCTYPE HTML>
-<html lang="en" data-ng-app="slideApp">
-	<head>
-		<title>SlideCard</title>
-		<meta charset="utf-8">
-
-<!-- 		<link rel="stylesheet" href="css/libs/bootstrap.css">
-		<link rel="stylesheet" href="css/libs/bootstrap-theme.css"> -->
-
-		<link rel="stylesheet" type="text/css" href="css/animate.css">
-		<link rel="stylesheet" type="text/css" href="css/icons.css">
-		<link rel="stylesheet" type="text/css" href="css/theme1.0.css">
-		<link rel="stylesheet" type="text/css" href="css/angular-color-picker.css">
-	</head>
-	<body>
+<html data-ng-app="slideApp">
+<head>
+	<title>Slidecard</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/icons.css">
+	<link rel="stylesheet" type="text/css" href="css/theme_2.0.css">
+	<link rel="stylesheet" type="text/css" href="css/angular-color-picker.css">
+</head>
+<body ng-controller="contentController as content">
+	<header ng-class="{'standard': !content.isPage('/welcome') }">
 		<div class="header-navbar">
-			<div class="lg-flex-container" ng-controller="contentController">
-				<a href="#/welcome" class="brand-title">SlideCard</a>
-				<nav class="right">
+			<div class="lg-flex-container">
+				<a href="#/welcome" class="brand"><img src="img/logo.png"><span>SlideCard</span></a>
+				<nav class="right header-menu">
 					<ul class="inline no-margin" data-ng-hide="isLog()">
-						<li><a href="#/login">Log in</a></li>
+						<li><a href="#/login">Login</a></li>
 					</ul>
 					<ul ng-click="page()" class="inline no-margin" data-ng-show="isLog()">
 						<li>
 							<a href="#/cardList">Cards</a>
-						</li>
-						<li>
-							<a href="#/share">Share</a>
 						</li>
 						<li>
 							<a href="#/collection">Network</a>
@@ -36,7 +30,7 @@
 						<li class="dropdown" ng-controller="welcomeController"><a onclick="return false;">{{ firstname }} {{ lastname }}</a>
 							<ul class="dropped no-list no-margin">
 								<li><a href="#/account">Profile</a></li>
-								<li><a href="#/account/update">Settings</a></li>
+								<li><a href="#/account/settings">Settings</a></li>
 								<li class="seperated"><a href="#/logout">Logout</a></li>
 							</ul>
 						</li>
@@ -44,24 +38,49 @@
 				</nav>
 			</div>
 		</div>
-<!--		
-		<ul class="inline no-margin">
-				<li><button type="button" class="btn btn-default"><a href="#/welcome">Welcome</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/cardList">Cards</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/cardCreate">AddCard</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/collection">Collection</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/template">Templates list</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/templateCreate">AddTemplates</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/register">Register</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/account">My Profile</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/login">Login</a></button></li>
-				<li><button type="button" class="btn btn-default"><a href="#/logout">Logout</a></button></li>
-			</ul>
--->
+		<div class="header-description lg-container">
+			<div class="presentation animated fadeIn" style="padding:10% 0;">
+				<h1>Renew business cards</h1>
+				<p>Share your business cards as easy as a slide on your phone!</p>
+				<p><a href="#/register" class="big-btn">Get started</a> <a href="#/login">Already have an account?</a></p>
+			</div>
+			<div class="phone-mockup animated fadeInRight">
+				<img src="img/screen_settings.png">
+			</div>
 		</div>
-		<div id="wrap">
-			<div data-ng-view></div>
+	</header>
+	<section>
+
+		<data-ng-view></data-ng-view>
+
+	</section>
+	<footer>
+		<div class="flex-row spaced">	
+			<div>
+				<h3 class="title">Vivamus</h3>
+			</div>
+			<div>
+				<h3 class="title">Quisque diam</h3>
+			</div>
+			<div>
+				<h3 class="title">Nulla facilisi</h3>
+				<ul class="no-margin no-list">
+					<li><a href>bibendum blandit</a></li>
+					<li><a href>bibendum blandit</a></li>
+					<li><a href>bibendum blandit</a></li>
+				</ul>
+			</div>
+			<div>
+				<h3 class="title">Integer</h3>
+			</div>
 		</div>
+		<div class="xs-container">
+			<p><a href="http://cdn.slidecard.ovh/android/app-release.apk">Slidecard Android</a></p>
+		</div>
+		<div class="lg-container">
+			<p class="copyright">&copy; 2015 &middot; slidecard.com</p>
+		</div>
+	</footer>
 
 		<!-- Development -->
 		<script src="js/libs/angular/angular.js"></script>
@@ -81,7 +100,6 @@
 		<script src="js/controller/cardCreate.js"></script>
 		<script src="js/controller/cardList.js"></script>
 		<script src="js/controller/cardDetail.js"></script>
-		<script src="js/controller/share.js"></script>
 		<script src="js/controller/accountUpdate.js"></script>
 		<script src="js/controller/cardUpdate.js"></script>
 		<script src="js/controller/templateList.js"></script>
@@ -93,13 +111,18 @@
 		<script src="js/controller/contactList.js"></script>
 		<script src="js/libs/jquery.js"></script>
 		<script src="js/app.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>			
+		<script type="text/javascript">
 
-		<!-- Production minify -->
-		<!-- <script src="js_min/slidecard_17-05-2015_16h10.js"></script> -->
-		<footer>
-			<div class="lg-flex-container">
-				<p align="center" class="copyright">&copy; 2015 <a href="#/welcome">slidecard.ovh</a></p>
-			</div>
-		</footer>
-	</body>
+		$(function ()
+		{
+			$('div[class^=\'card\']').click(function (e)
+			{
+				console.log(e);
+				$(this).prepend('<span class="badge-checked icon-check animated bounce"></span>');
+			});
+		});
+
+		</script>
+</body>
 </html>
