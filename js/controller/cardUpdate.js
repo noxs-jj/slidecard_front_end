@@ -7,24 +7,29 @@ slideController.controller('cardUpdateController',
 	else {
 		$scope.error = '';
 		$scope.cdn = urlCdn;
-		$scope.indexTemplate = 0;
-
-		$http.get(urlApi + '/card/' + $routeParams.id + '?token=' + $cookies.usr_token)
-		.success(function(data) {
-			$scope.card = data.data;
-		})
-		.error(function(data, status) {
-			$scope.error = data.message;
-		})
-
+	
 		// TEMPLATE LIST
 		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
 		.success(function(data) {
 			$scope.templates = data.data;
+
+			// Get card details OLD Function is here to wait response of $scope.templates
+			$http.get(urlApi + '/card/' + $routeParams.id + '?token=' + $cookies.usr_token)
+			.success(function(data) {
+				$scope.card = data.data;
+				//console.log($scope.card);
+				$scope.getIndexTemplate($scope.card.id_template);
+			})
+			.error(function(data, status) {
+				$scope.error = data.message;
+			})
+
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
 		})
+
+		
 
 		// Get Index
 		$scope.getIndexTemplate = function(template_id) {
@@ -37,7 +42,7 @@ slideController.controller('cardUpdateController',
 				index++;
 			}
 		}
-
+		
 		// FONTS LIST
 		$http.get(urlApi + '/fonts?token=' + $cookies.usr_token)
 		.success(function(data) {
@@ -47,6 +52,7 @@ slideController.controller('cardUpdateController',
 			$scope.error = data.message;
 		})
 		$scope.update = function() {
+			//console.log('id_template:' + $scope.id_template);
 			if ($scope.color == undefined)
 				$scope.color = $scope.card.color;
 			else

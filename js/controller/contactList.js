@@ -7,6 +7,7 @@ slideController.controller('contactListController',
 	else {
 		$scope.error = '';
 		$scope.cdn = urlCdn;
+
 		$http.get(urlApi + '/collection?token=' + $cookies.usr_token)
 		.success(function(data, status) {
 			$scope.result = data.data;
@@ -14,5 +15,16 @@ slideController.controller('contactListController',
 		.error(function(data, status) {
 			$scope.error = data.message;
 		})
+
+		// $scope.isPresent = function(id_own) {
+		// 	var i = 0,
+		// 	len = $scope.result.length;
+
+		// 	while (i < len) {
+		// 		if ($scope.result)
+		// 		i++;
+		// 	}
+		// 	return false;
+		// }
 	}
 }]);
