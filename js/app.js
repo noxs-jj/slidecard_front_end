@@ -2,7 +2,7 @@ $(function () {
 	$('.header-navbar ul.dropped').hover(function () {
 		$('.header-navbar li.dropdown a').addClass('opened');
 	}, function () {
-		$('.header-navbar li.dropdown a').removeClass('opened');		
+		$('.header-navbar li.dropdown a').removeClass('opened');
 	});
 
 	$('.header-navbar nav > ul > li:not(.dropdown) > a').click(function ( e ) {

@@ -1,17 +1,22 @@
 <div class="lg-flex-container">
-	<div class="title">
-		<h1 class="title">Your Contact</h1>
-		<p>Some description ...</p>
-	</div>
-	<div class="alert-danger animated fadeIn" data-ng-show="error">
+	<div class="alert-error animated fadeIn" data-ng-show="error">
 		<p><span class="icon-cross"></span>{{ error }}</p>
 	</div>
+	<h2>Contact list</h2>
+	<p>3 contacts</p>
 	<div data-ng-repeat="entry in newObj">
-		------------------------------------------------------------------------------------------------</br>
-		<div ng-click="choseIt(entry.owner.id)">
-			<b>{{entry.owner.lastname | uppercase}} {{entry.owner.firstname}}</b></br>
+		<div class="contact-list" ng-click="choseIt(entry.owner.id)" ng-class="{'active': userSelect == entry.owner.id }">
+			{{entry.owner.lastname | uppercase}} {{entry.owner.firstname}}
 		</div>
-		<div ng-show="userSelect == entry.owner.id">
+		<div class="contact-show" ng-show="userSelect == entry.owner.id">
+
+			<div style="background-image:url(http://cdn.slidecard.ovh{{ entry.owner.avatar }});background-position:-50px;" class="avatar"></div>
+			<h3>{{ entry.owner.firstname }} {{ entry.owner.lastname }}</h3>
+			<p><span class="badge">{{ entry.owner.card_hash }}</span></p>
+			<p>{{ entry.owner.email }}</p>
+			<p>Member since {{entry.owner.created_at}}</p>
+		
+<!--
 			id: {{entry.owner.id}}</br>
 			id_rights: {{entry.owner.id_rights}}</br>
 			card_hash: {{entry.owner.card_hash}}</br>
@@ -26,6 +31,7 @@
 			accept_news: {{entry.owner.accept_news}}</br>
 			created_at: {{entry.owner.created_at}}</br>
 			updated_at: {{entry.owner.updated_at}}</br>
+-->
 		</div>
 	</div>
 </div>

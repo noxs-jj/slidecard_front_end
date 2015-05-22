@@ -4,6 +4,7 @@
 
 	$scope.error = '';
 	$scope.auth = function() {
+
 		$http.post(urlApi + '/auth', {
 			'email': $scope.email,
 			'password': $scope.password

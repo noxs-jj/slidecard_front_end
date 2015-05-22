@@ -6,28 +6,23 @@
 	<div class="alert-danger animated fadeIn" data-ng-show="error">
 			<p><span class="icon-cross"></span>{{ error }}</p>
 		</div>
-	<div data-ng-repeat="entry in result">
-		<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + entry.template.path }});font-family:{{ card.font.name }}, Helvetica, Verdana">
-			<div class="hovered-links">
-				<a href="#/card/delete/{{ card.id }}" class="icon-trash">
-					<span class="helper"><span class="carret"></span>Remove</span>
-				</a>
-				<h3>{{ entry.owner.firstname }} {{ entry.owner.lastname }}</h3>
-				{{entry.id}}</br>
-				{{entry.owned_by}}</br>
-				{{entry.type}}</br>
-				{{entry.id_font}}</br>
-				{{entry.organization}}</br>
-				{{entry.job}}</br>
-				{{entry.location}}</br>
-				{{entry.email}}</br>
-				{{entry.phone}}</br>
-				{{entry.slogan}}</br>
-				{{entry.id_template}}</br>
-				{{entry.color}}</br>
-				{{entry.deleted_at}}</br>
-				{{entry.created_at}}</br>
-				{{entry.updated_at}}
+	<div class="flex-row">
+		<div data-ng-repeat="entry in result">
+			<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + entry.template.path }});background-size:cover;font-family:{{ card.font.name }}, Helvetica, Verdana">
+				<div class="hovered-links">
+					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
+						<span class="helper"><span class="carret"></span>Remove</span>
+					</a>
+					<h3>{{ entry.owner.firstname }} {{ entry.owner.lastname }}</h3>
+					<p style="color:#{{ entry.color }}">
+						{{ entry.job }} at {{ entry.organization }}<br>
+						<span class="icon-location-pin"></span> {{ entry.location }}
+					</p>
+					<p style="color:#{{ entry.color }}">
+						<a href="mailto:{{ entry.email }}">{{ entry.email }}</a><br>
+						{{ entry.phone }}
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>

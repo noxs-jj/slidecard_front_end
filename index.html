@@ -9,13 +9,91 @@
 	<link rel="stylesheet" type="text/css" href="css/angular-color-picker.css">
 </head>
 <body ng-controller="contentController as content">
+
+	<!-- Panel -->
+	<div id="panel">
+		<a href class="icon-cross close"></a>
+		<div class="panel_content">
+			
+			<div ng-show="content.getPanel('login')" class="xxs-container centered form" ng-controller="loginController as login">
+				<h2>Login</h2>
+				<p></p>
+				<div class="alert-error animated fadeIn" data-ng-show="error">
+					<p align="left"><span class="icon-cross"></span> {{ error }}</p>
+				</div>
+				<div class="alert-error animated fadeIn" data-ng-show="isLog()">
+					<p align="left"><span class="icon-cross"></span> Already logged in.</p>
+				</div>				
+				<form name="loginForm" data-ng-submit="auth()" ng-class="{'deactivated' : isLog() }">
+					<div class="form-block">
+						<label for="email">Email address</label>
+						<input type="email" required="true" class="form-input" data-ng-model="email">
+					</div>
+					<div class="form-block">
+						<label form="password">Password</label>
+						<input type="password" required="true" class="form-input" data-ng-model="password">
+					</div>
+					<button type="submit" class="form-submit">Login</button>
+					<button onclick="content.setPanel('register');" class="form-submit-default">Create an account</button>
+				</form>
+			</div>
+
+			<div ng-show="content.getPanel('register')" class="xxs-container centered form" ng-controller="registerController as register">
+						<h2 class="title">Register</h2>
+				<div class="alert-error animated fadeIn" data-ng-show="error">
+					<p><span class="icon-cross"></span> {{ error }}</p>
+				</div>
+				<div class="alert-error animated fadeIn" data-ng-show="isLog()">
+					<p align="left"><span class="icon-cross"></span> Already logged in.</p>
+				</div>					
+				<form name="registerForm" data-ng-submit="registerForm.$valid && reg()" novalidate="true"  ng-class="{'deactivated' : isLog() }">
+					<div class="form-block">
+						<label for="firstname">Firsname</label>
+						<input type="text" name="firstname" required="true" class="form-input" data-ng-model="firstname">
+					</div>
+					<div class="form-block">
+						<label for="lastname">Lastname</label>
+						<input type="text" name="lastname" required="true" class="form-input" data-ng-model="lastname">
+					</div>
+					<div class="form-block">
+						<label for="email">Email address</label>
+						<input type="email" name="email" required="true" class="form-input" data-ng-model="email">
+					</div>
+<!--
+
+					<div class="form-block">
+						<label for="email_again">Confirm email address</label>
+						<input type="email" name="email_again" required="true" class="form-input" data-ng-model="email_again">
+					</div>
+-->
+
+					<div class="form-block">
+						<label form="password">Password</label>
+						<input type="password" name="password" required="true" class="form-input" data-ng-model="password">
+					</div>
+<!--
+					<div class="form-block">
+						<label form="password">Confirm Password</label>
+						<input type="password" name="retype_password" required="true" class="form-input" data-ng-model="retype_password">
+					</div>
+-->
+					<button type="submit" class="form-submit">Register</button>
+				</form>
+			</div>
+
+
+		</div>
+	</div>
+
+	<!-- / Panel -->
+
 	<header ng-class="{'standard': !content.isPage('/welcome') }">
 		<div class="header-navbar">
 			<div class="lg-flex-container">
 				<a href="#/welcome" class="brand"><img src="img/logo.png"><span>SlideCard</span></a>
 				<nav class="right header-menu">
 					<ul class="inline no-margin" data-ng-hide="isLog()">
-						<li><a href="#/login">Login</a></li>
+						<li><a href ng-click="content.setPanel('login');" onclick="openPanel();">Login</a></li>
 					</ul>
 					<ul ng-click="page()" class="inline no-margin" data-ng-show="isLog()">
 						<li>
@@ -29,9 +107,12 @@
 						</li>
 						<li class="dropdown" ng-controller="welcomeController"><a onclick="return false;">{{ firstname }} {{ lastname }}</a>
 							<ul class="dropped no-list no-margin">
-								<li><a href="#/account">Profile</a></li>
+								<li>
+									<div class="min-avatar" style="background-image:url(http://cdn.slidecard.ovh/avatar/tbazire.jpg);background-position:-50px;"></div>
+								</li>
+								<li class="separated"><a href="#/account">Profile</a></li>
 								<li><a href="#/account/settings">Settings</a></li>
-								<li class="seperated"><a href="#/logout">Logout</a></li>
+								<li class="separated"><a href="#/logout">Logout</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -42,10 +123,15 @@
 			<div class="presentation animated fadeIn" style="padding:10% 0;">
 				<h1>Renew business cards</h1>
 				<p>Share your business cards as easy as a slide on your phone!</p>
-				<p><a href="#/register" class="big-btn">Get started</a> <a href="#/login">Already have an account?</a></p>
+				<p>
+					<a href onclick="openPanel();" ng-click="content.setPanel('register');" class="big-btn">Get started</a>
+					<a href ng-click="content.setPanel('login');" onclick="openPanel();">Already have an account?</a>
+				</p>
 			</div>
 			<div class="phone-mockup animated fadeInRight">
 				<img src="img/screen_settings.png">
+				<ul class="slideshow">
+				</ul>
 			</div>
 		</div>
 	</header>
@@ -63,11 +149,11 @@
 				<h3 class="title">Quisque diam</h3>
 			</div>
 			<div>
-				<h3 class="title">Nulla facilisi</h3>
+				<h3 class="title">Social</h3>
 				<ul class="no-margin no-list">
-					<li><a href>bibendum blandit</a></li>
-					<li><a href>bibendum blandit</a></li>
-					<li><a href>bibendum blandit</a></li>
+					<li><a href>twitter</a></li>
+					<li><a href>facebook</a></li>
+					<li><a href>google+</a></li>
 				</ul>
 			</div>
 			<div>
@@ -114,8 +200,31 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>			
 		<script type="text/javascript">
 
+		const ANIMATION_DURATION = 600;
+
+		var openPanel = function () {
+
+			$('#panel').animate({right: 0}, ANIMATION_DURATION, 'easeInOutCubic');
+		};
+
+
 		$(function ()
 		{
+			$('#panel').css({
+				height: $(window).innerHeight(),
+				right: - $('#panel').outerWidth() + "px"
+			});
+
+			var min_height = $(document).outerHeight() - $('header').outerHeight() - $('footer').outerHeight();
+
+			$('section').css({minHeight: min_height + "px"});
+
+			$('#panel .close').click(function ()
+			{
+				$('#panel').animate({right: - $('#panel').outerWidth() + "px"}, ANIMATION_DURATION, 'easeInOutCubic');
+			});
+
+
 			$('div[class^=\'card\']').click(function (e)
 			{
 				console.log(e);

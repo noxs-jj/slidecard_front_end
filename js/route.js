@@ -106,6 +106,35 @@ slideApp.controller('contentController',
 		function($cookies, $scope, $location) {
 			var content = this;
 
+	content.panel = {login: false, register: false};
+
+	content.getPanel = function (name) {
+
+		if (this.panel.login && name == 'login')
+			return true;
+
+		if (this.panel.register && name == 'register')
+			return true;
+
+		return false;
+	};
+
+	content.setPanel = function (name) {
+
+		if (name == 'login')
+		{
+			content.panel.login = true;
+			content.panel.register = false;
+		}
+
+		if (name == 'register')
+		{
+			content.panel.login = false;
+			content.panel.register = true;
+		}
+		console.log("set: " + name);
+	};
+
 	content.isPage = function (page) {
 		return page == $location.path();
 	};

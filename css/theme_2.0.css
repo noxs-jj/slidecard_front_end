@@ -26,6 +26,7 @@ a {
 p {
 	line-height: 23px;
 	color: rgb(140, 170, 190);
+	color: rgb(120, 135, 160);
 }
 
 hr {
@@ -65,6 +66,21 @@ nav.right {
 }
 
 /** Containers **/
+
+#panel {
+	position: fixed;
+	z-index: 9999;
+	padding: 50px 30px;
+	min-width: 330px;
+	width: 22%;
+	right: 0;
+	top: 0;
+	color: #333;
+	border-top: 3px solid rgb(0, 100, 200);
+	background-color: rgb(0, 100, 200);
+	background-color: #fff;
+	box-shadow: -1px 0 3px rgba(0, 0, 0, 0.1);
+}
 
 div[class*='-container'] {
 	position: relative;
@@ -177,6 +193,11 @@ div.xs-container {
 	width: 90%;
 }
 
+div.xxs-container {
+	max-width: 250px;
+	width: 90%;
+}
+
 div.flex-container {
 	width: 100%;
 }
@@ -235,12 +256,24 @@ header.standard .header-description {
 	color: #fff;
 }
 
+.header-navbar .min-avatar {
+	width: 83px;
+	height: 83px;
+	border-radius: 100%;
+	display: block;
+	margin: 10px auto;
+	background-size: cover;
+}
 
 .header-navbar li.dropdown {
     position: relative;
 }
 
-.header-navbar li.dropdown a:hover {
+.header-navbar li.dropdown a {
+    border-radius: 3px 3px 0 0;
+}
+
+.header-navbar li.dropdown a:hover, .header-navbar .opened {
     background-color: #fff;
     color: #444;
 }
@@ -251,27 +284,31 @@ header.standard .header-description {
 
 .header-navbar li.dropdown > ul {
     position: absolute;
-    top: 20px;
+    top: 28px;
     right: 0;
-    padding: 6px 15px;
+    padding: 6px 10px 0;
     min-width: 150px;
     display: none;
     z-index: 9;
     background-color: #fff;
-    border-radius: 0 0 3px 3px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 3px 0 3px 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .header-navbar ul.dropped a {
     display: block;
-    padding: 10px;
+    padding: 7px;
     margin: 0;
     color: #777;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
 
 .header-navbar ul.dropped a:hover {
-    padding: 10px 7px 10px 13px;
+    padding: 7px 7px 7px 13px;
     background-color: transparent;
     color: #444;
 }
@@ -280,9 +317,8 @@ header.standard .header-description {
     margin: 4px 0;
 }
 
-.header-navbar li.dropdown > ul > li.seperated {
+.header-navbar li.dropdown > ul > li.separated {
     border-top: 1px solid #eee;
-    padding-top: 10px;
 }
 
 
@@ -298,7 +334,6 @@ header.standard .header-description {
 .header-menu > ul > li > a:hover {
 	color: #fff;
 }
-
 
 .header-description p {
 	display: block;
@@ -460,6 +495,11 @@ footer .flex-row > div {
 	color: rgba(255, 255, 255, 0.5);
 }
 
+form.deactivated {
+	opacity: 0.8;
+	-webkit-filter: blur(2px);
+}
+
 .form-footer-newsletter {
 	margin: 0 15px;
 }
@@ -575,6 +615,18 @@ button[class^='form-submit'] {
 
 }
 
+#panel .form {
+	top: 20%;
+}
+
+/*
+#panel .form-input {
+	border: 1px solid rgb(230, 235, 245);
+	color: rgb(230, 235, 245);
+	background-color: transparent;
+	margin: 15px 0;
+}
+*/
 
 /** Tables **/
 
@@ -608,11 +660,35 @@ table.table a {
     margin: 0 10px;
 }
 
+/** Alerts **/
 
+div[class*='alert-'] {
+	padding: 8px 15px;
+	border-radius: 2px;
+	background-color: rgb(240, 242, 245);
+}
+
+div[class*='alert-'] p {
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+div.alert-error {
+	background-color:#e74c3c;
+}
+
+div.alert-success {
+	background-color:#2ecc71;
+}
 
 /** Custom **/
 
-.team .avatar {
+.slideshow {
+	position: absolute;
+}
+
+.team .avatar, .avatar {
 	width: 120px;
 	height: 120px;
 	margin: 0 auto;
@@ -667,6 +743,47 @@ table.table a {
 	display: inline-block;
 }
 
+#panel .close {
+	font-size: 180%;
+	font-weight: lighter;
+	float: right;
+	top: 0;
+	color: rgb(0, 100, 200);
+}
+
+.contact-list {
+	cursor: pointer;
+	display: inline-block;
+	width: 420px;
+	padding: 6px 10px;
+	border-radius: 2px;
+	border-bottom: 1px solid rgb(200, 205, 215);
+	-webkit-transition: all 0.2s;
+}
+
+.contact-list:hover, .contact-list.active {
+	background-color: rgb(230, 235, 245);
+}
+
+.contact-list.active {
+	border-radius: 3px 0 0 3px;
+	color: rgb(80, 95, 120);	
+}
+
+.contact-list, .contact-show {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.contact-show {
+	text-align: center;
+	width: 40%;
+	min-width: 250px;
+	padding: 20px 0;
+	border-radius: 0 3px 3px 3px;
+	margin-left: -4px;
+	background-color: rgb(230, 235, 245);
+}
 
 /*********************** To Remove ***********************/
 
