@@ -19,7 +19,7 @@ slideController.controller('templateDeleteController',
 			$http.get(urlApi + '/template/delete/' + $routeParams.id
 				+ '?token=' + $cookies.usr_token)
 			.success(function(data, status) {
-				$location.path('/templateList');
+				$location.path('/template');
 			})
 			.error(function(data, status) {
 				$scope.error = data.message;
