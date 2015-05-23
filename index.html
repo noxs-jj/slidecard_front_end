@@ -78,6 +78,8 @@
 					</div>
 -->
 					<button type="submit" class="form-submit">Register</button>
+					<button onclick="content.setPanel('login');" class="form-submit-default">Login</button>
+
 				</form>
 			</div>
 
@@ -87,7 +89,7 @@
 
 	<!-- / Panel -->
 
-	<header ng-class="{'standard': !content.isPage('/welcome') }">
+	<header ng-class="{'standard': !content.isPage(['/welcome']) }">
 		<div class="header-navbar">
 			<div class="lg-flex-container">
 				<a href="#/welcome" class="brand"><img src="img/logo.png"><span>SlideCard</span></a>
@@ -97,15 +99,15 @@
 					</ul>
 					<ul ng-click="page()" class="inline no-margin" data-ng-show="isLog()">
 						<li>
-							<a href="#/cardList">Cards</a>
+							<a href="#/cardList" ng-class="{'active': content.isPage(['/cardList','/cardCreate','/template','/templateCreate']) }">Cards</a>
 						</li>
 						<li>
-							<a href="#/collection">Network</a>
+							<a href="#/collection" ng-class="{'active': content.isPage(['/collection']) }">Network</a>
 						</li>
 						<li>
-							<a href="#/contactList">Contact</a>
+							<a href="#/contactList" ng-class="{'active': content.isPage(['/contactList']) }">Contact</a>
 						</li>
-						<li class="dropdown" ng-controller="welcomeController"><a onclick="return false;">{{ firstname }} {{ lastname }}</a>
+						<li class="dropdown" ng-controller="welcomeController"><a onclick="return false;" ng-class="{'active': content.isPage(['/account','/account/settings','/account/update']) }">{{ firstname }} {{ lastname }}</a>
 							<ul class="dropped no-list no-margin">
 								<li>
 									<div class="min-avatar" style="background-image:url(http://cdn.slidecard.ovh/avatar/tbazire.jpg);background-position:-50px;"></div>
@@ -204,7 +206,7 @@
 
 		var openPanel = function () {
 
-			$('#panel').animate({right: 0}, ANIMATION_DURATION, 'easeInOutCubic');
+			$('#panel').animate({right: 0}, ANIMATION_DURATION);
 		};
 
 
@@ -221,7 +223,7 @@
 
 			$('#panel .close').click(function ()
 			{
-				$('#panel').animate({right: - $('#panel').outerWidth() + "px"}, ANIMATION_DURATION, 'easeInOutCubic');
+				$('#panel').animate({right: - $('#panel').outerWidth() + "px"}, ANIMATION_DURATION);
 			});
 
 

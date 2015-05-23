@@ -271,6 +271,10 @@ header.standard .header-description {
 
 .header-navbar li.dropdown a {
     border-radius: 3px 3px 0 0;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    transition: none;
 }
 
 .header-navbar li.dropdown a:hover, .header-navbar .opened {
@@ -319,6 +323,10 @@ header.standard .header-description {
 
 .header-navbar li.dropdown > ul > li.separated {
     border-top: 1px solid #eee;
+}
+
+.header-navbar .active {
+	color: #fff;
 }
 
 
@@ -373,7 +381,7 @@ header.standard .header-description {
 
 /** Buttons **/
 
-a[class$='-btn'] {
+a[class*='-btn'] {
 	border-radius: 3px;
 	-webkit-transition: all 0.2s;
 	-moz-transition: all 0.2s;
@@ -406,6 +414,12 @@ a[class$='-btn'] {
 .colored-btn:hover {
 	color: #fff;
 	background-color: rgba(50, 150, 220, 1);
+}
+
+.default-btn {
+	padding: 8px 15px;
+	color: rgb(120, 135, 160);
+	background-color: rgb(230, 235, 245);
 }
 
 /** Navigation **/
@@ -452,6 +466,23 @@ a[class$='-btn'] {
 	background-color: rgb(50, 150, 220);
 /*	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 */
+}
+
+.badge-on, .badge-off {
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background-color: #eee;
+	margin: 0 auto;
+}
+
+.badge-on {
+	background-color: #2ecc71;
+}
+
+.badge-off {
+	background-color: #e74c3c;
 }
 
 /** Footer **/
@@ -660,6 +691,17 @@ table.table a {
     margin: 0 10px;
 }
 
+table.colored-table {
+	width: 100%;
+	border-radius: 3px;
+	background-color: rgb(240, 242, 245);
+}
+
+table.colored-table td {
+	padding: 6px 20px;
+	color: rgb(120, 135, 160);	
+}
+
 /** Alerts **/
 
 div[class*='alert-'] {
@@ -752,6 +794,7 @@ div.alert-success {
 }
 
 .contact-list {
+	position: relative;
 	cursor: pointer;
 	display: inline-block;
 	width: 420px;
@@ -770,6 +813,12 @@ div.alert-success {
 	color: rgb(80, 95, 120);	
 }
 
+.contact-wrapper {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
 .contact-list, .contact-show {
 	display: inline-block;
 	vertical-align: top;
@@ -783,6 +832,12 @@ div.alert-success {
 	border-radius: 0 3px 3px 3px;
 	margin-left: -4px;
 	background-color: rgb(230, 235, 245);
+}
+
+.edit-profile {
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 
 /*********************** To Remove ***********************/

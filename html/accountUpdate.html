@@ -1,3 +1,51 @@
+<div class="lg-flex-container">
+	<div class="alert-danger animated fadeIn" data-ng-show="error">
+		<p><span class="icon-cross"></span>{{ error }}</p>
+	</div>
+</div>
+<form name="newCardForm" data-ng-submit="update()" novalidate>
+	<div class="flex-row">
+
+		<div class="flex-block">
+			<h2 class="title">Update profile</h2>
+
+			<div class="form-block">
+				<label for="firstname">Firstname</label>
+				<input type="text" class="form-input" placeholder="{{ firstname }}" value="{{ update_firstname }}" data-ng-model="update_firstname">
+			</div>
+			<div class="form-block">
+				<label for="lastname">Lastname</label>
+				<input type="text" class="form-input" placeholder="{{ lastname }}" value="{{ update_lastname }}"  data-ng-model="update_lastname">
+			</div>
+			<div class="form-block">
+				<label for="email">Email address</label>
+				<input type="text" class="form-input" placeholder="{{ email }}" value="{{ update_email }}" data-ng-model="update_email">
+			</div>
+
+			<div class="form-block">
+				<label for="avatar">Avatar (< 2Mbits) </label>
+				<input type="file" file-model="update_url_avatar" class="form-input">
+			</div>
+			<button class="form-submit" type="submit" value="Login">Save changes</button>
+		</div>
+
+		<div class="flex-block">
+			<h2 class="title">Change password</h2>
+			<div class="form-block">
+				<label for="password">Password</label>
+				<input type="password" class="form-input"  data-ng-model="update_password">
+			</div>
+			<div class="form-block">
+				<label for="password">Confirm Password</label>
+				<input type="password" class="form-input" data-ng-model="retype_password">
+			</div>
+			<button class="form-submit" type="submit" value="Login">Save changes</button>
+		</div>
+
+		</div>
+	</form>
+</div>
+<!--
 <div class="lg-container">
 	<h2 class="title">Update profile</h2>
 	<form class="form-signin" name="newCardForm" data-ng-submit="update()" novalidate>
@@ -40,3 +88,4 @@
 		</div>
 	</form>
 </div>
+-->

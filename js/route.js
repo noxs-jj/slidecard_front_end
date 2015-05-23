@@ -136,7 +136,13 @@ slideApp.controller('contentController',
 	};
 
 	content.isPage = function (page) {
-		return page == $location.path();
+
+		for (var i = 0; i < page.length; i++)
+		{
+			if (page[i] == $location.path())
+				return true;
+		}
+		return false;
 	};
 
 	$scope.isLog = function() {

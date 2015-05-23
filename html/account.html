@@ -5,29 +5,30 @@
 		<p><span class="icon-cross"></span>{{ error }}</p>
 	</div>
 
-	<div>
-		<img src="{{ cdn + avatar }}" style="width:120px;">
+	<div style="margin:6% 0;position:relative;">
+		<div class="avatar" style="background-image: url(http://cdn.slidecard.ovh{{ avatar }});"></div>
+		<a href="#/account/update" class="default-btn edit-profile"><span class="icon-pencil"></span> Edit profile</a>
 		<h2 class="title">{{ firstname }} {{ lastname }}</h2>
-		<p>Your slidecard code<br>{{ card_hash }}</p>
+		<p>Your slidecard code<br><b>{{ card_hash }}</b></p>
 		<p>{{ email }}</p>
-		<p>NewsLetter subscription: <b>{{ accept_news }}</b></p>
-		<p>Notifications subscription: <b>{{ accept_notif }}</b></p>
-		<a href="#/account/update" class="simple-btn"><span class="icon-edit"></span> Edit profile</a>
+
+		<div class="xs-container">
+			<table class="colored-table" style="margin: 0 auto;">
+				<tr>
+					<td>Newsletter</td>
+					<td>Notifications</td>
+				</tr>
+				<tr>
+					<td>
+						<span ng-show="accept_news" class="badge-on"></span>
+						<span ng-show="!accept_news" class="badge-off"></span>	
+					</td>
+					<td>
+						<span ng-show="accept_notif" class="badge-on"></span>
+						<span ng-show="!accept_notif" class="badge-off"></span>
+					</td>
+				</tr>
+			</table>		
+		</div>
 	</div>
 </div>
-<!--
-<div style="margin-top:50px" class="md-container">
-	<div class="alert-danger animated fadeIn" data-ng-show="error">
-		<p><span class="icon-cross"></span>{{ error }}</p>
-	</div>
-	<div class="centered-box">
-		<img class="avatar" src="{{ cdn +  avatar }}" alt="Profile {{ firstname }} {{ lastname }}">
-		<h2 class="title">{{ firstname }} {{ lastname }}</h2>
-		<p>{{ card_hash }}</p>
-		<p>{{ email }}</p>
-		<p>NewsLetter subscription: <b>{{ accept_news }}</b></p>
-		<p>Notifications subscription: <b>{{ accept_notif }}</b></p>
-		<a href="#/account/update" class="simple-btn"><span class="icon-edit"></span> Edit profile</a>
-	</div>
-</div>
--->

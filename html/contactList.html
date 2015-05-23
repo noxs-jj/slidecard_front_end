@@ -3,35 +3,39 @@
 		<p><span class="icon-cross"></span>{{ error }}</p>
 	</div>
 	<h2>Contact list</h2>
-	<p>3 contacts</p>
+	<p>{{ newObj.length }} contact<span ng-show="newObj.length > 1">s</span></p>
 	<div data-ng-repeat="entry in newObj">
 		<div class="contact-list" ng-click="choseIt(entry.owner.id)" ng-class="{'active': userSelect == entry.owner.id }">
 			{{entry.owner.lastname | uppercase}} {{entry.owner.firstname}}
 		</div>
-		<div class="contact-show" ng-show="userSelect == entry.owner.id">
+	</div>
+		
+	<div data-ng-repeat="entry in newObj" class="contact-wrapper">
+		<div ng-show="userSelect == entry.owner.id"  class="contact-show">
 
 			<div style="background-image:url(http://cdn.slidecard.ovh{{ entry.owner.avatar }});background-position:-50px;" class="avatar"></div>
-			<h3>{{ entry.owner.firstname }} {{ entry.owner.lastname }}</h3>
-			<p><span class="badge">{{ entry.owner.card_hash }}</span></p>
-			<p>{{ entry.owner.email }}</p>
-			<p>Member since {{entry.owner.created_at}}</p>
-		
-<!--
-			id: {{entry.owner.id}}</br>
-			id_rights: {{entry.owner.id_rights}}</br>
-			card_hash: {{entry.owner.card_hash}}</br>
-			active: {{entry.owner.active}}</br>
-			firstname: {{entry.owner.firstname}}</br>
-			lastname: {{entry.owner.lastname}}</br>
-			avatar: {{entry.owner.avatar}}</br>
-			email: {{entry.owner.email}}</br>
-			last_login: {{entry.owner.last_login}}</br>
-			api_token: {{entry.owner.api_token}}</br>
-			accept_notif: {{entry.owner.accept_notif}}</br>
-			accept_news: {{entry.owner.accept_news}}</br>
-			created_at: {{entry.owner.created_at}}</br>
-			updated_at: {{entry.owner.updated_at}}</br>
--->
+				<h3>{{ entry.owner.firstname }} {{ entry.owner.lastname }}</h3>
+				<p><span class="badge">{{ entry.owner.card_hash }}</span></p>
+				<p><a href="mailto:{{ entry.owner.email }}">{{ entry.owner.email }}</a></p>
+				<p>Member since {{entry.owner.created_at}}</p>
+			
+	<!--
+				id: {{entry.owner.id}}</br>
+				id_rights: {{entry.owner.id_rights}}</br>
+				card_hash: {{entry.owner.card_hash}}</br>
+				active: {{entry.owner.active}}</br>
+				firstname: {{entry.owner.firstname}}</br>
+				lastname: {{entry.owner.lastname}}</br>
+				avatar: {{entry.owner.avatar}}</br>
+				email: {{entry.owner.email}}</br>
+				last_login: {{entry.owner.last_login}}</br>
+				api_token: {{entry.owner.api_token}}</br>
+				accept_notif: {{entry.owner.accept_notif}}</br>
+				accept_news: {{entry.owner.accept_news}}</br>
+				created_at: {{entry.owner.created_at}}</br>
+				updated_at: {{entry.owner.updated_at}}</br>
+	-->
+			</div>
 		</div>
 	</div>
 </div>
