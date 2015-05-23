@@ -27,8 +27,10 @@ slideController.controller('contactListController',
 				});
 				return cleaned;
 			}
-			$scope.newObj = $scope.removeDeplucate($scope.result);
 
+			var contacts = $scope.removeDeplucate($scope.result);
+
+			$scope.newObj = contacts;
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;

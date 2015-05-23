@@ -5,12 +5,12 @@
 		<form name="newCardForm" data-ng-submit="update()" novalidate>
 
 			<div class="form-block">
-				<label for="update_accept_news">NewsLetter subscription</label>
+				<label for="update_accept_news">Newsletters subscription</label>
 				<select class="form-input select" data-ng-model="update_accept_news">
 					<option data-ng-value="0" data-ng-selected="0 == accept_news"
-						data-ng-init="accept_news">False</option>
+						data-ng-init="accept_news">Deactivated</option>
 					<option data-ng-value="1" data-ng-selected="1 == accept_news"
-						data-ng-init="accept_news">True</option>
+						data-ng-init="accept_news">Activated</option>
 				</select>
 			</div>
 
@@ -18,9 +18,9 @@
 				<label for="update_accept_notif">Notifications subscription</label>
 				<select class="form-input select" data-ng-model="update_accept_notif">
 					<option data-ng-value="0" data-ng-selected="0 == accept_notif"
-						data-ng-init="accept_notif">False</option>
+						data-ng-init="accept_notif">Deactivated</option>
 					<option data-ng-value="1" data-ng-selected="1 == accept_notif"
-						data-ng-init="accept_notif">True</option>
+						data-ng-init="accept_notif">Activated</option>
 				</select>
 			</div>
 

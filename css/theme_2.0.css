@@ -97,6 +97,13 @@ div.lightgrey-container {
 	background-color: rgb(230, 235, 245);
 }
 
+div.lightgrey-text-container {
+	padding: 5% 0;
+	margin: 5% 0 0;
+/*	background-image: -webkit-linear-gradient(top, rgb(230, 235, 245) 60%, rgb(255, 255, 255) 60%);
+*/	background-color: rgb(230, 235, 245);
+}
+
 div.blue-container {
 	background-color: rgb(0, 100, 200);	
 }
@@ -422,6 +429,11 @@ a[class*='-btn'] {
 	background-color: rgb(230, 235, 245);
 }
 
+.default-btn:hover {
+	color: rgb(100, 115, 140);
+	background-color: rgb(210, 215, 225);
+}
+
 /** Navigation **/
 
 .navbar-default {
@@ -488,9 +500,19 @@ a[class*='-btn'] {
 /** Footer **/
 
 footer {
+	font-size: 0.9em;
 	padding: 30px 0 10px 0;	
 	color: rgba(255, 255, 255, 0.3);
 	background-color: rgb(20, 35, 60);
+}
+
+footer a {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+footer a:hover {
+	color: rgba(255, 255, 255, 0.6);
+	text-decoration: underline;
 }
 
 footer h3 {
@@ -500,7 +522,12 @@ footer h3 {
 }
 
 footer .copyright {
-	font-size: 0.7em;
+	display: block;
+	font-size: 0.8em;
+	text-align: center;
+	padding-top: 10px;
+	margin-top: 50px;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
 	color: rgba(255, 255, 255, 0.3);
 }
 
@@ -512,18 +539,21 @@ footer .flex-row > div {
 /** Form **/
 
 ::-webkit-input-placeholder {
-	color: rgba(255, 255, 255, 0.5);
+	color: rgb(200, 200, 200);
 }
+
 :-moz-placeholder {
-	color: rgba(255, 255, 255, 0.5);
+	color: rgb(200, 200, 200);
 	opacity:  1;
 }
+
 ::-moz-placeholder {
-	color: rgba(255, 255, 255, 0.5);
+	color: rgb(200, 200, 200);
 	opacity:  1;
 }
+
 :-ms-input-placeholder {
-	color: rgba(255, 255, 255, 0.5);
+	color: rgb(200, 200, 200);
 }
 
 form.deactivated {
@@ -607,6 +637,7 @@ form.deactivated {
 
 .form-block > .note {
 	font-size: 0.8em;
+	margin-left: 10px;
 	color: rgb(140, 170, 190);
 }
 

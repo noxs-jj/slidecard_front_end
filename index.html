@@ -145,10 +145,22 @@
 	<footer>
 		<div class="flex-row spaced">	
 			<div>
-				<h3 class="title">Vivamus</h3>
+				<h3 class="title">About Slidecard</h3>
+				<ul class="no-margin no-list">
+					<li><a href>How to use slidecard</a></li>
+					<li><a href>Developers</a></li>
+					<li><a href>Press</a></li>
+					<li><a href>Careers</a></li>
+					<li><a href>Legal notice</a></li>
+					<li><a href>Contact us</a></li>
+				</ul>
 			</div>
 			<div>
-				<h3 class="title">Quisque diam</h3>
+				<h3 class="title">Applications</h3>
+				<ul class="no-margin no-list">
+					<li><a href>iOS Application</a></li>
+					<li><a href>Android Application</a></li>
+				</ul>
 			</div>
 			<div>
 				<h3 class="title">Social</h3>
@@ -159,13 +171,21 @@
 				</ul>
 			</div>
 			<div>
-				<h3 class="title">Integer</h3>
+				<h3 class="title">My account</h3>
+				<ul ng-show="isLog()" class="no-margin no-list">
+					<li><a href="#/cardList">Cards</a></li>
+					<li><a href="#/collection">Network</a></li>
+					<li><a href="#/contactList">Contacts</a></li>
+					<li><a href="#/account">Profile</a></li>
+					<li><a href="#/logout">Logout</a></li>
+				</ul>
+				<ul ng-show="!isLog()" class="no-margin no-list">
+					<li><a href="#/login">Login</a></li>
+					<li><a href="#/register">Register</a></li>
+				</ul>
 			</div>
 		</div>
-		<div class="xs-container">
-			<p><a href="http://cdn.slidecard.ovh/android/app-release.apk">Slidecard Android</a></p>
-		</div>
-		<div class="lg-container">
+		<div class="lg-flex-container">
 			<p class="copyright">&copy; 2015 &middot; slidecard.com</p>
 		</div>
 	</footer>
