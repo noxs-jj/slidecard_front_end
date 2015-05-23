@@ -4,6 +4,19 @@ slideController.controller('welcomeController',
 
 			console.log($location.path());
 
+		$scope.newsletter = function () {
+
+			$http.post(urlApi + '/newsletter?token=' + $cookies.usr_token, {
+				'email': $scope.email
+			})
+			.success(function (data, status) {
+
+			})
+			.error(function (data, status) {
+				$scope.error = data.message;
+			});
+		};
+
 	$scope.error = '';
 	if ($cookies.logged == undefined)
 		$cookies.logged == false;
