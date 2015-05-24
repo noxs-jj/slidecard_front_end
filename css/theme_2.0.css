@@ -273,10 +273,11 @@ header.standard .header-description {
 }
 
 .header-navbar li.dropdown {
-    position: relative;
+    position: relative;	
 }
 
 .header-navbar li.dropdown a {
+    padding-bottom: 30px;
     border-radius: 3px 3px 0 0;
     -webkit-transition: none;
     -moz-transition: none;
@@ -295,14 +296,14 @@ header.standard .header-description {
 
 .header-navbar li.dropdown > ul {
     position: absolute;
-    top: 28px;
-    right: 0;
+    top: 47px;
+    right: -1px;
     padding: 6px 10px 0;
     min-width: 150px;
     display: none;
     z-index: 9;
     background-color: #fff;
-    border-radius: 3px 0 3px 3px;
+    border-radius: 0 0 3px 3px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -558,10 +559,6 @@ footer .flex-row > div {
 
 form.deactivated {
 	opacity: 0.8;
-	-webkit-filter: blur(2px);
-	-moz-filter: blur(2px);
-	-ms-filter: blur(2px);
-	filter: blur(2px);
 }
 
 .form-footer-newsletter {
@@ -931,6 +928,11 @@ div[class*='card'] .options a {
 	display: inline-block;
 	border-radius: 18px;
 	width: 90px;
+}
+
+.hidden-map {
+	opacity: 0.8;
+	background-color: #fff;
 }
 
 /*********************** To Remove ***********************/

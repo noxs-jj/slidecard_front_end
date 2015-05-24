@@ -45,13 +45,14 @@
 			
 			<div ng-show="content.getPanel('login')" class="xxs-container centered form" ng-controller="loginController as login">
 				<h2>Login</h2>
-				<p></p>
+
 				<div class="alert-error animated fadeIn" data-ng-show="error">
 					<p align="left"><span class="icon-cross"></span> {{ error }}</p>
 				</div>
 				<div class="alert-error animated fadeIn" data-ng-show="isLog()">
 					<p align="left"><span class="icon-cross"></span> Already logged in.</p>
 				</div>				
+				<div ng-show="content.getPanel('login') && isLog()" class="hidden-map"></div>
 				<form name="loginForm" data-ng-submit="auth()" ng-class="{'deactivated' : isLog() }">
 					<div class="form-block">
 						<label for="email">Email address</label>
@@ -74,6 +75,7 @@
 				<div class="alert-error animated fadeIn" data-ng-show="isLog()">
 					<p align="left"><span class="icon-cross"></span> Already logged in.</p>
 				</div>					
+				<div ng-show="content.getPanel('register') && isLog()" class="hidden-map"></div>
 				<form name="registerForm" data-ng-submit="registerForm.$valid && reg()" novalidate="true"  ng-class="{'deactivated' : isLog() }">
 					<div class="form-block">
 						<label for="firstname">Firsname</label>
@@ -159,7 +161,7 @@
 				</p>
 			</div>
 			<div class="phone-mockup animated fadeInRight">
-				<img src="img/screen_settings.png">
+				<img src="http://cdn.slidecard.ovh/assets/presentation_main.png">
 				<ul class="slideshow">
 				</ul>
 			</div>
@@ -225,6 +227,7 @@
 
 		var openPanel = function () {
 
+			$('.hidden-map').css({height: $(document).outerHeight() + "px"});
 			$('#panel').animate({right: 0}, ANIMATION_DURATION);
 		};
 
@@ -239,6 +242,12 @@
 			var min_height = $(document).outerHeight() - $('header').outerHeight() - $('footer').outerHeight();
 
 			$('section').css({minHeight: min_height + "px"});
+
+			$(document).on('change', function () {
+				var min_height = $(document).outerHeight() - $('header').outerHeight() - $('footer').outerHeight();
+				$('section').css({minHeight: min_height + "px"});
+
+			});
 
 			$('#panel .close').click(function ()
 			{
