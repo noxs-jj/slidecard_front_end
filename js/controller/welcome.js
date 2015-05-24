@@ -24,9 +24,10 @@ slideController.controller('welcomeController',
 		$http.get(urlApi + '/account?token=' + $cookies.usr_token)
 		.success(function(data, status) {
 			$scope.firstname = data.data.firstname;
-			$scope.lastname = data.data.lastname;
+			$scope.lastname  = data.data.lastname;
+			$scope.avatar    = data.data.avatar; 
 			$cookies.user_id = $scope.id;
-			$scope.cdn = urlCdn;
+			$scope.cdn       = urlCdn;
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;

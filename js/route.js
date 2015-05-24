@@ -96,6 +96,11 @@ slideApp.config(['$routeProvider', '$httpProvider',
 		controller: 'welcomeController',
 		controllerAs: 'welcome'
 	}).
+	when('/application', {
+		templateUrl: 'html/applications.html',
+		controller: 'welcomeController',
+		controllerAs: 'welcome'
+	}).
 	otherwise({ redirectTo: '/welcome' });
 
     delete $httpProvider.defaults.headers.common['X-Requested-With'];

@@ -1,7 +1,6 @@
 <div class="lg-flex-container">
 	<div class="title">
-		<h1 class="title">Your Network</h1>
-		<p>Some description ...</p>
+		<h1 class="title">Network</h1>
 	</div>
 	<div class="alert-danger animated fadeIn" data-ng-show="error">
 			<p><span class="icon-cross"></span>{{ error }}</p>
@@ -9,20 +8,20 @@
 	<div class="flex-row">
 		<div data-ng-repeat="entry in result">
 			<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + entry.template.path }});background-size:cover;font-family:{{ card.font.name }}, Helvetica, Verdana">
-				<div class="hovered-links">
+				<div class="options">
 					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
 						<span class="helper"><span class="carret"></span>Remove</span>
 					</a>
-					<h3>{{ entry.owner.firstname }} {{ entry.owner.lastname }}</h3>
-					<p style="color:#{{ entry.color }}">
-						{{ entry.job }} at {{ entry.organization }}<br>
-						<span class="icon-location-pin"></span> {{ entry.location }}
-					</p>
-					<p style="color:#{{ entry.color }}">
-						<a href="mailto:{{ entry.email }}">{{ entry.email }}</a><br>
-						{{ entry.phone }}
-					</p>
 				</div>
+				<h3>{{ entry.owner.firstname }} {{ entry.owner.lastname }}</h3>
+				<p style="color:#{{ entry.color }}">
+					{{ entry.job }} at {{ entry.organization }}<br>
+					<span class="icon-location-pin"></span> {{ entry.location }}
+				</p>
+				<p style="color:#{{ entry.color }}">
+					<a href="mailto:{{ entry.email }}">{{ entry.email }}</a><br>
+					{{ entry.phone }}
+				</p>
 			</div>
 		</div>
 	</div>

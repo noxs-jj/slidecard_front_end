@@ -11,21 +11,25 @@
 <div class="flex-row"><h1 class="title">Managing cards</h1></div>
 <div class="flex-row">
 	<div ng-repeat="card in result">
-		<div class="card animated flipInX" style="color:#{{ card.color }};background-image:url({{ cdn + card.template.path }});background-size:cover;font-family:{{ card.font.name }}, Helvetica, Verdana">
-			<div class="hovered-links">
-				<a href="#/card/{{ card.id }}" class="icon-text">
-					<span class="helper"><span class="carret"></span>More</span>
-				</a>
-				<a href="#/card/update/{{ card.id }}" class="icon-pencil">
-					<span class="helper"><span class="carret"></span>Edit</span>
-				</a>
-				<a href="#/card/delete/{{ card.id }}" class="icon-trash">
-					<span class="helper"><span class="carret"></span>Delete</span>
-				</a>
+		<div class="card-block">
+			<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + card.template.path }});background-size:cover;font-family:{{ card.font.name }}, Helvetica, Verdana">
+
+				<div class="options">
+					<a href="#/card/{{ card.id }}" class="icon-text">
+						<span class="helper"><span class="carret"></span>More</span>
+					</a>
+					<a href="#/card/update/{{ card.id }}" class="icon-pencil">
+						<span class="helper"><span class="carret"></span>Edit</span>
+					</a>
+					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
+						<span class="helper"><span class="carret"></span>Delete</span>
+					</a>
+				</div>
+
+				<h3>{{ card.job }} at {{ card.organization }}</h3>
+				<p style="color:#{{ card.color }}"><span class="icon-location-pin" style="margin-right:5px;"></span> {{ card.location }}</p>
+				<p style="color:#{{ card.color }}">{{ card.phone }}<br>
 			</div>
-			<h3>{{ card.job }} at {{ card.organization }}</h3>
-			<p style="color:#{{ card.color }}"><span class="icon-location-pin" style="margin-right:5px;"></span> {{ card.location }}</p>
-			<p style="color:#{{ card.color }}">{{ card.phone }}<br>
 		</div>
 	</div>
 </div>

@@ -559,6 +559,9 @@ footer .flex-row > div {
 form.deactivated {
 	opacity: 0.8;
 	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-ms-filter: blur(2px);
+	filter: blur(2px);
 }
 
 .form-footer-newsletter {
@@ -769,10 +772,16 @@ div.alert-success {
 	border: 6px solid #fff;
 	background-size: cover;
 	-webkit-filter: grayscale(42%);
+	-moz-filter: grayscale(42%);
+	-ms-filter: grayscale(42%);
+	filter: grayscale(42%);
 }
 
 .team .avatar:hover {
 	-webkit-filter: grayscale(0%);	
+	-moz-filter: grayscale(0%);	
+	-ms-filter: grayscale(0%);	
+	filter: grayscale(0%);	
 }
 
 .team h4 {
@@ -828,11 +837,14 @@ div.alert-success {
 	position: relative;
 	cursor: pointer;
 	display: inline-block;
-	width: 420px;
+	width: 330px;
 	padding: 6px 10px;
 	border-radius: 2px;
 	border-bottom: 1px solid rgb(200, 205, 215);
 	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
 }
 
 .contact-list:hover, .contact-list.active {
@@ -841,12 +853,12 @@ div.alert-success {
 
 .contact-list.active {
 	border-radius: 3px 0 0 3px;
-	color: rgb(80, 95, 120);	
+	color: rgb(80, 95, 120);
 }
 
 .contact-wrapper {
 	position: absolute;
-	right: 0;
+	left: 350px;
 	top: 0;
 }
 
@@ -857,7 +869,7 @@ div.alert-success {
 
 .contact-show {
 	text-align: center;
-	width: 40%;
+	width: 330px;
 	min-width: 250px;
 	padding: 20px 0;
 	border-radius: 0 3px 3px 3px;
@@ -871,8 +883,58 @@ div.alert-success {
 	top: 0;
 }
 
-/*********************** To Remove ***********************/
+div[class*='card'] {
+	position: relative;
+	border-radius: 3px;
+	height: 200px;
+	width: 330px;
+	padding: 10px 30px;
+	margin: 10px;
+}
 
+.card-block {
+	position: relative;
+}
+
+div[class*='card'] .options {
+	position: absolute;
+	top: -10px;
+	right: 6px;
+	padding: 4px 10px;
+	border-radius: 3px;
+	opacity: 0;
+	background-color: rgb(230, 235, 245);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+div[class*='card']:hover .options {
+	opacity: 1;
+	top: -4px;
+}
+
+div[class*='card'] .options a {
+	margin: 4px 0;
+	padding: 5px 8px;
+	display: block;
+	color: rgb(120, 135, 160);
+}
+
+.options .helper {
+	display: none;
+}
+
+.app-icon {
+	display: inline-block;
+	border-radius: 18px;
+	width: 90px;
+}
+
+/*********************** To Remove ***********************/
+/*
 .map-creator {
 	display: block;
 	height: 420px;
@@ -889,7 +951,7 @@ div[class^='card'] {
 	margin: 10px;
 	position: relative;
 /*	border: 1px solid transparent !important;
-*/
+*
 }
 
 div.card {
@@ -929,3 +991,4 @@ div.card4 p {
 .card a:hover {
 	text-decoration: underline;
 }
+*/
