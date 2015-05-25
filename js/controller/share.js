@@ -27,17 +27,20 @@ slideController.controller('shareController',
 			return;
 		}
 		console.log('sending: ' + $scope.cardToSend);
-		$http.post(urlApi + '/share' + '?token=' + $cookies.usr_token, {
-			'card_hash': $scope.userToShare,
-			'hash_code': $scope.cardToSend,
-			'lat': 0,
-			'lng': 0
-		})
-		.success(function(data, status) {
-			$scope.success = 'Share Sucess';
-		})
-		.error(function(data, status) {
-			$scope.error = data.message;
-		})
+		console,log('user_lat ' + user_lat);
+		console,log('user_lng ' + user_lng);
+
+		// $http.post(urlApi + '/share' + '?token=' + $cookies.usr_token, {
+		// 	'card_hash': $scope.userToShare,
+		// 	'hash_code': $scope.cardToSend,
+		// 	'lat': user_lat,
+		// 	'lng': user_lng
+		// })
+		// .success(function(data, status) {
+		// 	$scope.success = 'Share Sucess';
+		// })
+		// .error(function(data, status) {
+		// 	$scope.error = data.message;
+		// })
 	}
 }]);

@@ -31,11 +31,13 @@ slideController.controller('cardListController',
 				return;
 			}
 			console.log('sending: ' + $scope.cardToSend);
+			console.log('user_lat ' + user_lat);
+			console.log('user_lng ' + user_lng);
 			$http.post(urlApi + '/share' + '?token=' + $cookies.usr_token, {
 				'card_hash': $scope.userToShare,
 				'hash_code': $scope.cardToSend,
-				'lat': 0,
-				'lng': 0
+				'lat': user_lat,
+				'lng': user_lng
 			})
 			.success(function(data, status) {
 				$scope.success = 'Share Sucess';
