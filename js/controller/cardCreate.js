@@ -13,7 +13,8 @@ slideController.controller('cardCreateController',
 		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
 			.success(function(data) {
 			$scope.templates = data.data;
-			console.log($scope.templates);
+			if ($scope.templates == undefined || $scope.templates == '')
+				$location.path('/templateCreate');
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
