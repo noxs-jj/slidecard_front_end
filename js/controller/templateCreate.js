@@ -12,7 +12,6 @@ slideController.controller('templateCreateController',
 		$scope.create = function() {
 			var fd = new FormData();
 
-
 			if ($scope.type == undefined)
 				$scope.type = 0;
 			fd.append("name", $scope.name);

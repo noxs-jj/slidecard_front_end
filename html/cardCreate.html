@@ -19,7 +19,7 @@
 
 		<div class="flex-block">
 			<h3 class="title">Company informations</h3>
-		
+
 			<div class="alert-danger animated fadeIn" data-ng-show="error">
 				<p><span class="icon-cross"></span>{{ error }}</p>
 			</div>
@@ -79,7 +79,7 @@
 						ng-click="getIndexTemplate(id_template)" ng-change="getIndexTemplate(id_template)">
 					<option
 						data-ng-repeat="entry in templates"
-						value="{{entry.id}}"
+						data-ng-value="{{entry.id}}"
 						data-ng-selected="templates[0].id == entry.id">{{entry.name}}
 					</option>
 				</select>

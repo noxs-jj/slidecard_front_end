@@ -13,6 +13,7 @@ slideController.controller('cardCreateController',
 		$http.get(urlApi + '/template?token=' + $cookies.usr_token)
 			.success(function(data) {
 			$scope.templates = data.data;
+			console.log($scope.templates);
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
@@ -41,9 +42,13 @@ slideController.controller('cardCreateController',
 
 		// CREATE CARD POST
 		$scope.create = function() {
+			console.log('create 0');
 			if ($scope.type == undefined)
 				$scope.type = 0;
 			$scope.color = $scope.color.substring(1, 7);
+			if ($scope.id_template == undefined) {
+				$scope.id_template = $scope.templates[0].id;
+			}
 			$http.post(urlApi + '/card/create?token=' + $cookies.usr_token, {
 					'organization': $scope.organization,
 					'job': $scope.job,
