@@ -46,11 +46,6 @@ slideApp.config(['$routeProvider', '$httpProvider',
 		controller: 'templateDeleteController',
 		controllerAs: 'templateDelete'
 	}).
-	when('/share', {
-		templateUrl: 'html/share.html',
-		controller: 'shareController',
-		controllerAs: 'share'
-	}).
 	when('/cardList', {
 		templateUrl: 'html/cardList.html',
 		controller: 'cardListController',
@@ -90,6 +85,11 @@ slideApp.config(['$routeProvider', '$httpProvider',
 		templateUrl: 'html/contactList.html',
 		controller: 'contactListController',
 		controllerAs: 'contactList'
+	}).
+	when('/collectionMapCard', {
+		templateUrl: 'html/collectionMapCard.html',
+		controller: 'collectionMapCardController',
+		controllerAs: 'collectionMapCard'
 	}).
 	when('/welcome', {
 		templateUrl: 'html/welcome.html',

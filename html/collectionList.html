@@ -7,9 +7,17 @@
 		</div>
 	<div class="flex-row">
 		<div data-ng-repeat="entry in result">
-			<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + entry.template.path }});background-size:cover;font-family:{{ card.font.name }}, Helvetica, Verdana">
+			<div class="infocards">
+				<span data-ng-show="entry.coord.lat != 0 || entry.coord.lng != 0"
+					class="glyphicon glyphicon-map-marker"
+					data-ng-click="mapcard(entry.coord.lat, entry.coord.lng)">
+					<a href="">Location</a>
+				</span>
+			</div>
+
+			<div class="card" style="color:#{{ entry.color }};background-image:url({{ cdn + entry.template.path }});background-size:cover;font-family:{{ entry.font.name }}, Helvetica, Verdana">
 				<div class="options">
-					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
+					<a href="#/card/delete/{{ entry.id }}" class="icon-trash">
 						<span class="helper"><span class="carret"></span>Remove</span>
 					</a>
 				</div>

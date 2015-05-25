@@ -14,5 +14,9 @@ slideController.controller('collectionListController',
 		.error(function(data, status) {
 			$scope.error = data.message;
 		})
+
+		$scope.mapcard = function(lat, lng) {
+			$location.path('/collectionMapCard').search({'lat': lat, 'lng':lng});
+		};
 	}
 }]);
