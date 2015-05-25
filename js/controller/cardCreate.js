@@ -43,7 +43,6 @@ slideController.controller('cardCreateController',
 
 		// CREATE CARD POST
 		$scope.create = function() {
-			console.log('create 0');
 			if ($scope.type == undefined)
 				$scope.type = 0;
 			$scope.color = $scope.color.substring(1, 7);

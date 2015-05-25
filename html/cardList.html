@@ -8,72 +8,65 @@
 		</ul>
 	</div>
 </div>
-<div class="flex-row"><h1 class="title">Managing cards</h1></div>
-<div class="flex-row">
-	<div ng-repeat="card in result">
-		<div class="card-block">
-			<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + card.template.path }});background-size:cover;font-family:{{ card.font.name }}, Helvetica, Verdana">
-
-				<div class="options">
-					<a href="#/card/{{ card.id }}" class="icon-text">
-						<span class="helper"><span class="carret"></span>More</span>
-					</a>
-					<a href="#/card/update/{{ card.id }}" class="icon-pencil">
-						<span class="helper"><span class="carret"></span>Edit</span>
-					</a>
-					<a href="#/card/delete/{{ card.id }}" class="icon-trash">
-						<span class="helper"><span class="carret"></span>Delete</span>
-					</a>
-				</div>
-
-				<h3>{{ card.job }} at {{ card.organization }}</h3>
-				<p style="color:#{{ card.color }}"><span class="icon-location-pin" style="margin-right:5px;"></span> {{ card.location }}</p>
-				<p style="color:#{{ card.color }}">{{ card.phone }}<br>
-			</div>
-		</div>
-	</div>
+<div class="flex-row"><h1 class="title">Managing cards</h1>
+	
 </div>
-<!--
-<div class="navbar-default">
-	<div class="lg-flex-container">
-		<ul class="inline-block">
-			<li><a href="#/cardList">Manage cards</a></li>
-			<li><a href="#/cardCreate">Create a card</a></li>
-			<li><a href="#/template">Templates</a></li>
-			<li><a href="#/templateCreate">Create a template</a></li>
-		</ul>
-	</div>
+
+<div class="alert-danger animated fadeIn" data-ng-show="error">
+	<p><span class="icon-cross"></span>{{ error }}</p>
 </div>
-<div class="lg-flex-container" style="margin-top:50px;">
-	<div class="alert-danger animated fadeIn" data-ng-show="error">
-		<p><span class="icon-cross"></span>{{ error }}</p>
+
+<div class="alert-danger animated fadeIn" data-ng-show="success">
+	<p><span class="icon-cross"></span>{{ success }}</p>
+</div>
+
+<form class="form-signin" name="shareForm" ng-submit="shareForm.$valid && sendCard()" novalidate>
+
+	<div class="form-block">
+		<input type="text" class="form-input" placeholder="Key User" required="true"
+				data-ng-model="userToShare">
 	</div>
-	<div style="padding-bottom:4%;">
-		<h1 class="title">Managing cards</h1>
-		<p>Manage your business cards</p>
-	</div>
-	<div class="inline">
+
+	<div class="flex-row">
 		<div ng-repeat="card in result">
-			<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + card.template.path }});font-family:{{ card.font.name }}, Helvetica, Verdana">
-			<div class="hovered-links">
-				<a href="#/card/{{ card.id }}" class="icon-text">
-					<span class="helper"><span class="carret"></span>More</span>
-				</a>
-				<a href="#/card/update/{{ card.id }}" class="icon-pencil">
-					<span class="helper"><span class="carret"></span>Edit</span>
-				</a>
-				<a href="#/card/delete/{{ card.id }}" class="icon-trash">
-					<span class="helper"><span class="carret"></span>Delete</span>
-				</a>
+			<div class="card-block">
+				<div class="card"
+					style="color:#{{ card.color }};
+					background-image:url({{ cdn + card.template.path }});
+					background-size:cover;
+					font-family:{{ card.font.name }}, Helvetica, Verdana"
+					data-ng-click="selectCard(card.hash_code)">
+
+					<div data-ng-if="card.hash_code == cardToSend">
+						<h1>SELECTED</h1>
+					</div>
+
+					<div class="options">
+						<a href="#/card/{{ card.id }}" class="icon-text">
+							<span class="helper"><span class="carret"></span>More</span>
+						</a>
+						<a href="#/card/update/{{ card.id }}" class="icon-pencil">
+							<span class="helper"><span class="carret"></span>Edit</span>
+						</a>
+						<a href="#/card/delete/{{ card.id }}" class="icon-trash">
+							<span class="helper"><span class="carret"></span>Delete</span>
+						</a>
+					</div>
+
+					<h3>{{ card.job }} at {{ card.organization }}</h3>
+					<p style="color:#{{ card.color }}"><span class="icon-location-pin" style="margin-right:5px;"></span> {{ card.location }}</p>
+					<p style="color:#{{ card.color }}">{{ card.phone }}<br>
+				</div>
 			</div>
-			<h3>{{ card.job }} at {{ card.organization }}</h3>
-			<p style="color:#{{ card.color }};">{{ card.slogan }}</p>
-			<p style="color:#{{ card.color }};"><i>{{ card.email }}</i></p>
-			<p style="color:#{{ card.color }};">{{ card.phone }}</p>			
 		</div>
 	</div>
-</div>
-<div class="lg-flex-container">
-	<p style="padding:50px 0;"><a href="#/cardCreate" class="simple-btn" style="padding:10px 20px 10px 10px;"><span class="icon-plus"></span> &nbsp; Add a new card</a></p>
-</div>
--->
+
+	<button class="submit-btn" type="submit">Share</button>
+
+</form>
+
+
+
+
+
+
