@@ -49,9 +49,9 @@
 				<div class="alert-error animated fadeIn" data-ng-show="error">
 					<p align="left"><span class="icon-cross"></span> {{ error }}</p>
 				</div>
-				<div class="alert-error animated fadeIn" data-ng-show="isLog()">
-					<p align="left"><span class="icon-cross"></span> Already logged in.</p>
-				</div>				
+				<div class="alert-success animated fadeIn" data-ng-show="isLog()">
+					<p align="left"><span class="icon-cross"></span> Logged in success</p>
+				</div>
 				<div ng-show="content.getPanel('login') && isLog()" class="hidden-map"></div>
 				<form name="loginForm" data-ng-submit="auth()" ng-class="{'deactivated' : isLog() }">
 					<div class="form-block">
