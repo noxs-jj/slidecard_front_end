@@ -6,7 +6,16 @@
 		<p><span class="icon-cross"></span>{{ error }}</p>
 	</div>
 	<h2>{{ result.name }}</h2>
-	<article class="card-detailed" style="color:#{{ card.color }};background-image:url({{ cdn + result.path }});">
-	</article>
+	<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + result.path }});">
+		id {{result.id}}</br>
+		type {{result.type}}</br>
+		name {{result.name}}</br>
+		path {{result.path}}</br>
+		price {{result.price}}</br>
+		created_by {{result.created_by}}</br>
+		deleted_at {{result.deleted_at}}</br>
+		created_at {{result.created_at}}</br>
+		updated_at {{result.updated_at}}
+	</div>
 	<button type="button" class="simple-btn" data-ng-click="delete()">Delete</button>
 </div>

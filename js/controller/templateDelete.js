@@ -10,6 +10,7 @@ slideController.controller('templateDeleteController',
 		$http.get(urlApi + '/template/' + $routeParams.id + '?token=' + $cookies.usr_token)
 		.success(function(data, status) {
 			$scope.result = data.data.template;
+			console.log($scope.result);
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
