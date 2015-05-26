@@ -25,4 +25,5 @@ cat ../js/controller/cardDelete.js >> one_file.js
 cat ../js/controller/collectionList.js >> one_file.js
 cat ../js/controller/contactList.js >> one_file.js
 cat ../js/controller/collectionDelete.js >> one_file.js
+cat ../js/controller/reportBug.js >> one_file.js
 cat ../js/app.js >> one_file.js
