@@ -16,6 +16,22 @@ body {
 	outline: none;
 }
 
+#beta {
+	position: fixed;
+	top: 25%;
+	left: -33px;
+	padding: 10px;
+	background-color: #e74c3c;
+	color: #fff;
+	z-index: 999;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#beta a{ color: #fff;}
+
+
 /** General **/
 
 a {
