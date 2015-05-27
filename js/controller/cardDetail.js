@@ -15,4 +15,4 @@ slideController.controller('cardDetailController',
 			$scope.error = data.message;
 		})
 	}
-}]);
+}];
