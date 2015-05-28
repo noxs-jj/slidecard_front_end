@@ -39,8 +39,8 @@ slideController.controller('templateCreateController',
 				})
 				.error(function(data, status) {
 					$scope.error = data.message;
-				})
+				});
 			}
-		}
+		};
 	}
 }]);

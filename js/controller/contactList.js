@@ -34,11 +34,11 @@ slideController.controller('contactListController',
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
-		})
+		});
 
 		$scope.choseIt = function(id_owner) {
 			$scope.userSelect = id_owner;
 			console.log($scope.userSelect);
-		}
+		};
 	}
 }]);

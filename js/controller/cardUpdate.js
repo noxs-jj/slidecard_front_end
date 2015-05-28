@@ -22,12 +22,12 @@ slideController.controller('cardUpdateController',
 			})
 			.error(function(data, status) {
 				$scope.error = data.message;
-			})
+			});
 
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
-		})
+		});
 
 		
 
@@ -41,7 +41,7 @@ slideController.controller('cardUpdateController',
 					$scope.indexTemplate = index;
 				index++;
 			}
-		}
+		};
 		
 		// FONTS LIST
 		$http.get(urlApi + '/fonts?token=' + $cookies.usr_token)
@@ -50,7 +50,7 @@ slideController.controller('cardUpdateController',
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
-		})
+		});
 		$scope.update = function() {
 			//console.log('id_template:' + $scope.id_template);
 			if ($scope.color == undefined)
@@ -81,7 +81,7 @@ slideController.controller('cardUpdateController',
 			})
 			.error(function(data, status) {
 				$scope.error = data.message;
-			})
-		}
+			});
+		};
 	}
 }]);

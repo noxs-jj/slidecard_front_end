@@ -21,7 +21,7 @@ slideController.controller('accountUpdateController',
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
-		})
+		});
 		$scope.update = function() {
 			$scope.error = '';
 			if ($scope.update_password == $scope.retype_password) {
@@ -75,7 +75,7 @@ slideController.controller('accountUpdateController',
 					})
 					.error(function(data, status) {
 						$scope.error = data.message;
-					})
+					});
 				}
 			}
 			else

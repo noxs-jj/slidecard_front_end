@@ -14,7 +14,7 @@ slideController.controller('collectionDeleteController',
 			})
 			.error(function(data, status) {
 				$scope.error = data.message;
-			})
-		}
+			});
+		};
 	}
 }]);

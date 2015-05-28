@@ -54,7 +54,7 @@ slideApp.controller('contentController',
 			var marker = new google.maps.Marker({ position: latlng, map: map, title:"You are here" });
 			map.panTo(latlng);
 		}
-	}
+	};
 
 	function errorPosition(error) {
 		switch (error.code) {
@@ -72,11 +72,11 @@ slideApp.controller('contentController',
 				break;
 		}
 		$('#geolocinfo').css('display', 'none');
-	}
+	};
 
 	function stopGeolocation() {
 		navigator.geolocation.clearWatch(geolocId);
-	}
+	};
 
 	if (navigator.geolocation) {
 		var geolocId = navigator.geolocation

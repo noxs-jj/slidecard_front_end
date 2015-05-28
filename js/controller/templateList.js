@@ -13,6 +13,6 @@ slideController.controller('templateListController',
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
-		})
+		});
 	}
 }]);

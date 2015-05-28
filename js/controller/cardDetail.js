@@ -2,8 +2,9 @@ slideController.controller('cardDetailController',
 		['$scope', '$http', '$cookies', '$location', '$routeParams',
 		function($scope, $http, $cookies, $location, $routeParams) {
 
-	if (!$cookies.usr_token)
+	if (!$cookies.usr_token) {
 		$location.path('/login');
+	}
 	else {
 		$scope.error = '';
 		$scope.cdn = urlCdn;
@@ -13,6 +14,6 @@ slideController.controller('cardDetailController',
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
-		})
+		});
 	}
-}];
+}]);

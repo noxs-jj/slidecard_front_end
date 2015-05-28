@@ -10,11 +10,9 @@
 </div>
 <div style="padding:4% 0;">
 <form name="newCardForm" data-ng-submit="newCardForm.$valid && create()" novalidate>
-
 	<div class="alert-danger animated fadeIn" data-ng-show="error">
 		<p><span class="icon-cross"></span>{{ error }}</p>
 	</div>
-
 	<div class="flex-row">
 
 		<div class="flex-block">
@@ -98,14 +96,12 @@
 
 		</div>
 
-
-
-
 		<div class="flex-block">
 			<h3 class="title">Preview</h3>
 			<div class="card"
 				style="color:{{ color * 1.5 }};
-				background-image:url({{ cdn + templates[indexTEmplate].path }});background-size:cover;
+				background-image:url({{ cdn + templates[indexTEmplate].path }});
+				background-size:cover;
 				font-family:{{ fonts[id_font - 1].name }}, Helvetica, Verdana">
 
 				<h3 ng-if="organization == undefined">Organization</h3>
@@ -140,103 +136,3 @@
 	</div>
 </form>
 </div>
-<!--
-<div class="navbar-default">
-	<div class="lg-flex-container">
-		<ul class="inline-block">
-			<li><a href="#/cardList">Manage cards</a></li>
-			<li><a href="#/cardCreate">Create a card</a></li>
-			<li><a href="#/template">Templates</a></li>
-			<li><a href="#/templateCreate">Create a template</a></li>
-		</ul>
-	</div>
-</div>
-<div class="sm-container">
-	<div class="title"><h1 class="title">Add a new Card</h1></div>
-	<form class="form-signin" name="newCardForm" data-ng-submit="newCardForm.$valid && create()" novalidate>
-		<div class="alert-danger animated fadeIn" data-ng-show="error">
-			<p><span class="icon-cross"></span>{{ error }}</p>
-		</div>
-		<div class="form-block">
-			<input type="text" class="form-input" placeholder="Organization name (required)" required="true" data-ng-model="organization">
-		</div>
-		<div class="form-block">
-			<input type="text" class="form-input" placeholder="Job name (required)" required="true" data-ng-model="job">
-		</div>
-		<div class="form-block">
-			<input type="text" class="form-input" placeholder="Location (required)" required="true" data-ng-model="location">
-		</div>
-		<div class="form-block">
-			<input type="email" class="form-input" placeholder="Email address (required)" required="true" data-ng-model="email">
-		</div>
-		<div class="form-block">
-			<input type="text" class="form-input sm" placeholder="Phone number (required)" required="true" data-ng-model="phone">
-		</div>
-		<div class="form-block">
-			<input type="text" class="form-input" placeholder="An amazing slogan! (required)" required="true" data-ng-model="slogan">
-		</div>
-		<div class="form-block">
-			<color-picker ng-model="color"></color-picker>
-			<input type="text" class="form-input" placeholder="Font color (ex: FF9900) (required)" required="true" data-ng-model="color" disabled="true" ng-init="color = '#FFFFFF'">
-		</div>
-
-		<div class="form-block">
-			<label for="type">Card type</label>
-			<select name="type" class="form-input select" data-ng-model="type" form="typeform">
-				<option value="0" data-ng-selected="true">Professional</option>
-				<option value="1">Personal</option>
-			</select>
-		</div>
-		<div class="form-block">
-			<label for="template">Choose a template</label>
-			<select name="id_template" class="form-input select" data-ng-model="id_template"
-					ng-click="getIndexTemplate(id_template)" ng-change="getIndexTemplate(id_template)">
-				<option
-					data-ng-repeat="entry in templates"
-					value="{{entry.id}}"
-					data-ng-selected="templates[0].id == entry.id">{{entry.name}}
-				</option>
-			</select>
-		<div class="form-block">
-			<label for="template">Choose a font</label>
-			<select  class="form-input select" data-ng-model="id_font">
-				<option
-					data-ng-repeat="entry in fonts"
-					value="{{entry.id}}"
-					data-ng-selected="entry.id == 1">{{entry.name}}
-				</option>
-			</select>
-		</div>		
-		<button class="submit-btn" type="submit" value="Login">Add card</button>
-	</form>
-	
-	</div>
-	<div>
-		<h2 class="title">New card</h2>
-		<div class="card"
-			style="color:{{ color }};
-			background-image:url({{ cdn + templates[indexTEmplate].path }});
-			font-family:{{ fonts[id_font - 1].name }}, Helvetica, Verdana">
-
-		<h3 ng-if="organization == undefined">Organization</h3>
-		<h3 ng-if="organization == ''">Organization</h3>
-		<h3 ng-if="organization">{{ organization }}</h3>
-
-		<p ng-if="slogan == undefined">Slogan</p>
-		<p ng-if="slogan == ''">Slogan</p>
-		<p ng-if="slogan">{{ slogan }}</p>
-
-		<p ng-if="email == undefined">Email</p>
-		<p ng-if="email == ''">Email</p>
-		<p ng-if="email">{{ email }}</p>
-
-		<p ng-if="phone == undefined">Phone</p>
-		<p ng-if="phone == ''">Phone</p>
-		<p ng-if="phone">{{ phone }}</p>
-
-		<p ng-if="location == undefined">Location</p>
-		<p ng-if="location == ''">Location</p>
-		<p ng-if="location">{{ location }}</p>
-	</div>
-</div>
--->

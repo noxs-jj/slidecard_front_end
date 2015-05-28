@@ -14,7 +14,7 @@ slideController.controller('templateDeleteController',
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
-		})
+		});
 
 		$scope.delete = function() {
 			$http.get(urlApi + '/template/delete/' + $routeParams.id
@@ -24,7 +24,7 @@ slideController.controller('templateDeleteController',
 			})
 			.error(function(data, status) {
 				$scope.error = data.message;
-			})
-		}
+			});
+		};
 	}
 }]);

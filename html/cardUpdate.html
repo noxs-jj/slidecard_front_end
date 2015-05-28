@@ -16,7 +16,11 @@
 <div class="flex-row">
 	<div class="flex-block">
 		<h2 class="title">Old card</h2>
-		<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + card.template.path }});font-family:{{ card.font.name }}, Helvetica, Verdana">
+		<div class="card"
+			style="color:#{{ card.color }};
+			background-image:url({{ cdn + card.template.path }});
+			background-size:cover;
+			font-family:{{ card.font.name }}, Helvetica, Verdana">
 
 			<h3>{{ card.job }} at {{ card.organization }}</h3>
 			<p style="color:#{{ card.color }}">{{ card.slogan }}</p>
@@ -93,6 +97,7 @@
 		<div class="card"
 			style="color:{{ color }};
 			background-image:url({{ cdn + templates[indexTemplate].path }});
+			background-size:cover;
 			font-family:{{ fonts[id_font - 1].name }}, Helvetica, Verdana">
 
 			<h3 ng-if="organization == undefined">{{ card.organization }}</h3>

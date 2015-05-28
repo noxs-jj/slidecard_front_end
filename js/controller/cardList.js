@@ -16,11 +16,11 @@ slideController.controller('cardListController',
 		})
 		.error(function(data, status) {
 			$scope.error = data.message;
-		})
+		});
 
 		$scope.selectCard = function(key_card) {
 			$scope.cardToSend = key_card;
-		}
+		};
 
 		$scope.sendCard = function() {
 			$scope.error = '';
@@ -44,8 +44,7 @@ slideController.controller('cardListController',
 			})
 			.error(function(data, status) {
 				$scope.error = data.message;
-			})
-		}
+			});
+		};
 	}
 }]);
-// 8799295290 (jquilez)

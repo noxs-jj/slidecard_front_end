@@ -6,7 +6,9 @@
 		<p><span class="icon-cross"></span>{{ error }}</p>
 	</div>
 	<h2>{{ result.name }}</h2>
-	<div class="card" style="color:#{{ card.color }};background-image:url({{ cdn + result.path }});">
+	<div class="card" style="color:#{{ card.color }};
+		background-image:url({{ cdn + result.path }});
+		background-size:cover;">
 		id {{result.id}}</br>
 		type {{result.type}}</br>
 		name {{result.name}}</br>

@@ -22,6 +22,6 @@ slideController.controller('accountController',
 		})
 		.error(function(data, status) {
 			$scope.error = status + ' / ' + data.message;
-		})
+		});
 	}
 }]);
