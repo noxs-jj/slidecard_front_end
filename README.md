@@ -1,43 +1,44 @@
 # 42
 
-### Update 26/03/2015
+### Update 28/05/2015
 ---
 Besoins API
-- apache
+- apache2
 - php55 (minimum)
 - php-mcrypt
 - composer
 
 ### Projet de 6 mois
---
 
-Echange de cartes de visite entre smartphone
+- www.slidecard.ovh
+- admin.slidecard.ovh
+- cdn.slidecard.ovh
 
-- Site de presentation du projet (page unique, pas se faire chier)
-- API (python|ruby|php) a definir
-- Application mobile connectee a l'API (iOS uniquement)
-- Site web avec gestion des contacts
-
-### Extra:
-- Integrer un systeme de personnalisation des cartes (Sur le site web)
-- Ajouter un marketplace au site
-- Permettre aux utilisateurs de vendre des templates de cartes
-- Creation de boutiques (?)
 
 ### Others Slidecard's git www.slidecard.tk
-- https://github.com/tbzr/42 (Docker server setup and others)
-- https://github.com/tbzr/sc_api (API server)
-- https://github.com/noxsnono/slidecard_ios (IOS Smarphone Application)
-- https://bitbucket.org/NoXsNoNo/slidecard_front_end (Front-end Website)
+- http://github.com/tbzr/42 ( Main project - Rendu 42 )
+- http://github.com/tbzr/sc_api ( API Server )
+- http://github.com/noxsnono/slidecard_ios ( IOS/Android Smarphone Application )
+- http://github.com/noxsnono/slidecard_front_end ( Front-End Website )
+- http://github.com/noxsnono/slidecard_assets ( Assets CDN )
+
+
+## stats Commit
+- API Rest:: https://github.com/tbzr/sc_api/commits/master
+- Front-end:: https://github.com/noxsnono/slidecard_front_end/commits/master
+- WebApp:: https://github.com/noxsnono/slidecard_ios/commits/master
+- Assets:: https://github.com/noxsnono/slidecard_assets
+- Rendu:: https://github.com/tbzr/42/commits/master
+
+
+## Stat Commit all project
 
 
 ###### Jonathan Maurice
-
 
 ###### Jean-Jacques Moiroux
 jjmoiroux@gmail.com
 
 ###### Julien Quilez
-
 
 ###### Thomas bazire
